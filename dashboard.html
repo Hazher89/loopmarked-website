@@ -33,6 +33,19 @@
                     </svg>
                     Overview
                 </a>
+                <a href="#" class="sidebar-link" data-section="marketplace">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3h18v18H3zM21 9H3M21 15H3M12 3v18" />
+                    </svg>
+                    Marketplace
+                </a>
+                <a href="#" class="sidebar-link" data-section="listings">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                    My Listings
+                </a>
                 <a href="#" class="sidebar-link" data-section="wallet">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -181,6 +194,40 @@
                     </div>
                 </section>
 
+                <!-- ═══ MARKETPLACE SECTION ═══ -->
+                <section class="content-section" id="section-marketplace">
+                    <div class="section-actions">
+                        <input type="text" id="marketplaceSearch" class="search-input" placeholder="Search items..." />
+                        <select id="marketplaceCategory" class="filter-select">
+                            <option value="">All Categories</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="furniture">Furniture</option>
+                            <option value="vehicles">Vehicles</option>
+                        </select>
+                    </div>
+                    <div class="listings-grid" id="marketplaceGrid">
+                        <!-- Items injected via JS -->
+                        <div class="empty-state-dash">
+                            <div class="loading-spinner"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ═══ MY LISTINGS SECTION ═══ -->
+                <section class="content-section" id="section-listings">
+                    <div class="section-header">
+                        <h2>My Listings</h2>
+                        <button class="create-btn" onclick="openCreateListing()">+ Create Listing</button>
+                    </div>
+                    <div class="listings-grid" id="myListingsGrid">
+                        <!-- Items injected via JS -->
+                        <div class="empty-state-dash">
+                            <p>You haven't posted any listings yet.</p>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- ═══ WALLET SECTION ═══ -->
                 <section class="content-section" id="section-wallet">
                     <div class="wallet-hero">
@@ -215,14 +262,28 @@
 
                 <!-- ═══ MESSAGES SECTION ═══ -->
                 <section class="content-section" id="section-messages">
-                    <div class="empty-state-dash large">
-                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)"
-                            stroke-width="1.5">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                        </svg>
-                        <h3>Messages</h3>
-                        <p>Your chat conversations appear here. Download the app to start messaging buyers and sellers.
-                        </p>
+                    <div class="chat-container">
+                        <!-- Chat List -->
+                        <div class="chat-sidebar">
+                            <div class="chat-search">
+                                <input type="text" placeholder="Search chats..." id="chatSearch">
+                            </div>
+                            <div class="chat-list" id="chatList">
+                                <!-- Loaded via JS -->
+                                <div class="loading-spinner"></div>
+                            </div>
+                        </div>
+                        <!-- Chat Window -->
+                        <div class="chat-window" id="chatWindow">
+                            <div class="chat-empty-state">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                                <h3>Select a conversation</h3>
+                                <p>Choose a chat from the left to start messaging.</p>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -262,7 +323,7 @@
             <h2 class="popup-title">Daily Bonus!</h2>
             <p class="popup-desc">Welcome back! You've earned your daily login bonus.</p>
             <div class="popup-reward">
-                <span class="popup-reward-value">+0.1</span>
+                <span class="popup-reward-value">+1</span>
                 <span class="popup-reward-label">LUMO</span>
             </div>
             <button class="popup-btn" onclick="claimDailyBonus()">Claim Reward</button>
