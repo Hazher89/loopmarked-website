@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loop Marked — The Future of Local Trading</title>
+  <meta name="description"
+    content="Loop Marked is a premium peer-to-peer marketplace powered by Lumo, a digital currency that makes local trading secure, instant, and rewarding." />
+  <meta name="keywords"
+    content="marketplace, local trading, Lumo, digital currency, peer-to-peer, buy sell, Loop Marked" />
+  <meta property="og:title" content="Loop Marked — The Future of Local Trading" />
+  <meta property="og:description" content="Trade locally with Lumo. A premium marketplace experience." />
+  <meta property="og:image" content="/images/hero-mockup.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="/images/app-icon.png" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <!-- ═══════ NAVBAR ═══════ -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-logo">
+        <img src="/images/app-icon.png" alt="Loop Marked" class="navbar-logo-img" />
+        <span class="navbar-brand">Loop Marked</span>
+      </a>
+      <div class="navbar-links" id="navLinks">
+        <a href="#features" class="nav-link" data-i18n="nav_features">Features</a>
+        <a href="#how-it-works" class="nav-link" data-i18n="nav_how">How It Works</a>
+        <a href="#lumo" class="nav-link" data-i18n="nav_lumo">Lumo</a>
+        <a href="#security" class="nav-link" data-i18n="nav_security">Security</a>
+      </div>
+      <div class="navbar-actions">
+        <!-- Language Switcher -->
+        <div class="nav-lang" id="authLangSwitcher">
+          <button class="lang-btn" id="langBtn" aria-label="Change language">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+            <span id="currentLangLabel">EN</span>
+          </button>
+          <div class="lang-dropdown" id="langDropdown"></div>
+        </div>
+        <a href="/auth.html" class="btn-ghost" data-i18n="nav_login">Log In</a>
+        <a href="/auth.html" class="btn-primary-sm" data-i18n="nav_start">Get Started</a>
+      </div>
+      <button class="navbar-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════ HERO ═══════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+      <div class="hero-glow hero-glow-3"></div>
+      <div class="hero-particles" id="heroParticles"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          <span data-i18n="hero_badge">Now Available on iOS & Android</span>
+        </div>
+        <h1 class="hero-title">
+          <span data-i18n="hero_title_1">The Future of</span><br />
+          <span class="gradient-text" data-i18n="hero_title_2">Local Trading</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero_desc">
+          Trade locally using Lumo — a digital currency that makes buying and selling secure, instant, and rewarding. No
+          cash. No hassle. Just premium peer-to-peer commerce.
+        </p>
+        <div class="hero-cta">
+          <a href="/auth.html" class="btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+            <span data-i18n="hero_cta">Start Trading Free</span>
+          </a>
+          <a href="#how-it-works" class="btn-secondary">
+            <span data-i18n="hero_learn">Learn More</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17l9.2-9.2M17 17V7.8H7.8" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+      <div class="hero-visual">
+        <div class="hero-phone-wrapper">
+          <div class="hero-phone-glow"></div>
+          <img src="/images/hero-mockup.png" alt="Loop Marked App" class="hero-phone" />
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-dot"></div>
+      </div>
+      <span data-i18n="hero_scroll">SCROLL TO EXPLORE</span>
+    </div>
+  </section>
+
+  <!-- ═══════ TRUSTED BY ═══════ -->
+  <section class="trusted-section">
+    <div class="container">
+      <p class="trusted-label" data-i18n="trust_title">TRUSTED BY THOUSANDS OF TRADERS WORLDWIDE</p>
+      <div class="trusted-logos">
+        <div class="trusted-item"><span>🛡️</span> <span data-i18n="trust_1">End-to-End Encrypted</span></div>
+        <div class="trusted-item"><span>⚡</span> <span data-i18n="trust_2">Instant Transactions</span></div>
+        <div class="trusted-item"><span>🌍</span> <span data-i18n="trust_3">Available Worldwide</span></div>
+        <div class="trusted-item"><span>✅</span> <span data-i18n="trust_4">Verified Users</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FEATURES ═══════ -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" data-i18n="feat_label">FEATURES</span>
+        <h2 class="section-title"><span data-i18n="feat_title_1">Everything you need to</span><br /><span
+            class="gradient-text" data-i18n="feat_title_2">trade smarter</span></h2>
+        <p class="section-subtitle" data-i18n="feat_desc">Loop Marked combines a premium marketplace with a built-in
+          digital economy, real-time messaging, and powerful search tools.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card feature-card-large" data-aos="fade-up">
+          <div class="feature-icon feature-icon-cyan">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+          </div>
+          <h3 class="feature-title" data-i18n="feat_1_t">Smart Marketplace</h3>
+          <p class="feature-desc" data-i18n="feat_1_d">Browse thousands of listings with advanced filters — by location,
+            category, price range, and radius. Find exactly what you need, nearby.</p>
+          <img src="/images/hero-mockup.png" alt="Marketplace" class="feature-preview" />
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon feature-icon-purple">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          </div>
+          <h3 class="feature-title" data-i18n="feat_2_t">Real-Time Chat</h3>
+          <p class="feature-desc" data-i18n="feat_2_d">Negotiate directly with buyers and sellers via end-to-end
+            encrypted messaging. Share images, make offers, and close deals — all in-app.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon feature-icon-gold">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" />
+            </svg>
+          </div>
+          <h3 class="feature-title" data-i18n="feat_3_t">Lumo Economy</h3>
+          <p class="feature-desc" data-i18n="feat_3_d">Trade using Lumo — our digital currency. Earn by watching ads,
+            completing daily bonuses, and referrals. Buy, sell, and trade seamlessly.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon feature-icon-green">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3 class="feature-title" data-i18n="feat_4_t">Verified & Secure</h3>
+          <p class="feature-desc" data-i18n="feat_4_d">Every user is verified. Every transaction is tracked. Block
+            users, report content, and enjoy a safe trading experience.</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="feature-icon feature-icon-cyan">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <h3 class="feature-title" data-i18n="feat_5_t">Location-Based Search</h3>
+          <p class="feature-desc" data-i18n="feat_5_d">Find items near you with radius-based search. See listings on a
+            map and filter by distance from your location.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ HOW IT WORKS ═══════ -->
+  <section class="how-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" data-i18n="how_label">HOW IT WORKS</span>
+        <h2 class="section-title"><span data-i18n="how_title_1">Start trading in</span><br /><span class="gradient-text"
+            data-i18n="how_title_2">3 simple steps</span></h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card" data-aos="fade-up">
+          <div class="step-number">01</div>
+          <div class="step-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </div>
+          <h3 class="step-title" data-i18n="how_1_t">Create Account</h3>
+          <p class="step-desc" data-i18n="how_1_d">Sign up in seconds with Apple or Google. Get free Lumo to start
+            exploring the marketplace.</p>
+        </div>
+        <div class="step-connector">
+          <svg width="40" height="2" viewBox="0 0 40 2">
+            <line x1="0" y1="1" x2="40" y2="1" stroke="rgba(0,240,255,0.3)" stroke-width="2" stroke-dasharray="6 4" />
+          </svg>
+        </div>
+        <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="step-number">02</div>
+          <div class="step-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </div>
+          <h3 class="step-title" data-i18n="how_2_t">Find & Trade</h3>
+          <p class="step-desc" data-i18n="how_2_d">Browse listings, filter by location, and chat directly with sellers.
+            Make offers using Lumo.</p>
+        </div>
+        <div class="step-connector">
+          <svg width="40" height="2" viewBox="0 0 40 2">
+            <line x1="0" y1="1" x2="40" y2="1" stroke="rgba(0,240,255,0.3)" stroke-width="2" stroke-dasharray="6 4" />
+          </svg>
+        </div>
+        <div class="step-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="step-number">03</div>
+          <div class="step-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+          </div>
+          <h3 class="step-title" data-i18n="how_3_t">Earn & Grow</h3>
+          <p class="step-desc" data-i18n="how_3_d">Earn Lumo from daily bonuses, watching ads, and completing trades.
+            Build your reputation and grow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ APP SHOWCASE ═══════ -->
+  <section class="showcase-section">
+    <div class="container">
+      <div class="showcase-grid">
+        <div class="showcase-text" data-aos="fade-right">
+          <span class="section-badge" data-i18n="show_label">APP EXPERIENCE</span>
+          <h2 class="section-title"><span data-i18n="show_title_1">A marketplace that</span><br /><span
+              class="gradient-text" data-i18n="show_title_2">feels premium</span></h2>
+          <p class="showcase-desc" data-i18n="show_desc">Every pixel crafted for the modern trader. Dark
+            quantum-inspired design, smooth
+            animations, and intuitive navigation make trading a pleasure.</p>
+          <ul class="showcase-features">
+            <li>
+              <div class="check-icon">✓</div><span data-i18n="show_1">Glassmorphic dock navigation</span>
+            </li>
+            <li>
+              <div class="check-icon">✓</div><span data-i18n="show_2">Real-time offer & chat system</span>
+            </li>
+            <li>
+              <div class="check-icon">✓</div><span data-i18n="show_3">Smart image galleries with zoom</span>
+            </li>
+            <li>
+              <div class="check-icon">✓</div><span data-i18n="show_4">Transaction receipts with full history</span>
+            </li>
+            <li>
+              <div class="check-icon">✓</div><span data-i18n="show_5">Push notifications & read receipts</span>
+            </li>
+          </ul>
+        </div>
+        <div class="showcase-phones" data-aos="fade-left">
+          <div class="showcase-phone showcase-phone-back"><img src="/images/wallet-mockup.png" alt="Wallet" /></div>
+          <div class="showcase-phone showcase-phone-front"><img src="/images/chat-mockup.png" alt="Chat" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ LUMO ECONOMY ═══════ -->
+  <section class="lumo-section" id="lumo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge section-badge-gold" data-i18n="lumo_label">LUMO ECONOMY</span>
+        <h2 class="section-title"><span data-i18n="lumo_title_1">Your digital wallet,</span><br /><span
+            class="gradient-text-gold" data-i18n="lumo_title_2">reimagined</span></h2>
+        <p class="section-subtitle" data-i18n="lumo_desc">Lumo is the heart of Loop Marked. Earn, spend, and trade with
+          a currency designed for the community.</p>
+      </div>
+      <div class="lumo-grid">
+        <div class="lumo-card" data-aos="fade-up">
+          <div class="lumo-card-icon">🎬</div>
+          <h3 data-i18n="lumo_1_t">Watch & Earn</h3>
+          <p data-i18n="lumo_1_d">Watch short ads and earn Lumo instantly. Up to 5 premium ads daily.</p>
+          <div class="lumo-reward" data-i18n="lumo_1_r">+0.1 — 0.5 Lumo</div>
+        </div>
+        <div class="lumo-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="lumo-card-icon">📅</div>
+          <h3 data-i18n="lumo_2_t">Daily Bonus</h3>
+          <p data-i18n="lumo_2_d">Claim your daily Lumo bonus. Consecutive days earn bigger rewards.</p>
+          <div class="lumo-reward" data-i18n="lumo_2_r">+0.1 Lumo/day</div>
+        </div>
+        <div class="lumo-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="lumo-card-icon">💰</div>
+          <h3 data-i18n="lumo_3_t">Buy Lumo</h3>
+          <p data-i18n="lumo_3_d">Purchase Lumo packs via in-app purchase to boost your trading power.</p>
+          <div class="lumo-reward" data-i18n="lumo_3_r">From $0.99</div>
+        </div>
+        <div class="lumo-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="lumo-card-icon">🏪</div>
+          <h3 data-i18n="lumo_4_t">Trade & Grow</h3>
+          <p data-i18n="lumo_4_d">Use Lumo to buy, sell, and boost your listings. Grow your marketplace presence.</p>
+          <div class="lumo-reward" data-i18n="lumo_4_r">Unlimited</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ SECURITY ═══════ -->
+  <section class="security-section" id="security">
+    <div class="container">
+      <div class="security-grid">
+        <div class="security-visual" data-aos="fade-right">
+          <div class="security-shield">
+            <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="url(#shieldGrad)" stroke-width="1.5">
+              <defs>
+                <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00F0FF" />
+                  <stop offset="100%" stop-color="#7000FF" />
+                </linearGradient>
+              </defs>
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <polyline points="9 12 11 14 15 10" stroke-width="2" />
+            </svg>
+          </div>
+        </div>
+        <div class="security-text" data-aos="fade-left">
+          <span class="section-badge" data-i18n="sec_label">SECURITY</span>
+          <h2 class="section-title"><span data-i18n="sec_title_1">Your safety is</span><br /><span class="gradient-text"
+              data-i18n="sec_title_2">our priority</span></h2>
+          <div class="security-features">
+            <div class="security-item">
+              <div class="security-item-icon">🔐</div>
+              <div>
+                <h4 data-i18n="sec_1_t">End-to-End Encryption</h4>
+                <p data-i18n="sec_1_d">All messages are encrypted. Your conversations stay private.</p>
+              </div>
+            </div>
+            <div class="security-item">
+              <div class="security-item-icon">✅</div>
+              <div>
+                <h4 data-i18n="sec_2_t">Verified Profiles</h4>
+                <p data-i18n="sec_2_d">Every user is verified via Apple or Google authentication.</p>
+              </div>
+            </div>
+            <div class="security-item">
+              <div class="security-item-icon">🚫</div>
+              <div>
+                <h4 data-i18n="sec_3_t">Content Moderation</h4>
+                <p data-i18n="sec_3_d">AI-powered moderation keeps the marketplace safe and clean.</p>
+              </div>
+            </div>
+            <div class="security-item">
+              <div class="security-item-icon">📜</div>
+              <div>
+                <h4 data-i18n="sec_4_t">Block & Report</h4>
+                <p data-i18n="sec_4_d">Easily block users and report suspicious activity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CTA ═══════ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-glow"></div>
+        <h2 class="cta-title"><span data-i18n="cta_title_1">Ready to start</span> <span
+            data-i18n="cta_title_2">trading?</span></h2>
+        <p class="cta-subtitle" data-i18n="cta_desc">Join thousands of traders on Loop Marked. Available now on iOS and
+          Android.</p>
+        <div class="cta-actions">
+          <a href="/auth.html" class="btn-primary btn-large">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+            <span data-i18n="hero_cta">Start Trading Free</span>
+          </a>
+        </div>
+        <div class="cta-stores">
+          <a href="#" class="store-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+            </svg>
+            <span data-i18n="cta_ios">App Store</span>
+          </a>
+          <a href="#" class="store-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5S6 2.67 6 3.5v17c0 .83-.67 1.5-1.5 1.5S3 21.33 3 20.5zM16.78 12L6.5 2.22 16.78 12zm0 0L6.5 21.78 16.78 12zM20.5 12L6.5 2.22v19.56L20.5 12z" />
+            </svg>
+            <span data-i18n="cta_android">Google Play</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="/images/app-icon.png" alt="Loop Marked" /><span>Loop Marked</span></div>
+          <p class="footer-tagline" data-i18n="foot_desc">The future of local trading. Buy, sell, and trade with Lumo —
+            secure, instant, rewarding.</p>
+        </div>
+        <div class="footer-links">
+          <h4 data-i18n="foot_product">Product</h4>
+          <a href="#features" data-i18n="nav_features">Features</a>
+          <a href="#lumo" data-i18n="nav_lumo">Lumo</a>
+          <a href="#how-it-works" data-i18n="nav_how">How It Works</a>
+          <a href="#security" data-i18n="nav_security">Security</a>
+        </div>
+        <div class="footer-links">
+          <h4 data-i18n="foot_legal">Legal</h4>
+          <a href="#" data-i18n="foot_privacy">Privacy</a>
+          <a href="#" data-i18n="foot_terms">Terms</a>
+          <a href="#" data-i18n="foot_cookies">Cookies</a>
+        </div>
+        <div class="footer-links">
+          <h4 data-i18n="foot_company">Company</h4>
+          <a href="#" data-i18n="foot_about">About</a>
+          <a href="#" data-i18n="foot_contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="foot_copy">© 2026 Loop Marked. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/i18n.js"></script>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
