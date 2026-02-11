@@ -457,6 +457,72 @@
         </div>
     </div>
 
+    <!-- Create Listing Modal -->
+    <div class="popup-overlay" id="createListingModal" style="display:none;">
+        <div class="popup-card listing-detail-card" style="max-width:600px;">
+            <div class="popup-close" onclick="closeCreateListing()">✕</div>
+            <div style="padding:32px;">
+                <h2 style="margin-bottom:24px;">Create New Listing</h2>
+
+                <div class="form-group">
+                    <label>Title *</label>
+                    <input type="text" id="newListingTitle" class="popup-input" placeholder="What are you selling?"
+                        maxlength="80">
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="newListingDesc" class="popup-input" rows="3"
+                        placeholder="Describe your item..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Price (Lumo) *</label>
+                    <input type="number" id="newListingPrice" class="popup-input" placeholder="e.g. 50" min="1"
+                        step="1">
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="newListingCategory" class="popup-input">
+                        <option value="electronics">Electronics</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="home">Home & Garden</option>
+                        <option value="sports">Sports</option>
+                        <option value="vehicles">Vehicles</option>
+                        <option value="books">Books</option>
+                        <option value="toys">Toys</option>
+                        <option value="other" selected>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Condition</label>
+                    <select id="newListingCondition" class="popup-input">
+                        <option value="new">New</option>
+                        <option value="like_new">Like New</option>
+                        <option value="good" selected>Good</option>
+                        <option value="fair">Fair</option>
+                        <option value="poor">Poor</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" id="newListingLocation" class="popup-input" placeholder="City, Country">
+                </div>
+
+                <div class="form-group">
+                    <label>Image</label>
+                    <input type="file" id="newListingImage" accept="image/*" class="popup-input" style="padding:8px;">
+                </div>
+
+                <button class="popup-btn" onclick="submitNewListing()" style="width:100%;margin-top:8px;">Publish
+                    Listing</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-content">

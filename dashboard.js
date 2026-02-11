@@ -242,38 +242,53 @@ window.openListingDetail = async function (listingId) {
     const modal = document.getElementById('listingDetailModal');
     modal.style.display = 'flex';
 
-    // Show skeleton/loading state in modal
+    // Show loading state
     document.getElementById('detailTitle').textContent = 'Loading...';
+    document.getElementById('detailDescription').textContent = '...';
+    document.getElementById('detailActions').innerHTML = '';
 
     try {
-        // Fetch full listing details + seller profile
+        // 1. Fetch listing (simple query, NO FK join)
         const { data: listing, error } = await supabase
             .from('listings')
-            .select(`
-                *,
-                seller:profiles!seller_id(full_name, avatar_url, username)
-            `)
+            .select('*')
             .eq('id', listingId)
             .single();
 
         if (error) throw error;
+        if (!listing) throw new Error('Listing not found');
 
-        // Fetch image (might need higher res, but using same method for now)
+        // 2. Fetch seller profile separately
+        let seller = null;
+        if (listing.seller_id) {
+            const { data: profile } = await supabase
+                .from('profiles')
+                .select('full_name, avatar_url, username')
+                .eq('id', listing.seller_id)
+                .single();
+            seller = profile;
+        }
+
+        // 3. Fetch image
         const imageUrl = await getListingImageUrl(listing.id) || '/images/app-icon.png';
 
-        // Populate Modal
+        // 4. Populate Modal
         document.getElementById('detailImage').src = imageUrl;
-        document.getElementById('detailTitle').textContent = listing.title;
+        document.getElementById('detailImage').onerror = function () { this.src = '/images/app-icon.png'; };
+        document.getElementById('detailTitle').textContent = listing.title || 'Untitled';
         document.getElementById('detailPrice').textContent = (listing.price / 100).toFixed(0) + ' L';
-        document.getElementById('detailLocation').textContent = listing.location || 'Unknown Location';
+        document.getElementById('detailLocation').textContent = listing.location || listing.city_name || 'Unknown';
         document.getElementById('detailCategory').textContent = listing.category || 'General';
         document.getElementById('detailDate').textContent = new Date(listing.created_at).toLocaleDateString();
         document.getElementById('detailDescription').textContent = listing.description || 'No description provided.';
 
         // Seller Info
-        if (listing.seller) {
-            document.getElementById('detailSellerName').textContent = listing.seller.full_name || listing.seller.username || 'Unknown Seller';
-            document.getElementById('detailSellerAvatar').src = listing.seller.avatar_url || '/images/app-icon.png';
+        if (seller) {
+            document.getElementById('detailSellerName').textContent = seller.full_name || seller.username || 'Seller';
+            document.getElementById('detailSellerAvatar').src = seller.avatar_url || '/images/app-icon.png';
+            document.getElementById('detailSellerAvatar').onerror = function () { this.src = '/images/app-icon.png'; };
+        } else {
+            document.getElementById('detailSellerName').textContent = 'Unknown Seller';
         }
 
         // Actions
@@ -281,14 +296,12 @@ window.openListingDetail = async function (listingId) {
         actionsContainer.innerHTML = '';
 
         if (listing.seller_id === currentUser.id) {
-            // Edit Button
             const editBtn = document.createElement('button');
             editBtn.className = 'action-btn btn-secondary';
             editBtn.textContent = '✎ Edit Listing';
-            editBtn.onclick = () => alert('Please use the Loop Marked mobile app to edit listings.');
+            editBtn.onclick = () => alert('Please use the Loop Marked mobile app to edit listings for now.');
             actionsContainer.appendChild(editBtn);
         } else {
-            // Contact/Offer Button
             const contactBtn = document.createElement('button');
             contactBtn.className = 'action-btn btn-primary';
             contactBtn.textContent = '💬 Make Offer / Chat';
@@ -301,8 +314,8 @@ window.openListingDetail = async function (listingId) {
 
     } catch (e) {
         console.error('Error loading listing detail:', e);
-        alert('Could not load listing details.');
-        closeListingDetail();
+        document.getElementById('detailTitle').textContent = 'Error';
+        document.getElementById('detailDescription').textContent = 'Could not load this listing. ' + (e.message || '');
     }
 }
 
@@ -364,7 +377,88 @@ window.contactSeller = async function (listingId, sellerId) {
 
 
 window.openCreateListing = function () {
-    alert("To create a listing, please download the Loop Marked app on iOS or Android for the best experience!");
+    document.getElementById('createListingModal').style.display = 'flex';
+}
+
+window.closeCreateListing = function () {
+    document.getElementById('createListingModal').style.display = 'none';
+    // Reset form
+    document.getElementById('newListingTitle').value = '';
+    document.getElementById('newListingDesc').value = '';
+    document.getElementById('newListingPrice').value = '';
+    document.getElementById('newListingLocation').value = '';
+    document.getElementById('newListingImage').value = '';
+}
+
+window.submitNewListing = async function () {
+    const title = document.getElementById('newListingTitle').value.trim();
+    const description = document.getElementById('newListingDesc').value.trim();
+    const priceStr = document.getElementById('newListingPrice').value.trim();
+    const category = document.getElementById('newListingCategory').value;
+    const condition = document.getElementById('newListingCondition').value;
+    const location = document.getElementById('newListingLocation').value.trim();
+    const imageFile = document.getElementById('newListingImage').files[0];
+
+    // Validation
+    if (!title) { alert('Title is required.'); return; }
+    if (!priceStr || parseFloat(priceStr) <= 0) { alert('Enter a valid price.'); return; }
+
+    const priceLumet = Math.round(parseFloat(priceStr) * 100); // Convert Lumo to Lumet
+
+    try {
+        // 1. Insert listing into database
+        const { data: newListing, error } = await supabase
+            .from('listings')
+            .insert({
+                title: title,
+                description: description || '',
+                price: priceLumet,
+                category: category,
+                condition: condition,
+                location: location || 'Unknown',
+                seller_id: currentUser.id,
+                seller_name: currentUser.user_metadata?.full_name || currentUser.email || 'User',
+                image_urls: [],
+                is_sold: false,
+                is_deleted: false,
+                is_boosted: false,
+                was_reported: false,
+                view_count: 0,
+                favorite_count: 0,
+                warning_level: 0,
+                approval_status: 'pending',
+                tags: []
+            })
+            .select()
+            .single();
+
+        if (error) throw error;
+
+        // 2. Upload image if provided
+        if (imageFile && newListing) {
+            const ext = imageFile.name.split('.').pop();
+            const fileName = `0.${ext}`;
+            const filePath = `${newListing.id}/${fileName}`;
+
+            const { error: uploadError } = await supabase.storage
+                .from('listing-images')
+                .upload(filePath, imageFile, { upsert: true });
+
+            if (uploadError) {
+                console.warn('Image upload failed:', uploadError.message);
+            }
+        }
+
+        closeCreateListing();
+        alert('Listing created! It will be visible after admin approval.');
+
+        // Refresh listings
+        loadSection('marketplace');
+
+    } catch (e) {
+        console.error('Create listing error:', e);
+        alert('Could not create listing: ' + (e.message || 'Unknown error'));
+    }
 }
 
 // ═══════ MESSAGES (CHAT) ═══════
