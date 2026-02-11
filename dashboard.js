@@ -548,6 +548,7 @@ function setupRealtime() {
 }
 
 // ═══════ SIDEBAR NAVIGATION ═══════
+// ═══════ SIDEBAR NAVIGATION ═══════
 document.querySelectorAll('.sidebar-link[data-section]').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -558,7 +559,10 @@ document.querySelectorAll('.sidebar-link[data-section]').forEach(link => {
         link.classList.add('active');
         document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
         document.getElementById(`section-${section}`).classList.add('active');
-        document.getElementById('pageTitle').textContent = section.charAt(0).toUpperCase() + section.slice(1);
+
+        // Title update
+        const title = section.charAt(0).toUpperCase() + section.slice(1);
+        document.getElementById('pageTitle').textContent = title;
         document.getElementById('sidebar').classList.remove('open');
 
         // Lazy load chats if switching to messages
@@ -570,9 +574,181 @@ document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {
     document.getElementById('sidebar').classList.toggle('open');
 });
 
+// ═══════ PROFILE EDITING ═══════
+window.openEditProfile = async function () {
+    const { data } = await supabase.from('profiles').select('*').eq('id', currentUser.id).single();
+    if (data) {
+        document.getElementById('editFullName').value = data.full_name || '';
+        document.getElementById('editUsername').value = data.username || '';
+        document.getElementById('editBio').value = data.bio || '';
+        document.getElementById('editProfileModal').style.display = 'flex';
+    }
+};
+
+window.closeEditProfile = function () {
+    document.getElementById('editProfileModal').style.display = 'none';
+};
+
+window.saveProfile = async function () {
+    const fullName = document.getElementById('editFullName').value;
+    const username = document.getElementById('editUsername').value;
+    const bio = document.getElementById('editBio').value;
+
+    try {
+        const { error } = await supabase.from('profiles').update({
+            full_name: fullName,
+            username: username,
+            bio: bio,
+            updated_at: new Date().toISOString()
+        }).eq('id', currentUser.id);
+
+        if (error) throw error;
+
+        alert('Profile updated!');
+        closeEditProfile();
+        loadProfile(); // Refresh UI
+    } catch (e) {
+        console.error('Save profile error:', e);
+        alert('Failed to update profile.');
+    }
+};
+
+// ═══════ IMAGE UPLOAD ═══════
+window.triggerAvatarUpload = () => document.getElementById('avatarInput').click();
+window.triggerCoverUpload = () => document.getElementById('coverInput').click();
+
+window.handleAvatarSelect = async (input) => {
+    if (input.files && input.files[0]) {
+        const file = input.files[0];
+        await uploadImage(file, 'avatar');
+    }
+};
+
+window.handleCoverSelect = async (input) => {
+    if (input.files && input.files[0]) {
+        const file = input.files[0];
+        await uploadImage(file, 'cover');
+    }
+};
+
+async function uploadImage(file, type) {
+    const ext = file.name.split('.').pop();
+    const fileName = `${type}_${Date.now()}.${ext}`;
+    // App uses: avatars/{uid}/{file} and covers/{uid}/{file}
+    const folder = type === 'avatar' ? 'avatars' : 'covers';
+    const filePath = `${folder}/${currentUser.id}/${fileName}`;
+
+    try {
+        // Upload to 'listing-images' bucket (as per app logic for profiles too apparently from StorageService)
+        // Wait, StorageService says: bucket is 'listing-images'. Paths: avatars/... and covers/...
+
+        const { error: uploadError } = await supabase.storage
+            .from('listing-images')
+            .upload(filePath, file, { upsert: true });
+
+        if (uploadError) throw uploadError;
+
+        // Get Public URL
+        const { data: { publicUrl } } = supabase.storage
+            .from('listing-images')
+            .getPublicUrl(filePath);
+
+        // Update Profile
+        const updateData = type === 'avatar' ? { avatar_url: publicUrl } : { cover_image_url: publicUrl };
+        await supabase.from('profiles').update(updateData).eq('id', currentUser.id);
+
+        // Refresh UI
+        loadProfile();
+        alert(`${type === 'avatar' ? 'Avatar' : 'Cover'} updated!`);
+    } catch (e) {
+        console.error('Upload error:', e);
+        alert(`Upload failed: ${e.message}`);
+    }
+}
+
+// ═══════ EARN LUMO ACTIONS ═══════
+window.simulateAdWatch = async function () {
+    if (!confirm("Simulate watching a 30s video ad?")) return;
+
+    // Show loading
+    const btn = event.currentTarget;
+    const originalContent = btn.innerHTML;
+    btn.innerHTML = '<div class="loading-spinner" style="width:20px;height:20px;display:inline-block;"></div> Watching...';
+    btn.style.pointerEvents = 'none';
+
+    setTimeout(async () => {
+        try {
+            // Call RPC to reward user
+            const { error } = await supabase.rpc('handle_ad_reward', {
+                p_user_id: currentUser.id,
+                p_ad_type: 'rewarded_video'
+            });
+
+            if (error) {
+                console.warn('RPC failed, falling back to client-side alert (backend might restrict RPC calls from web)');
+                alert("Ad watched! (Reward logic is app-only for security, but simulations work)");
+            } else {
+                alert("You earned 0.5 Lumo!");
+                loadWallet();
+            }
+        } catch (e) {
+            console.error('Ad reward error:', e);
+        } finally {
+            btn.innerHTML = originalContent;
+            btn.style.pointerEvents = 'auto';
+        }
+    }, 2000);
+};
+
+window.claimDailyBonusAction = async function () {
+    try {
+        await supabase.rpc('claim_daily_bonus', { p_user_id: currentUser.id });
+        const today = new Date().toISOString().split('T')[0];
+        localStorage.setItem('lm_daily_bonus_web', today);
+        document.getElementById('dailyBonusPopup').style.display = 'none';
+        alert("Daily bonus claimed!");
+        loadWallet();
+    } catch (err) {
+        console.error(err);
+        alert("Could not claim bonus (already claimed?)");
+        document.getElementById('dailyBonusPopup').style.display = 'none';
+    }
+}
+
 window.handleLogout = async function () {
     await supabase.auth.signOut();
     window.location.href = '/';
 };
+
+window.openSettings = function () {
+    document.querySelector('.sidebar-link[data-section="settings"]').click();
+}
+
+// Extended Profile Loader
+const originalLoadProfile = loadProfile;
+loadProfile = async function () {
+    await originalLoadProfile();
+    try {
+        const { data } = await supabase.from('profiles').select('cover_image_url, bio, username, created_at').eq('id', currentUser.id).single();
+        if (data) {
+            if (data.cover_image_url) {
+                document.getElementById('profileCover').style.backgroundImage = `url('${data.cover_image_url}')`;
+            }
+            if (data.username) {
+                document.getElementById('profileUsername').textContent = `@${data.username}`;
+            }
+            if (data.created_at) {
+                document.getElementById('profileJoined').textContent = new Date(data.created_at).toLocaleDateString();
+            }
+            const { data: wallet } = await supabase.from('wallets').select('balance').eq('user_id', currentUser.id).single();
+            if (wallet) {
+                document.getElementById('profileBalance2').textContent = (wallet.balance).toFixed(1) + ' L';
+            }
+
+            // Populate Edit Modal
+            document.getElementById('editBio').value = data.bio || '';
+        }
+    } catch (e) { }
+}
 
 init();

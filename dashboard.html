@@ -12,6 +12,9 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/dashboard.css" />
+    <!-- Cropper.js for image editing -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
 </head>
 
 <body>
@@ -67,6 +70,15 @@
                     </svg>
                     Profile
                 </a>
+                <a href="#" class="sidebar-link" data-section="settings">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                        </path>
+                    </svg>
+                    Settings
+                </a>
             </nav>
             <div class="sidebar-footer">
                 <button class="sidebar-link logout-btn" onclick="handleLogout()">
@@ -118,7 +130,6 @@
                 <!-- ═══ OVERVIEW ═══ -->
                 <section class="content-section active" id="section-overview">
                     <div class="overview-grid">
-                        <!-- Balance Card -->
                         <div class="overview-card balance-card">
                             <div class="overview-card-glow"></div>
                             <div class="balance-label">YOUR BALANCE</div>
@@ -127,7 +138,6 @@
                             <div class="balance-sub" id="balanceSub">— Lumet</div>
                         </div>
 
-                        <!-- Stats Cards -->
                         <div class="overview-card stat-card">
                             <div class="stat-icon stat-icon-cyan">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -171,7 +181,6 @@
                         </div>
                     </div>
 
-                    <!-- Recent Transactions -->
                     <div class="dashboard-section">
                         <h2 class="dashboard-section-title">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -183,18 +192,13 @@
                         </h2>
                         <div class="transactions-list" id="transactionsList">
                             <div class="empty-state-dash">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
-                                    stroke="rgba(255,255,255,0.2)" stroke-width="1.5">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                                    <polyline points="14 2 14 8 20 8" />
-                                </svg>
                                 <p>No transactions yet</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- ═══ MARKETPLACE SECTION ═══ -->
+                <!-- ═══ MARKETPLACE ═══ -->
                 <section class="content-section" id="section-marketplace">
                     <div class="section-actions">
                         <input type="text" id="marketplaceSearch" class="search-input" placeholder="Search items..." />
@@ -207,28 +211,26 @@
                         </select>
                     </div>
                     <div class="listings-grid" id="marketplaceGrid">
-                        <!-- Items injected via JS -->
                         <div class="empty-state-dash">
                             <div class="loading-spinner"></div>
                         </div>
                     </div>
                 </section>
 
-                <!-- ═══ MY LISTINGS SECTION ═══ -->
+                <!-- ═══ LISTINGS ═══ -->
                 <section class="content-section" id="section-listings">
                     <div class="section-header">
                         <h2>My Listings</h2>
                         <button class="create-btn" onclick="openCreateListing()">+ Create Listing</button>
                     </div>
                     <div class="listings-grid" id="myListingsGrid">
-                        <!-- Items injected via JS -->
                         <div class="empty-state-dash">
                             <p>You haven't posted any listings yet.</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- ═══ WALLET SECTION ═══ -->
+                <!-- ═══ WALLET ═══ -->
                 <section class="content-section" id="section-wallet">
                     <div class="wallet-hero">
                         <div class="wallet-hero-glow"></div>
@@ -237,49 +239,35 @@
                         <div class="wallet-hero-unit">LUMO</div>
                         <div class="wallet-hero-sub" id="walletSub">— Lumet</div>
                     </div>
-                    <div class="wallet-info-card">
-                        <h3>💡 How to earn Lumo</h3>
-                        <p>Download the Loop Marked app on iOS or Android to watch ads, claim daily bonuses, and earn
-                            Lumo rewards. Your balance syncs across all platforms.</p>
-                        <div class="store-buttons">
-                            <a href="#" class="store-badge">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                                </svg>
-                                App Store
-                            </a>
-                            <a href="#" class="store-badge">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                                </svg>
-                                Google Play
-                            </a>
+                    <!-- Earn Actions (Simulated) -->
+                    <div class="earn-actions-grid">
+                        <div class="earn-card" onclick="simulateAdWatch()">
+                            <div class="earn-icon">🎬</div>
+                            <h3>Watch Ad</h3>
+                            <p>Earn 0.5 Lumo instantly</p>
+                            <span class="earn-badge">HOT</span>
+                        </div>
+                        <div class="earn-card" onclick="claimDailyBonus()">
+                            <div class="earn-icon">🎁</div>
+                            <h3>Daily Bonus</h3>
+                            <p>Check in daily for rewards</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- ═══ MESSAGES SECTION ═══ -->
+                <!-- ═══ MESSAGES ═══ -->
                 <section class="content-section" id="section-messages">
                     <div class="chat-container">
-                        <!-- Chat List -->
                         <div class="chat-sidebar">
                             <div class="chat-search">
                                 <input type="text" placeholder="Search chats..." id="chatSearch">
                             </div>
                             <div class="chat-list" id="chatList">
-                                <!-- Loaded via JS -->
                                 <div class="loading-spinner"></div>
                             </div>
                         </div>
-                        <!-- Chat Window -->
                         <div class="chat-window" id="chatWindow">
                             <div class="chat-empty-state">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="1.5">
-                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                </svg>
                                 <h3>Select a conversation</h3>
                                 <p>Choose a chat from the left to start messaging.</p>
                             </div>
@@ -287,18 +275,32 @@
                     </div>
                 </section>
 
-                <!-- ═══ PROFILE SECTION ═══ -->
+                <!-- ═══ PROFILE ═══ -->
                 <section class="content-section" id="section-profile">
-                    <div class="profile-card">
-                        <div class="profile-avatar" id="profileAvatar">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)"
-                                stroke-width="1.5">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                                <circle cx="12" cy="7" r="4" />
-                            </svg>
+                    <div class="profile-hero" id="profileCover">
+                        <!-- Cover Photo -->
+                        <button class="edit-cover-btn" onclick="triggerCoverUpload()">📷 Edit Cover</button>
+                    </div>
+                    <div class="profile-card profile-main-card">
+                        <div class="profile-avatar-container">
+                            <div class="profile-avatar" id="profileAvatar">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
+                                    stroke="rgba(255,255,255,0.3)" stroke-width="1.5">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                    <circle cx="12" cy="7" r="4" />
+                                </svg>
+                            </div>
+                            <button class="edit-avatar-badge" onclick="triggerAvatarUpload()">✏️</button>
                         </div>
+
                         <h2 class="profile-name" id="profileName">—</h2>
-                        <p class="profile-email" id="profileEmail">—</p>
+                        <p class="profile-username" id="profileUsername">@username</p>
+
+                        <div class="profile-actions">
+                            <button class="secondary-btn" onclick="openEditProfile()">Edit Profile</button>
+                            <button class="secondary-btn" onclick="openSettings()">Settings</button>
+                        </div>
+
                         <div class="profile-meta">
                             <div class="profile-meta-item">
                                 <span class="profile-meta-value" id="profileJoined">—</span>
@@ -308,12 +310,82 @@
                                 <span class="profile-meta-value" id="profileBalance2">—</span>
                                 <span class="profile-meta-label">Lumo Balance</span>
                             </div>
+                            <div class="profile-meta-item">
+                                <span class="profile-meta-value" id="profileRating">—</span>
+                                <span class="profile-meta-label">Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ═══ SETTINGS ═══ -->
+                <section class="content-section" id="section-settings">
+                    <div class="settings-container">
+                        <h2>Settings</h2>
+                        <div class="settings-group">
+                            <div class="settings-item">
+                                <div class="settings-icon">🔔</div>
+                                <div class="settings-info">
+                                    <h3>Notifications</h3>
+                                    <p>Manage push notifications</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <div class="settings-item">
+                                <div class="settings-icon">🔊</div>
+                                <div class="settings-info">
+                                    <h3>Sound Effects</h3>
+                                    <p>In-app sounds</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="settings-group">
+                            <div class="settings-item danger" onclick="handleLogout()">
+                                <div class="settings-icon">🚪</div>
+                                <div class="settings-info">
+                                    <h3>Sign Out</h3>
+                                    <p>Log out of your account</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
             </div>
         </main>
     </div>
+
+    <!-- Modals -->
+    <!-- Edit Profile Modal -->
+    <div class="popup-overlay" id="editProfileModal" style="display:none;">
+        <div class="popup-card edit-profile-card">
+            <div class="popup-close" onclick="closeEditProfile()">✕</div>
+            <h2>Edit Profile</h2>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="editFullName" class="popup-input" />
+            </div>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" id="editUsername" class="popup-input" />
+            </div>
+            <div class="form-group">
+                <label>Bio</label>
+                <textarea id="editBio" class="popup-input" rows="3"></textarea>
+            </div>
+            <button class="popup-btn" onclick="saveProfile()">Save Changes</button>
+        </div>
+    </div>
+
+    <!-- Image Upload Inputs (Hidden) -->
+    <input type="file" id="avatarInput" accept="image/*" style="display:none;" onchange="handleAvatarSelect(this)">
+    <input type="file" id="coverInput" accept="image/*" style="display:none;" onchange="handleCoverSelect(this)">
 
     <!-- Daily Bonus Popup -->
     <div class="popup-overlay" id="dailyBonusPopup" style="display:none;">
@@ -326,18 +398,7 @@
                 <span class="popup-reward-value">+1</span>
                 <span class="popup-reward-label">LUMO</span>
             </div>
-            <button class="popup-btn" onclick="claimDailyBonus()">Claim Reward</button>
-        </div>
-    </div>
-
-    <!-- Broadcast Popup -->
-    <div class="popup-overlay" id="broadcastPopup" style="display:none;">
-        <div class="popup-card broadcast-card">
-            <div class="popup-close" onclick="closeBroadcast()">✕</div>
-            <div class="popup-icon">📢</div>
-            <h2 class="popup-title" id="broadcastTitle">Announcement</h2>
-            <p class="popup-desc" id="broadcastMessage">—</p>
-            <button class="popup-btn" onclick="closeBroadcast()">Got it</button>
+            <button class="popup-btn" onclick="claimDailyBonusAction()">Claim Reward</button>
         </div>
     </div>
 
