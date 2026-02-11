@@ -387,6 +387,46 @@
     <input type="file" id="avatarInput" accept="image/*" style="display:none;" onchange="handleAvatarSelect(this)">
     <input type="file" id="coverInput" accept="image/*" style="display:none;" onchange="handleCoverSelect(this)">
 
+    <!-- Listing Detail Modal -->
+    <div class="popup-overlay" id="listingDetailModal" style="display:none;">
+        <div class="popup-card listing-detail-card">
+            <div class="popup-close" onclick="closeListingDetail()">✕</div>
+
+            <div class="detail-layout">
+                <div class="detail-image-section">
+                    <img id="detailImage" src="/images/app-icon.png" alt="Listing" class="detail-main-img" />
+                </div>
+
+                <div class="detail-info-section">
+                    <div class="detail-header">
+                        <h2 id="detailTitle" class="detail-title">Loading...</h2>
+                        <div class="detail-price-badge" id="detailPrice">0 L</div>
+                    </div>
+
+                    <div class="detail-meta-row">
+                        <span id="detailLocation">Location</span>
+                        <span id="detailCategory">Category</span>
+                        <span id="detailDate">Date</span>
+                    </div>
+
+                    <p id="detailDescription" class="detail-desc">...</p>
+
+                    <div class="detail-seller-card">
+                        <img id="detailSellerAvatar" src="/images/app-icon.png" class="seller-avatar" />
+                        <div class="seller-text">
+                            <span id="detailSellerName" class="seller-name">Seller</span>
+                            <span class="seller-label">Verifisert Selger</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-actions" id="detailActions">
+                        <!-- Dynamic buttons injected via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Daily Bonus Popup -->
     <div class="popup-overlay" id="dailyBonusPopup" style="display:none;">
         <div class="popup-card">
@@ -399,6 +439,21 @@
                 <span class="popup-reward-label">LUMO</span>
             </div>
             <button class="popup-btn" onclick="claimDailyBonusAction()">Claim Reward</button>
+        </div>
+    </div>
+
+    <!-- Create Offer Modal -->
+    <div class="popup-overlay" id="createOfferModal" style="display:none;">
+        <div class="popup-card">
+            <div class="popup-close" onclick="closeCreateOffer()">✕</div>
+            <h2>Make an Offer</h2>
+            <p style="margin-bottom:16px;color:var(--text-secondary);font-size:14px;">Enter the amount of Lumo you want
+                to offer for this item.</p>
+            <div class="form-group">
+                <label>Offer Amount (Lumo)</label>
+                <input type="number" id="offerAmount" class="popup-input" placeholder="e.g. 50" min="1" step="0.5">
+            </div>
+            <button class="popup-btn" onclick="submitOffer()">Send Offer</button>
         </div>
     </div>
 

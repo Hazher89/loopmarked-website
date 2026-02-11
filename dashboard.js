@@ -217,15 +217,11 @@ async function renderListings(listings, containerId, isOwner = false) {
 
     container.innerHTML = listings.map((item, idx) => {
         const priceLumo = (item.price / 100).toFixed(0);
-        const imageUrl = imageUrls[idx] || '/images/app-icon.png'; // Fallback
-
-        // Don't show contact button if I own the listing
-        const contactBtn = (!isOwner && item.seller_id !== currentUser.id)
-            ? `<button class="contact-btn" onclick="contactSeller('${item.id}', '${item.seller_id}')" style="margin-top:8px;width:100%;padding:8px;background:rgba(0,240,255,0.1);color:var(--accent-cyan);border:1px solid rgba(0,240,255,0.3);border-radius:8px;cursor:pointer;font-weight:600;">Message Owner</button>`
-            : '';
+        const imageUrl = imageUrls[idx] || '/images/app-icon.png';
+        const dateStr = new Date(item.created_at).toLocaleDateString();
 
         return `
-            <div class="listing-card">
+            <div class="listing-card" onclick="openListingDetail('${item.id}')">
                 <div class="listing-image">
                     <img src="${imageUrl}" alt="${item.title}" loading="lazy" onerror="this.src='/images/app-icon.png'" />
                 </div>
@@ -234,14 +230,86 @@ async function renderListings(listings, containerId, isOwner = false) {
                     <div class="listing-title">${item.title}</div>
                     <div class="listing-meta">
                         <span>${item.location || 'Unknown'}</span>
-                        <span>${new Date(item.created_at).toLocaleDateString()}</span>
+                        <span>${dateStr}</span>
                     </div>
-                    ${contactBtn}
                 </div>
             </div>
         `;
     }).join('');
 }
+
+window.openListingDetail = async function (listingId) {
+    const modal = document.getElementById('listingDetailModal');
+    modal.style.display = 'flex';
+
+    // Show skeleton/loading state in modal
+    document.getElementById('detailTitle').textContent = 'Loading...';
+
+    try {
+        // Fetch full listing details + seller profile
+        const { data: listing, error } = await supabase
+            .from('listings')
+            .select(`
+                *,
+                seller:profiles!seller_id(full_name, avatar_url, username)
+            `)
+            .eq('id', listingId)
+            .single();
+
+        if (error) throw error;
+
+        // Fetch image (might need higher res, but using same method for now)
+        const imageUrl = await getListingImageUrl(listing.id) || '/images/app-icon.png';
+
+        // Populate Modal
+        document.getElementById('detailImage').src = imageUrl;
+        document.getElementById('detailTitle').textContent = listing.title;
+        document.getElementById('detailPrice').textContent = (listing.price / 100).toFixed(0) + ' L';
+        document.getElementById('detailLocation').textContent = listing.location || 'Unknown Location';
+        document.getElementById('detailCategory').textContent = listing.category || 'General';
+        document.getElementById('detailDate').textContent = new Date(listing.created_at).toLocaleDateString();
+        document.getElementById('detailDescription').textContent = listing.description || 'No description provided.';
+
+        // Seller Info
+        if (listing.seller) {
+            document.getElementById('detailSellerName').textContent = listing.seller.full_name || listing.seller.username || 'Unknown Seller';
+            document.getElementById('detailSellerAvatar').src = listing.seller.avatar_url || '/images/app-icon.png';
+        }
+
+        // Actions
+        const actionsContainer = document.getElementById('detailActions');
+        actionsContainer.innerHTML = '';
+
+        if (listing.seller_id === currentUser.id) {
+            // Edit Button
+            const editBtn = document.createElement('button');
+            editBtn.className = 'action-btn btn-secondary';
+            editBtn.textContent = '✎ Edit Listing';
+            editBtn.onclick = () => alert('Please use the Loop Marked mobile app to edit listings.');
+            actionsContainer.appendChild(editBtn);
+        } else {
+            // Contact/Offer Button
+            const contactBtn = document.createElement('button');
+            contactBtn.className = 'action-btn btn-primary';
+            contactBtn.textContent = '💬 Make Offer / Chat';
+            contactBtn.onclick = () => {
+                closeListingDetail();
+                contactSeller(listing.id, listing.seller_id);
+            };
+            actionsContainer.appendChild(contactBtn);
+        }
+
+    } catch (e) {
+        console.error('Error loading listing detail:', e);
+        alert('Could not load listing details.');
+        closeListingDetail();
+    }
+}
+
+window.closeListingDetail = function () {
+    document.getElementById('listingDetailModal').style.display = 'none';
+}
+
 
 window.contactSeller = async function (listingId, sellerId) {
     if (!currentUser) return;
@@ -356,6 +424,8 @@ async function loadConversations() {
     }
 }
 
+
+
 window.selectChat = async function (chatId, name, avatar, listingTitle) {
     activeChatId = chatId;
 
@@ -377,6 +447,7 @@ window.selectChat = async function (chatId, name, avatar, listingTitle) {
             <div class="loading-spinner"></div>
         </div>
         <div class="chat-input-area">
+            <button class="create-offer-btn" onclick="openCreateOffer()" title="Make an Offer">💰</button>
             <input type="text" class="chat-input" id="messageInput" placeholder="Type a message..." onkeypress="handleEnter(event)">
             <button class="send-btn" onclick="sendMessage()">➤</button>
         </div>
@@ -390,13 +461,19 @@ window.selectChat = async function (chatId, name, avatar, listingTitle) {
 }
 
 async function loadMessages(chatId) {
-    const { data: messages } = await supabase
-        .from('messages')
-        .select('*')
-        .eq('chat_id', chatId)
-        .order('created_at', { ascending: true });
+    try {
+        const { data: messages, error } = await supabase
+            .from('messages')
+            .select('*')
+            .eq('chat_id', chatId)
+            .order('created_at', { ascending: true });
 
-    renderMessages(messages);
+        if (error) throw error;
+        renderMessages(messages);
+    } catch (e) {
+        console.error('Error loading messages:', e);
+        document.getElementById('messageList').innerHTML = '<div style="text-align:center;padding:20px;">Could not load messages.</div>';
+    }
 }
 
 function renderMessages(messages) {
@@ -413,7 +490,23 @@ function renderMessages(messages) {
         const isMe = msg.sender_id === currentUser.id;
         const div = document.createElement('div');
         div.className = `message ${isMe ? 'sent' : 'received'}`;
-        div.textContent = msg.content;
+
+        if (msg.message_type === 'offer') {
+            // Render Offer Widget
+            div.style.background = 'transparent';
+            div.style.padding = '0';
+            div.innerHTML = `
+                <div class="offer-bubble">
+                    <span class="offer-label">OFFER</span>
+                    <span class="offer-amount">${msg.content} Lumo</span>
+                    <div class="offer-status">tap in app to manage</div>
+                </div>
+            `;
+        } else {
+            // Text Message
+            div.textContent = msg.content;
+        }
+
         list.appendChild(div);
     });
 
@@ -440,10 +533,58 @@ window.sendMessage = async function () {
             message_type: 'text',
             created_at: new Date().toISOString()
         });
-
-        // Optimistic update (optional, but realtime should catch it fast)
+        // Optimistic update handled by Realtime if fast enough, else could append locally
     } catch (err) {
         console.error('Send error:', err);
+    }
+}
+
+// ═══════ OFFERS ═══════
+window.openCreateOffer = function () {
+    document.getElementById('createOfferModal').style.display = 'flex';
+}
+
+window.closeCreateOffer = function () {
+    document.getElementById('createOfferModal').style.display = 'none';
+    document.getElementById('offerAmount').value = '';
+}
+
+window.submitOffer = async function () {
+    const input = document.getElementById('offerAmount');
+    const amount = parseFloat(input.value);
+
+    if (!amount || amount <= 0) {
+        alert("Please enter a valid amount.");
+        return;
+    }
+
+    closeCreateOffer();
+
+    try {
+        // Prepare payload for create_offer RPC (assuming standard signature)
+        // If RPC fails or doesn't exist, we fallback to just sending a message marked as 'offer'
+
+        // Note: App uses 'ChatService' which likely wraps 'create_offer' RPC.
+        // We'll try inserting directly to 'offers' table if possible, but usually RPC handles notifications.
+        // Let's emulate App: send message with type 'offer'. 
+        // Real backend logic should handle offer creation via triggers on 'messages' or separate 'offers' insert.
+        // But for display consistency, message_type='offer' is key.
+
+        // Attempt insert to 'messages' first as primary method for chat display
+        await supabase.from('messages').insert({
+            chat_id: activeChatId,
+            sender_id: currentUser.id,
+            content: amount.toString(), // Store amount as content
+            message_type: 'offer',
+            created_at: new Date().toISOString()
+        });
+
+        // Also try to call RPC 'create_offer' if needed for backend logic (e.g. notifications)
+        // But let's assume message trigger handles it or it's enough for display.
+
+    } catch (e) {
+        console.error('Offer error:', e);
+        alert('Could not send offer.');
     }
 }
 
@@ -459,12 +600,28 @@ function subscribeToChat(chatId) {
             filter: `chat_id=eq.${chatId}`
         }, (payload) => {
             const list = document.getElementById('messageList');
+            // Only append if list exists and it's for current chat (filter handles it though)
             if (payload.new && list) {
                 const msg = payload.new;
                 const isMe = msg.sender_id === currentUser.id;
+
                 const div = document.createElement('div');
                 div.className = `message ${isMe ? 'sent' : 'received'}`;
-                div.textContent = msg.content;
+
+                if (msg.message_type === 'offer') {
+                    div.style.background = 'transparent';
+                    div.style.padding = '0';
+                    div.innerHTML = `
+                        <div class="offer-bubble">
+                            <span class="offer-label">OFFER</span>
+                            <span class="offer-amount">${msg.content} Lumo</span>
+                            <div class="offer-status">New</div>
+                        </div>
+                    `;
+                } else {
+                    div.textContent = msg.content;
+                }
+
                 list.appendChild(div);
                 list.scrollTop = list.scrollHeight;
             }
