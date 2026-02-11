@@ -83,13 +83,13 @@ async function loadWallet() {
     try {
         const { data, error } = await supabase
             .from('wallets')
-            .select('balance_lumet')
+            .select('coin_balance')
             .eq('user_id', currentUser.id)
             .single();
 
         if (data) {
             walletData = data;
-            const lumet = data.balance_lumet || 0;
+            const lumet = data.coin_balance || 0;
             const lumo = (lumet / 100).toFixed(1);
             const lumetFormatted = lumet.toLocaleString();
 
@@ -119,8 +119,8 @@ async function loadTransactions() {
         if (data && data.length > 0) {
             const container = document.getElementById('transactionsList');
             container.innerHTML = data.map(tx => {
-                const isCredit = tx.amount_lumet > 0;
-                const lumo = (Math.abs(tx.amount_lumet) / 100).toFixed(1);
+                const isCredit = tx.amount > 0;
+                const lumo = (Math.abs(tx.amount) / 100).toFixed(1);
                 const date = new Date(tx.created_at);
                 const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' • ' +
                     date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
