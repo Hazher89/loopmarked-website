@@ -144,18 +144,41 @@ async function loadTransactions() {
     }
 }
 
+// ═══════ STORAGE IMAGE HELPER ═══════
+// Fetches listing images from Supabase Storage (same logic as the Flutter app)
+async function getListingImageUrl(listingId) {
+    try {
+        const { data: files } = await supabase.storage
+            .from('listing-images')
+            .list(listingId, { limit: 1, sortBy: { column: 'name', order: 'asc' } });
+
+        if (files && files.length > 0) {
+            const fileName = files[0].name;
+            if (/\.(jpg|jpeg|png|webp)$/i.test(fileName)) {
+                const { data } = supabase.storage
+                    .from('listing-images')
+                    .getPublicUrl(`${listingId}/${fileName}`);
+                return data.publicUrl;
+            }
+        }
+    } catch (e) {
+        // Storage folder might not exist for this listing
+    }
+    return null;
+}
+
 // ═══════ MARKETPLACE ═══════
 async function loadMarketplace() {
     try {
         const { data, error } = await supabase
             .from('listings')
-            .select('id, title, price, image_urls, seller_id, location, created_at')
+            .select('id, title, price, seller_id, location, created_at')
             .order('created_at', { ascending: false })
             .limit(50);
 
         if (data) {
-            document.getElementById('statListings').textContent = data.length; // Update stat
-            renderListings(data, 'marketplaceGrid');
+            document.getElementById('statListings').textContent = data.length;
+            await renderListings(data, 'marketplaceGrid');
         }
     } catch (err) {
         console.error('Marketplace error:', err);
@@ -171,25 +194,30 @@ async function loadMyListings() {
             .order('created_at', { ascending: false });
 
         if (data) {
-            renderListings(data, 'myListingsGrid', true);
+            await renderListings(data, 'myListingsGrid', true);
         }
     } catch (err) {
         console.error('My listings error:', err);
     }
 }
 
-function renderListings(listings, containerId, isOwner = false) {
+async function renderListings(listings, containerId, isOwner = false) {
     const container = document.getElementById(containerId);
     if (!listings || listings.length === 0) {
         container.innerHTML = `<div class="empty-state-dash"><p>No listings found.</p></div>`;
         return;
     }
 
-    container.innerHTML = listings.map(item => {
+    // Show loading state
+    container.innerHTML = `<div class="empty-state-dash"><div class="loading-spinner"></div></div>`;
+
+    // Fetch images from Storage in parallel for all listings
+    const imagePromises = listings.map(item => getListingImageUrl(item.id));
+    const imageUrls = await Promise.all(imagePromises);
+
+    container.innerHTML = listings.map((item, idx) => {
         const priceLumo = (item.price / 100).toFixed(0);
-        const imageUrl = (item.image_urls && item.image_urls.length > 0)
-            ? item.image_urls[0]
-            : '/images/app-icon.png'; // Fallback
+        const imageUrl = imageUrls[idx] || '/images/app-icon.png'; // Fallback
 
         // Don't show contact button if I own the listing
         const contactBtn = (!isOwner && item.seller_id !== currentUser.id)
@@ -199,7 +227,7 @@ function renderListings(listings, containerId, isOwner = false) {
         return `
             <div class="listing-card">
                 <div class="listing-image">
-                    <img src="${imageUrl}" alt="${item.title}" loading="lazy" />
+                    <img src="${imageUrl}" alt="${item.title}" loading="lazy" onerror="this.src='/images/app-icon.png'" />
                 </div>
                 <div class="listing-details">
                     <div class="listing-price">${priceLumo} L</div>
