@@ -48,6 +48,9 @@ function applyTranslations() {
 function updateLangButton() {
     const label = document.getElementById('currentLangLabel');
     if (label) label.textContent = currentLang.toUpperCase();
+    // Also update mobile language label
+    const mobileLabel = document.getElementById('mobileLangLabel');
+    if (mobileLabel) mobileLabel.textContent = currentLang.toUpperCase();
 }
 
 function buildDropdown() {
@@ -68,6 +71,32 @@ function buildDropdown() {
     });
 }
 
+function buildMobileDropdown() {
+    const dd = document.getElementById('mobileLangDropdown');
+    if (!dd) return;
+    dd.innerHTML = LANGUAGES.map(l =>
+        `<button class="lang-option${l.code === currentLang ? ' active' : ''}" data-lang="${l.code}">
+      <span class="lang-flag">${l.flag}</span><span>${l.name}</span>
+    </button>`
+    ).join('');
+    dd.querySelectorAll('.lang-option').forEach(btn => {
+        btn.addEventListener('click', () => {
+            setLang(btn.dataset.lang);
+            dd.classList.remove('open');
+            // Update active state in both dropdowns
+            dd.querySelectorAll('.lang-option').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            // Also sync desktop dropdown active state
+            const desktopDD = document.getElementById('langDropdown');
+            if (desktopDD) {
+                desktopDD.querySelectorAll('.lang-option').forEach(b => {
+                    b.classList.toggle('active', b.dataset.lang === btn.dataset.lang);
+                });
+            }
+        });
+    });
+}
+
 function initLangSwitcher() {
     const btn = document.getElementById('langBtn');
     const dd = document.getElementById('langDropdown');
@@ -79,12 +108,30 @@ function initLangSwitcher() {
     document.addEventListener('click', () => dd.classList.remove('open'));
 }
 
+function initMobileLangSwitcher() {
+    const btn = document.getElementById('mobileLangBtn');
+    const dd = document.getElementById('mobileLangDropdown');
+    if (!btn || !dd) return;
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dd.classList.toggle('open');
+    });
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.mobile-lang-bar')) {
+            dd.classList.remove('open');
+        }
+    });
+}
+
 // ── Init ──
 document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.lang = currentLang;
     document.documentElement.dir = ['ar', 'fa', 'ku', 'ps'].includes(currentLang) ? 'rtl' : 'ltr';
     buildDropdown();
+    buildMobileDropdown();
     initLangSwitcher();
+    initMobileLangSwitcher();
     applyTranslations();
 });
 

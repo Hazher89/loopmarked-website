@@ -1887,3 +1887,137 @@ img {
   right: auto;
   left: 0;
 }
+
+/* ==========================================
+   MOBILE LANGUAGE BAR
+   ========================================== */
+.mobile-lang-bar {
+  display: none;
+  /* Hidden on desktop */
+}
+
+@media (max-width: 768px) {
+  .mobile-lang-bar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10001;
+    background: rgba(10, 10, 14, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+  }
+
+  .mobile-lang-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 6px 16px;
+  }
+
+  .mobile-lang-label {
+    font-size: 14px;
+  }
+
+  .mobile-lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.12), rgba(112, 0, 255, 0.12));
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 20px;
+    color: var(--accent-cyan, #00F0FF);
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--font-main, 'Inter', sans-serif);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+  }
+
+  .mobile-lang-btn:active {
+    transform: scale(0.96);
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(112, 0, 255, 0.2));
+  }
+
+  .mobile-lang-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 60vh;
+    overflow-y: auto;
+    background: rgba(12, 12, 18, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.12);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    padding: 8px 12px;
+  }
+
+  .mobile-lang-dropdown.open {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    animation: fadeInDown 0.25s ease-out;
+  }
+
+  .mobile-lang-dropdown .lang-option {
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .mobile-lang-dropdown .lang-option.active {
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--accent-cyan, #00F0FF);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+  }
+
+  .mobile-lang-dropdown .lang-flag {
+    font-size: 16px;
+  }
+
+  /* Push navbar down to make room for the language bar */
+  .navbar {
+    top: 33px !important;
+  }
+
+  /* Push hero down to account for both bars */
+  .hero {
+    padding-top: 130px !important;
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Scrollbar for mobile dropdown */
+  .mobile-lang-dropdown::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .mobile-lang-dropdown::-webkit-scrollbar-thumb {
+    background: rgba(0, 240, 255, 0.2);
+    border-radius: 3px;
+  }
+}
+
+/* RTL for mobile lang bar */
+[dir="rtl"] .mobile-lang-dropdown {
+  direction: rtl;
+}

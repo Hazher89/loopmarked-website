@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Marked - Premium Chat Preview</title>
+    <style>
+        :root {
+            /* Premium Dark Theme Colors */
+            --bg-primary: #121212;
+            --bg-secondary: #1E1E1E;
+            --bg-tertiary: #262626;
+            --bg-elevated: #2A2A2A;
+
+            --surface-base: #1C1C1C;
+            --surface-elevated: #262626;
+
+            --primary-base: #00D9FF;
+            --primary-hover: #00B8D9;
+            --primary-bg: rgba(0, 217, 255, 0.1);
+
+            --coin-gold: #C9A961;
+            --coin-gold-dark: #B8964F;
+            --coin-gold-bg: rgba(201, 169, 97, 0.15);
+
+            --text-primary: #F5F5F5;
+            --text-secondary: #B8B8B8;
+            --text-tertiary: #6B6B6B;
+
+            --error: #E57373;
+            --success: #66BB6A;
+
+            --radius-m: 12px;
+            --radius-l: 16px;
+            --radius-xl: 24px;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            display: flex;
+            justify_content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .phone-frame {
+            width: 390px;
+            height: 844px;
+            background-color: var(--bg-primary);
+            border-radius: 40px;
+            box-shadow: 0 0 0 12px #333, 0 20px 50px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Header */
+        .chat-header {
+            background-color: var(--bg-secondary);
+            /* surfaceBase */
+            padding: 50px 16px 12px;
+            /* Top padding for notch area */
+            border-bottom: 1px solid var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .back-btn {
+            color: var(--primary-base);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .profile-info {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--bg-tertiary);
+            background-image: url('https://i.pravatar.cc/150?img=32');
+            background-size: cover;
+            position: relative;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--success);
+            border: 2px solid var(--bg-secondary);
+            /* Cutout effect */
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .user-details h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .user-details span {
+            font-size: 12px;
+            color: var(--success);
+            /* "Online" text style */
+        }
+
+        .header-actions {
+            color: var(--primary-base);
+            font-size: 20px;
+            display: flex;
+            gap: 16px;
+        }
+
+        /* Listing Card (Top) */
+        .listing-card-mini {
+            margin: 12px 16px 0;
+            background-color: var(--surface-base);
+            border-radius: var(--radius-m);
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid var(--bg-tertiary);
+            /* Simulating SliverToBoxAdapter placement */
+        }
+
+        .listing-thumb {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            background-color: #333;
+            background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80');
+            background-size: cover;
+        }
+
+        .listing-details {
+            flex: 1;
+        }
+
+        .listing-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .listing-price {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 14px;
+            color: var(--coin-gold);
+            font-weight: 700;
+        }
+
+        .coin-icon {
+            width: 14px;
+            height: 14px;
+            background-color: var(--coin-gold);
+            border-radius: 50%;
+        }
+
+        /* Message List */
+        .message-list {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .date-divider {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin: 8px 0;
+            font-weight: 500;
+        }
+
+        /* Bubbles */
+        .bubble-row {
+            display: flex;
+            margin-bottom: 2px;
+        }
+
+        .bubble-row.me {
+            justify-content: flex-end;
+        }
+
+        .bubble {
+            max-width: 75%;
+            padding: 10px 14px;
+            border-radius: 18px;
+            font-size: 15px;
+            line-height: 1.4;
+            position: relative;
+        }
+
+        .bubble-time {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: right;
+            margin-top: 4px;
+            /* In actual implementation, time is often outside or integrated differently, reflecting Loop logic */
+        }
+
+        .bubble.them {
+            background-color: var(--surface-elevated);
+            color: var(--text-primary);
+            border-bottom-left-radius: 4px;
+        }
+
+        .bubble.me {
+            background-color: var(--primary-base);
+            color: #000;
+            /* textInverse */
+            border-bottom-right-radius: 4px;
+            font-weight: 500;
+        }
+
+
+        /* Offer Card Message */
+        .offer-card-msg {
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.05) 100%);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            border-radius: var(--radius-m);
+            padding: 16px;
+            margin: 8px 0;
+            align-self: flex-end;
+            /* Sent by me */
+            width: 85%;
+        }
+
+        .offer-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .offer-title {
+            font-size: 13px;
+            color: var(--coin-gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .offer-status {
+            font-size: 11px;
+            background: rgba(201, 169, 97, 0.2);
+            color: var(--coin-gold);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .offer-amount {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .offer-amount-coin {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--coin-gold);
+        }
+
+        .offer-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-offer {
+            flex: 1;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-withdraw {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+        }
+
+        /* Input Area with Staging */
+        .input-area {
+            background-color: var(--surface-base);
+            border-top: 1px solid var(--bg-tertiary);
+            padding-bottom: 20px;
+            /* Safe area */
+            /* Using Column layout for staging + input */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Staging Area (Multi-image) */
+        .staging-area {
+            display: flex;
+            gap: 8px;
+            padding: 12px 12px 0 12px;
+            overflow-x: auto;
+            /* height: 90px; */
+        }
+
+        /* Custom scrollbar hiding */
+        .staging-area::-webkit-scrollbar {
+            display: none;
+        }
+
+        .staged-thumb {
+            width: 90px;
+            height: 90px;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            flex-shrink: 0;
+            border: 1px solid var(--bg-tertiary);
+        }
+
+        .remove-btn {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        /* Main Input Bar */
+        .input-bar {
+            padding: 12px;
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .attach-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--bg-tertiary);
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+            margin-bottom: 2px;
+        }
+
+        .text-input-container {
+            flex: 1;
+            background-color: var(--bg-primary);
+            /* Darker input bg */
+            border-radius: 20px;
+            padding: 10px 14px;
+            border: 1px solid var(--bg-tertiary);
+            min-height: 40px;
+        }
+
+        .text-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 15px;
+            outline: none;
+            resize: none;
+        }
+
+        .send-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--primary-base);
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2px;
+            cursor: pointer;
+        }
+
+        /* Dialog Overlay */
+        .dialog-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Barrier */
+            backdrop-filter: blur(4px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            /* Hidden by default, un-comment to show */
+            display: none;
+        }
+
+        .open-dialog .dialog-overlay {
+            display: flex;
+        }
+
+        .apple-dialog {
+            width: 300px;
+            background: rgba(28, 28, 28, 0.85);
+            /* surfaceBase with opacity */
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .dialog-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .dialog-msg {
+            font-size: 14px;
+            color: var(--text-secondary);
+            /* 70% opacity */
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .dialog-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-secondary {
+            flex: 1;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            flex: 1;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--primary-base), #7C3AED);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body class="">
+
+    <div class="phone-frame">
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="back-btn">‹</div>
+            <div class="avatar">
+                <div class="status-dot"></div>
+            </div>
+            <div class="profile-info">
+                <div class="user-details">
+                    <h3>Sarah Jenkins</h3>
+                    <span>Online</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <span>⚠</span> <!-- Report/Block icon placeholder -->
+            </div>
+        </div>
+
+        <!-- Scrollable Content -->
+        <div style="flex: 1; overflow-y: auto; display: flex; flex-direction: column;">
+
+            <!-- Listing Card Stuck to Top (Simulated) -->
+            <div class="listing-card-mini">
+                <div class="listing-thumb"></div>
+                <div class="listing-details">
+                    <div class="listing-title">Vintage Camera Lens</div>
+                    <div class="listing-price">
+                        <div class="coin-icon"></div> 80 Lumo
+                    </div>
+                </div>
+                <div style="font-size: 20px; color: var(--text-tertiary)">›</div>
+            </div>
+
+            <div class="message-list">
+                <div class="date-divider">Today</div>
+
+                <!-- Message Them -->
+                <div class="bubble-row them">
+                    <div class="bubble them">
+                        Hi! Is this still available? I can pick it up today.
+                        <div class="bubble-time">10:42 AM</div>
+                    </div>
+                </div>
+
+                <!-- Message Me -->
+                <div class="bubble-row me">
+                    <div class="bubble me">
+                        Yes it is!
+                        <div class="bubble-time">10:45 AM</div>
+                    </div>
+                </div>
+
+                <!-- Offer Card (Me) -->
+                <div class="offer-card-msg">
+                    <div class="offer-header">
+                        <span class="offer-title">Offer Sent</span>
+                        <span class="offer-status">PENDING</span>
+                    </div>
+                    <div class="offer-amount">
+                        <div class="offer-amount-coin"></div> 80
+                    </div>
+                    <div class="offer-actions">
+                        <div class="btn-offer btn-withdraw">Withdraw Offer</div>
+                    </div>
+                </div>
+
+                <!-- Message Me (with image context) -->
+                <div class="bubble-row me">
+                    <div class="bubble me">
+                        Here are some more photos of the mount.
+                        <div class="bubble-time">10:46 AM</div>
+                    </div>
+                </div>
+
+                <!-- Sent Images (Simulated) -->
+                <div class="bubble-row me">
+                    <div style="display: flex; gap: 4px; justify-content: flex-end; width: 100%;">
+                        <div
+                            style="width: 120px; height: 120px; border-radius: 12px; background-image: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80'); background-size: cover;">
+                        </div>
+                        <div
+                            style="width: 120px; height: 120px; border-radius: 12px; background-image: url('https://images.unsplash.com/photo-1500634245200-e5245c7574ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80'); background-size: cover;">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <!-- Staged Images (Simulated Staging Area) -->
+            <div class="staging-area">
+                <div class="staged-thumb"
+                    style="background-image: url('https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80');">
+                    <div class="remove-btn">✕</div>
+                </div>
+                <div class="staged-thumb"
+                    style="background-image: url('https://images.unsplash.com/photo-1493238792015-15a260905e32?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80');">
+                    <div class="remove-btn">✕</div>
+                </div>
+                <div class="staged-thumb"
+                    style="background-image: url('https://images.unsplash.com/photo-1610440042657-612c52089458?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80');">
+                    <div class="remove-btn">✕</div>
+                </div>
+            </div>
+
+            <div class="input-bar">
+                <div class="attach-btn">+</div>
+                <div class="text-input-container">
+                    <input type="text" class="text-input" placeholder="Type a message..." value="">
+                </div>
+                <div class="send-btn">➤</div> <!-- Using simple arrow for preview -->
+            </div>
+        </div>
+
+        <!-- Dialog Overlay (Hidden by default, toggle class 'open-dialog' on body to see) -->
+        <div class="dialog-overlay" id="dialog">
+            <div class="apple-dialog">
+                <div class="dialog-title">Offer Already Sent</div>
+                <div class="dialog-msg">
+                    You already have a pending or accepted offer for this listing. Please wait for the seller to
+                    respond.
+                </div>
+                <div class="dialog-actions">
+                    <button class="btn-secondary" onclick="closeDialog()">OK</button>
+                    <button class="btn-primary" onclick="closeDialog()">Go to Chat</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="margin-left: 40px; color: #fff; max-width: 300px;">
+        <h2>Interactive Preview</h2>
+        <p style="color: #bbb; margin-top: 10px;">
+            This previews the <strong>Premium Chat Screen</strong> with:
+        </p>
+        <ul style="color: #bbb; margin: 10px 0 20px 20px; line-height: 1.6;">
+            <li>Multi-image staging area (bottom)</li>
+            <li>Premium Offer Card styling</li>
+            <li>Dark mode color palette</li>
+            <li>"Offer Already Sent" dialog</li>
+        </ul>
+        <button onclick="toggleDialog()"
+            style="padding: 10px 20px; background: #00D9FF; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+            Toggle "Offer Sent" Dialog
+        </button>
+    </div>
+
+    <script>
+        function toggleDialog() {
+            const dialog = document.getElementById('dialog');
+            if (dialog.style.display === 'flex') {
+                dialog.style.display = 'none';
+            } else {
+                dialog.style.display = 'flex';
+            }
+        }
+
+        function closeDialog() {
+            document.getElementById('dialog').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
