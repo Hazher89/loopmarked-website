@@ -168,11 +168,59 @@ async function getListingImageUrl(listingId) {
 }
 
 // ═══════ MARKETPLACE ═══════
+// Cache user country so we don't fetch it every time
+let _userCountryCode = null;
+
+async function getUserCountryCode() {
+    if (_userCountryCode) return _userCountryCode;
+    try {
+        const { data: profile } = await supabase
+            .from('profiles')
+            .select('country_code')
+            .eq('id', currentUser.id)
+            .single();
+        _userCountryCode = profile?.country_code;
+    } catch (e) {
+        console.error('Error fetching user country:', e);
+    }
+    return _userCountryCode;
+}
+
 async function loadMarketplace() {
     try {
-        const { data, error } = await supabase
+        // 1) Get current user's country_code
+        const userCountry = await getUserCountryCode();
+
+        // 2) Read current filter values from UI
+        const categoryEl = document.getElementById('marketplaceCategory');
+        const searchEl = document.getElementById('marketplaceSearch');
+        const selectedCategory = categoryEl?.value || '';
+        const searchText = (searchEl?.value || '').trim().toLowerCase();
+
+        // 3) Build query with STRICT filtering (same as Flutter app)
+        let query = supabase
             .from('listings')
-            .select('id, title, price, seller_id, location, created_at')
+            .select('id, title, price, seller_id, location, created_at, country_code, category')
+            .eq('approval_status', 'approved')
+            .eq('is_deleted', false)
+            .eq('is_sold', false);
+
+        // 4) ALWAYS filter by user's country — NEVER show other countries
+        if (userCountry) {
+            query = query.eq('country_code', userCountry);
+        }
+
+        // 5) Category filter
+        if (selectedCategory) {
+            query = query.eq('category', selectedCategory);
+        }
+
+        // 6) Search filter (ilike for title)  
+        if (searchText) {
+            query = query.ilike('title', `%${searchText}%`);
+        }
+
+        const { data, error } = await query
             .order('created_at', { ascending: false })
             .limit(50);
 
@@ -184,6 +232,14 @@ async function loadMarketplace() {
         console.error('Marketplace error:', err);
     }
 }
+
+// Marketplace filter event listeners
+document.getElementById('marketplaceCategory')?.addEventListener('change', () => loadMarketplace());
+let _searchDebounce = null;
+document.getElementById('marketplaceSearch')?.addEventListener('input', () => {
+    clearTimeout(_searchDebounce);
+    _searchDebounce = setTimeout(() => loadMarketplace(), 400);
+});
 
 async function loadMyListings() {
     try {
@@ -406,6 +462,13 @@ window.submitNewListing = async function () {
     const priceLumet = Math.round(parseFloat(priceStr) * 100); // Convert Lumo to Lumet
 
     try {
+        // 0. Get user's country_code for listing geo-tagging
+        const { data: userProfile } = await supabase
+            .from('profiles')
+            .select('country_code, country')
+            .eq('id', currentUser.id)
+            .single();
+
         // 1. Insert listing into database
         const { data: newListing, error } = await supabase
             .from('listings')
@@ -418,6 +481,7 @@ window.submitNewListing = async function () {
                 location: location || 'Unknown',
                 seller_id: currentUser.id,
                 seller_name: currentUser.user_metadata?.full_name || currentUser.email || 'User',
+                country_code: userProfile?.country_code || null,
                 image_urls: [],
                 is_sold: false,
                 is_deleted: false,
