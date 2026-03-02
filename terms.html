@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Loop Marked</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: var(--primary-bg, #050508);
+            color: var(--text-primary, #ffffff);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .terms-container {
+            max-width: 800px;
+            width: 100%;
+            padding: 100px 20px 60px;
+            box-sizing: border-box;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header-section h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .date {
+            color: var(--text-secondary, #808080);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .policy-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .policy-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(124, 58, 237, 0.3);
+            /* Purple accent for Terms */
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .policy-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--accent-2, #7C3AED);
+            /* Purple accent */
+            margin-top: 0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .policy-card h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background: var(--accent-2, #7C3AED);
+            border-radius: 4px;
+        }
+
+        .policy-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 20px;
+        }
+
+        .policy-card ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .policy-card li {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 12px;
+            list-style-type: none;
+            position: relative;
+        }
+
+        .policy-card li::before {
+            content: '•';
+            color: var(--accent-2, #7C3AED);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .policy-card strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--accent-2, #7C3AED);
+            text-decoration: none;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
+        }
+
+        /* Subtle background effects */
+        .bg-glow-1,
+        .bg-glow-2 {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .bg-glow-1 {
+            top: 10%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, var(--accent-2, #7C3AED) 0%, transparent 70%);
+        }
+
+        .bg-glow-2 {
+            bottom: 30%;
+            right: -10%;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, var(--accent-1, #00F0FF) 0%, transparent 70%);
+        }
+
+        .back-button {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .header-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .policy-card {
+                padding: 25px;
+            }
+
+            .back-button {
+                top: 20px;
+                left: 20px;
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <a href="index.html" class="back-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Home
+    </a>
+
+    <div class="terms-container">
+        <div class="header-section">
+            <h1>Terms of Service</h1>
+            <p class="date">Last Updated: March 2, 2026</p>
+        </div>
+
+        <div class="policy-card">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing or using Loop Marked, you agree to be bound by these Terms of Service. If you do not agree
+                with any part of these terms, you may not use our application. We offer a community-centric platform to
+                buy, sell, and trade safely.</p>
+        </div>
+
+        <div class="policy-card">
+            <h2>2. User Accounts</h2>
+            <p>To use most features of Loop Marked, you must register for an account using Apple or Google sign-in. You
+                are responsible for maintaining the confidentiality of your account credentials and for all activities
+                that occur under your account.</p>
+            <ul>
+                <li><strong>Eligibility:</strong> You must be at least 12 years old (or the minimum age required in your
+                    country) to use our platform.</li>
+                <li><strong>Accuracy:</strong> All information you provide must be accurate and up to date.</li>
+                <li><strong>Termination:</strong> We reserve the right to suspend or terminate accounts that violate
+                    these terms or engage in fraudulent activity.</li>
+            </ul>
+        </div>
+
+        <div class="policy-card">
+            <h2>3. Allowed and Prohibited Conduct</h2>
+            <p>Loop Marked is explicitly designed to foster a safe trading ecosystem. When using our services, you agree
+                <strong>not</strong> to:</p>
+            <ul>
+                <li>Post items that are illegal, counterfeit, or explicitly prohibited by local laws.</li>
+                <li>Engage in harassment, hate speech, or abuse towards other community members.</li>
+                <li>Attempt to manipulate the Lumo economy, referral system, or badge system through artificial means or
+                    bot accounts.</li>
+                <li>Spam the marketplace or post deceptive listings.</li>
+            </ul>
+        </div>
+
+        <div class="policy-card">
+            <h2>4. The Lumo Economy</h2>
+            <p>Loop Marked uses an internal virtual currency called <strong>Lumo</strong> to facilitate interactions and
+                premium features.</p>
+            <ul>
+                <li><strong>Acquisition:</strong> Lumo can be earned for free (via daily bonuses or rewards) or
+                    purchased via In-App Purchases (handled by Apple App Store or Google Play).</li>
+                <li><strong>No Cash Value:</strong> Lumo is not real money. It has no cash value outside the Loop Marked
+                    app and cannot be exchanged for fiat currency by Loop Marked.</li>
+                <li><strong>Final Sales:</strong> Purchases of Lumo are governed by the respective App Store policies.
+                    All in-app purchases are final unless required otherwise by law.</li>
+            </ul>
+        </div>
+
+        <div class="policy-card">
+            <h2>5. Disclaimer of Liability</h2>
+            <p>Loop Marked acts merely as a facilitator for peer-to-peer trading. We do not own, control, or inspect the
+                items listed.</p>
+            <ul>
+                <li><strong>No Warranty:</strong> The service is provided "as is" and "as available". We make no
+                    guarantees regarding the quality, safety, or legality of items listed by users.</li>
+                <li><strong>User Disputes:</strong> You agree that Loop Marked is not responsible for disputes arising
+                    from trades. Users should use the built-in encrypted chat and rating system to establish trust.</li>
+            </ul>
+        </div>
+
+        <div class="policy-card">
+            <h2>6. Changes to Terms</h2>
+            <p>We reserve the right to modify these Terms of Service at any time. We will notify users of significant
+                changes through the app. Continued use of the platform after changes constitutes acceptance of the new
+                terms.</p>
+        </div>
+
+        <div class="policy-card">
+            <h2>7. Contact Us</h2>
+            <p>If you have any questions about these Terms, feel free to reach out via the in-app support chat, or by
+                emailing <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Loop Marked</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: var(--primary-bg, #050508);
+            color: var(--text-primary, #ffffff);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .privacy-container {
+            max-width: 800px;
+            width: 100%;
+            padding: 100px 20px 60px;
+            box-sizing: border-box;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header-section h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .date {
+            color: var(--text-secondary, #808080);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .policy-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .policy-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 240, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .policy-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--accent-1, #00F0FF);
+            margin-top: 0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .policy-card h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background: var(--accent-1, #00F0FF);
+            border-radius: 4px;
+        }
+
+        .policy-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 20px;
+        }
+
+        .policy-card ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .policy-card li {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 12px;
+            list-style-type: none;
+            position: relative;
+        }
+
+        .policy-card li::before {
+            content: '•';
+            color: var(--accent-1, #00F0FF);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .policy-card strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--accent-1, #00F0FF);
+            text-decoration: none;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+
+        /* Subtle background effects */
+        .bg-glow-1,
+        .bg-glow-2 {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .bg-glow-1 {
+            top: 10%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, var(--accent-1, #00F0FF) 0%, transparent 70%);
+        }
+
+        .bg-glow-2 {
+            bottom: 30%;
+            right: -10%;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, var(--accent-2, #7C3AED) 0%, transparent 70%);
+        }
+
+        .back-button {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .header-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .policy-card {
+                padding: 25px;
+            }
+
+            .back-button {
+                top: 20px;
+                left: 20px;
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <a href="index.html" class="back-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Home
+    </a>
+
+    <div class="privacy-container">
+        <div class="header-section">
+            <h1>Privacy Policy</h1>
+            <p class="date">Last Updated: March 2, 2026</p>
+        </div>
+
+        <div class="policy-card">
+            <h2>Introduction</h2>
+            <p>Welcome to Loop Marked. We respect your privacy and are committed to protecting your personal data. This
+                Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our
+                mobile application, website, and related services.</p>
+        </div>
+
+        <div class="policy-card">
+            <h2>Information We Collect</h2>
+            <p>To provide you with our marketplace services, we collect the following types of information:</p>
+            <ul>
+                <li><strong>Account Information:</strong> When you sign up, we collect your email address or
+                    authentication tokens from Apple/Google.</li>
+                <li><strong>Profile Information:</strong> Your chosen display name, profile picture, and bio.</li>
+                <li><strong>Location Data:</strong> To show you local listings, we collect your precise or approximate
+                    location when you use the app.</li>
+                <li><strong>User Content:</strong> Information about items you list for sale, photos you upload,
+                    messages you send via our chat system, and reviews you leave for other users.</li>
+                <li><strong>Usage Data:</strong> Information about how you interact with our app, including device
+                    identifiers and crash logs to improve app performance.</li>
+                <li><strong>Transaction Data:</strong> Information related to your Lumo balance and in-app purchases.
+                    (Payment processing is handled securely by Apple; we do not store your credit card details).</li>
+            </ul>
+        </div>
+
+        <div class="policy-card">
+            <h2>How We Use Your Information</h2>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Provide, maintain, and improve our app and services.</li>
+                <li>Process transactions and manage your Lumo economy balance.</li>
+                <li>Facilitate communication between buyers and sellers.</li>
+                <li>Verify accounts and enhance the safety and security of our platform.</li>
+                <li>Send support messages, updates, and security alerts.</li>
+                <li>Provide personalized, local content and marketplace listings.</li>
+            </ul>
+        </div>
+
+        <div class="policy-card">
+            <h2>How We Share Your Information</h2>
+            <p>We do not sell your personal information. We may share your information in the following situations:</p>
+            <ul>
+                <li><strong>With other users:</strong> Your profile information, listings, and reviews are visible to
+                    other users on the platform.</li>
+                <li><strong>Service Providers:</strong> We use third-party services (like Supabase for database hosting)
+                    to help operate our app. These providers have access to your information only to perform tasks on
+                    our behalf and are obligated not to disclose or use it for other purposes.</li>
+                <li><strong>Legal Requirements:</strong> We may disclose information if required by law or in response
+                    to valid requests by public authorities.</li>
+            </ul>
+        </div>
+
+        <div class="policy-card">
+            <h2>Data Retention and Deletion</h2>
+            <p>We retain your personal information for as long as your account is active or as needed to provide you
+                services. You can delete your account and associated data at any time directly within the app settings
+                or by contacting our support team via chat.</p>
+        </div>
+
+        <div class="policy-card">
+            <h2>Your Privacy Rights</h2>
+            <p>Depending on your location, you may have the right to access, correct, or delete your personal data. You
+                can manage your privacy choices within the app settings, including visibility toggles for your wallet
+                balance and other specific information.</p>
+        </div>
+
+        <div class="policy-card">
+            <h2>Contact Us</h2>
+            <p>If you have questions or comments about this Privacy Policy, please contact us via the support chat in
+                the app or at <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.</p>
+        </div>
+    </div>
+</body>
+
+</html>
