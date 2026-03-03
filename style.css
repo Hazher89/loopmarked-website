@@ -961,116 +961,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* ═══════ STORIES SECTION ═══════ */
-.stories-section {
-  padding: 140px 0;
-  background: var(--bg-secondary);
-}
-
-.stories-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.stories-desc {
-  font-size: 16px;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  margin: 20px 0 36px;
-}
-
-.stories-features {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.stories-features li {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-}
-
-.stories-feature-icon {
-  font-size: 20px;
-  min-width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(123, 104, 238, 0.08);
-  border-radius: 10px;
-}
-
-.stories-features li strong {
-  display: block;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 2px;
-  color: var(--text-primary);
-}
-
-.stories-features li span {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.5;
-}
-
-/* Stories Phone Stack */
-.stories-visual {
-  display: flex;
-  justify-content: center;
-}
-
-.stories-phone-stack {
-  position: relative;
-  width: 300px;
-  height: 500px;
-}
-
-.stories-phone {
-  position: absolute;
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-  transition: transform 0.5s var(--ease-out-expo);
-}
-
-.stories-phone img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.stories-phone-back {
-  width: 240px;
-  height: 440px;
-  top: 30px;
-  left: 0;
-  transform: rotate(-6deg);
-  z-index: 1;
-}
-
-.stories-phone-front {
-  width: 260px;
-  height: 460px;
-  top: 10px;
-  right: 0;
-  transform: rotate(4deg);
-  z-index: 2;
-}
-
-.stories-phone-stack:hover .stories-phone-back {
-  transform: rotate(-10deg) translateX(-15px);
-}
-
-.stories-phone-stack:hover .stories-phone-front {
-  transform: rotate(6deg) translateX(10px) translateY(-5px);
-}
-
 /* ═══════ HOW IT'S BUILT ═══════ */
 .built-section {
   padding: 120px 0;
@@ -1681,27 +1571,6 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .stories-layout {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .stories-phone-stack {
-    width: 280px;
-    height: 440px;
-    margin: 0 auto;
-  }
-
-  .stories-phone-back {
-    width: 210px;
-    height: 380px;
-  }
-
-  .stories-phone-front {
-    width: 230px;
-    height: 400px;
-  }
-
   .tech-grid {
     grid-template-columns: 1fr;
   }
@@ -1778,4 +1647,161 @@ body {
     width: 100%;
     justify-content: center;
   }
+}
+
+/* ── Legal Pages (Privacy/Terms) Premium Redesign ── */
+.legal-container {
+  max-width: 800px;
+  width: 100%;
+  padding: 120px 20px 100px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0 auto;
+}
+
+.legal-header-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  margin-bottom: 20px;
+}
+
+.legal-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--accent-1);
+  flex-shrink: 0;
+}
+
+.legal-header-info h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.legal-header-info p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 4px 0 0 0;
+}
+
+/* Accordion Styles */
+.legal-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.legal-section {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.legal-section.active {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.legal-section-header {
+  padding: 20px 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  user-select: none;
+}
+
+.section-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.legal-section.active .section-icon-circle {
+  background: rgba(0, 240, 255, 0.15);
+  color: var(--accent-1);
+}
+
+.legal-section-header h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  flex: 1;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.chevron {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.legal-section.active .chevron {
+  transform: rotate(180deg);
+}
+
+.legal-section-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease;
+  padding: 0 24px;
+}
+
+.legal-section.active .legal-section-content {
+  max-height: 2000px;
+  /* Large enough to fit content */
+  padding: 0 24px 24px;
+  transition: max-height 0.5s ease-in, padding 0.3s ease;
+}
+
+.inner-content-box {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 14px;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.inner-content-box br {
+  content: "";
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Hide old simple containers */
+.privacy-container,
+.terms-container {
+  display: none;
 }

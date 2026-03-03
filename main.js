@@ -173,7 +173,7 @@ const staggerObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.2 });
 
-document.querySelectorAll('.showcase-features, .stories-features').forEach(list => {
+document.querySelectorAll('.showcase-features').forEach(list => {
     staggerObserver.observe(list);
 });
 
