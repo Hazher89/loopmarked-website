@@ -10,6 +10,7 @@ export default defineConfig({
                 dashboard: resolve(__dirname, 'dashboard.html'),
                 privacy: resolve(__dirname, 'privacy.html'),
                 terms: resolve(__dirname, 'terms.html'),
+                download: resolve(__dirname, 'download.html'),
             },
         },
     },
