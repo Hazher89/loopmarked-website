@@ -51,24 +51,55 @@ function updateLangButton() {
     // Also update mobile language label
     const mobileLabel = document.getElementById('mobileLangLabel');
     if (mobileLabel) mobileLabel.textContent = currentLang.toUpperCase();
+
+    // Support for the simplified switcher used in subpages
+    const currentFlag = LANGUAGES.find(l => l.code === currentLang)?.flag || '🇺🇸';
+    const currentName = LANGUAGES.find(l => l.code === currentLang)?.name || 'English';
+    const flagEl = document.getElementById('current-lang-flag');
+    if (flagEl) flagEl.textContent = currentFlag;
+    const nameEl = document.getElementById('current-lang-name');
+    if (nameEl) nameEl.textContent = currentName;
 }
 
 function buildDropdown() {
+    // ── Main Page Dropdown ──
     const dd = document.getElementById('langDropdown');
-    if (!dd) return;
-    dd.innerHTML = LANGUAGES.map(l =>
-        `<button class="lang-option${l.code === currentLang ? ' active' : ''}" data-lang="${l.code}">
-      <span class="lang-flag">${l.flag}</span><span>${l.name}</span>
-    </button>`
-    ).join('');
-    dd.querySelectorAll('.lang-option').forEach(btn => {
-        btn.addEventListener('click', () => {
-            setLang(btn.dataset.lang);
-            dd.classList.remove('open');
-            dd.querySelectorAll('.lang-option').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    if (dd) {
+        dd.innerHTML = LANGUAGES.map(l =>
+            `<button class="lang-option${l.code === currentLang ? ' active' : ''}" data-lang="${l.code}">
+          <span class="lang-flag">${l.flag}</span><span>${l.name}</span>
+        </button>`
+        ).join('');
+        dd.querySelectorAll('.lang-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLang(btn.dataset.lang);
+                dd.classList.remove('open');
+                dd.querySelectorAll('.lang-option').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
         });
-    });
+    }
+
+    // ── Subpage Simple Dropdown (privacy / terms / download) ──
+    const menu = document.getElementById('lang-menu');
+    if (menu) {
+        menu.innerHTML = LANGUAGES.map(l =>
+            `<div class="lang-item${l.code === currentLang ? ' active' : ''}" data-lang="${l.code}" style="padding: 10px 15px; cursor: pointer; display: flex; align-items: center; gap: 10px; color: #fff; white-space: nowrap; border-radius: 8px;">
+        <span class="lang-flag">${l.flag}</span><span>${l.name}</span>
+      </div>`
+        ).join('');
+        menu.querySelectorAll('.lang-item').forEach(item => {
+            item.addEventListener('click', () => {
+                setLang(item.dataset.lang);
+                menu.style.display = 'none';
+            });
+            // Add hover effect
+            item.addEventListener('mouseenter', () => item.style.background = 'rgba(255,255,255,0.1)');
+            item.addEventListener('mouseleave', () => {
+                if (!item.classList.contains('active')) item.style.background = 'transparent';
+            });
+        });
+    }
 }
 
 function buildMobileDropdown() {
@@ -98,14 +129,29 @@ function buildMobileDropdown() {
 }
 
 function initLangSwitcher() {
+    // ── Main Header Switcher ──
     const btn = document.getElementById('langBtn');
     const dd = document.getElementById('langDropdown');
-    if (!btn || !dd) return;
-    btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        dd.classList.toggle('open');
-    });
-    document.addEventListener('click', () => dd.classList.remove('open'));
+    if (btn && dd) {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dd.classList.toggle('open');
+        });
+        document.addEventListener('click', () => dd.classList.remove('open'));
+    }
+
+    // ── Simple Switcher (subpages) ──
+    const menuBtn = document.getElementById('lang-menu-btn');
+    const menu = document.getElementById('lang-menu');
+    if (menuBtn && menu) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        });
+        document.addEventListener('click', () => {
+            menu.style.display = 'none';
+        });
+    }
 }
 
 function initMobileLangSwitcher() {
@@ -133,6 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initLangSwitcher();
     initMobileLangSwitcher();
     applyTranslations();
+    updateLangButton();
 });
 
 window.LM_i18n = { t, setLang, currentLang: () => currentLang };
