@@ -234,15 +234,18 @@ const en = {
     dl_ios: 'Download on the App Store',
     dl_android: 'Get it on Google Play',
     // ── About Us ──
-    about_title: 'The Visionary Behind Loop Marked',
-    about_subtitle: 'Loop Marked isn\'t just an app; it\'s the culmination of years of relentless dedication by a solo founder.',
-    about_story_title: 'The Solo Journey',
-    about_story_p1: 'Loop Marked was born from a singular vision: to redefine the digital marketplace. Every single pixel on this website and every line of code in the mobile application was architected, developed, and tested by one person. This journey required thousands of hours of dedication, turning a disruptive concept into a globally accessible ecosystem.',
-    about_story_p2: 'Behind the scenes, this project was a labor of love and resilience. While the execution was a solo effort, the foundation was strengthened by the unwavering support and testing from a small circle of friends and family. Their belief in the project provided the fuel to overcome every technical obstacle and perfect the experience you see today.',
-    about_vision_title: 'Why Loop Markt?',
-    about_vision_p: 'In an era where personal data is often traded for profit, I spent years engineering a platform where privacy is the foundation, not just a feature. By combining military-grade encryption with the innovative Lumo economy, Loop Marked creates a space where security is structurally guaranteed and engagement is fairly rewarded.',
-    about_win_title: 'A Win-Win for All',
-    about_win_p: 'In this ecosystem, everyone wins. Sellers reach a global audience with localized support in 22 languages. Buyers trade with total peace of mind, knowing their data is encrypted. Together, we are building the future of local and global trade — one secure transaction at a time.',
+    // ── About Us V2 ──
+    about_title: 'The Visionary Mastermind Behind Loop Marked',
+    about_subtitle: 'Loop Marked is the result of thousands of hours of relentless innovation, designed and built by a single architect driven by a singular purpose.',
+    about_story_title: 'A Solo Revolution',
+    about_story_p1: 'Loop Marked was born from a radical vision: to create the world\'s most secure and user-centric marketplace. Every single pixel on this website and every line of code in the mobile application was architected, developed, and tested by one person. This journey required thousands of hours of focus, turning a disruptive idea into a premium, global ecosystem.',
+    about_story_p2: 'Behind the scenes, this project was a labor of absolute dedication. While the technical execution was a solo masterpiece, the foundation was fueled by the unwavering support and testing from a tight-knit circle of family and friends. Their belief in the vision provided the strength to conquer every complex obstacle and refine the high-performance experience you see today.',
+    about_vision_title: 'The Genius of the Loop Marked Concept',
+    about_vision_p: 'In a world where privacy is often ignored, I spent years engineering a system where security is the core DNA, not an afterthought. The "Mastermind" concept behind Loop Marked is to create a closed-loop economy where users are finally in control. By integrating end-to-end encryption with the revolutionary Lumo economy, Loop Marked creates a space where every interaction is structurally secure and every user is fairly rewarded.',
+    about_core_title: 'The Innovation: Lumo & Stories',
+    about_core_p: 'At the heart of the Loop Marked engine lies the Lumo Economy and immersive Stories. This isn\'t just about buying and selling; it\'s about building a digital reputation and engaging in a community that values your privacy. The Lumo ecosystem allows for seamless, secure transactions while Stories bring the marketplace to life, allowing users to showcase their worlds 24 hours at a time.',
+    about_win_title: 'The Ultimate Win-Win Ecosystem',
+    about_win_p: 'In this revolutionary ecosystem, every stakeholder wins. Sellers access a global stage with support for 22 languages and RTL compatibility. Buyers trade with absolute confidence, protected by military-grade encryption. Together, we are not just changing how people trade; we are establishing a new global standard for the secure, private, and community-driven marketplace of the future.',
 };
 
 // ── Norwegian ──
@@ -456,15 +459,18 @@ const nb = {
     dl_ios: 'Last ned på App Store',
     dl_android: 'Få den på Google Play',
     // ── About Us ──
-    about_title: 'The Visionary Behind Loop Marked',
-    about_subtitle: 'Loop Marked er ikke bare en app; det er kulminasjonen av år med nådeløs dedikasjon fra en solo-grunnlegger.',
-    about_story_title: 'Solo-reisen',
-    about_story_p1: 'Loop Marked ble født fra en enestående visjon: å redefinere den digitale markedsplassen. Hver enkelt piksel på denne nettsiden og hver linje med kode i mobilapplikasjonen ble bygget, utviklet og testet av én person. Denne reisen krevde tusenvis av timer med dedikasjon, og gjorde et forstyrrende konsept til et globalt tilgjengelig økosystem.',
-    about_story_p2: 'Bak kulissene var dette prosjektet et arbeid av kjærlighet og motstandskraft. Mens utførelsen var en soloinnsats, ble grunnlaget styrket av den urokkelige støtten og utprøvingen fra en liten venne- og familiekrets. Deres tro på prosjektet ga drivstoffet til å overvinne alle tekniske hindringer og perfeksjonere opplevelsen du ser i dag.',
-    about_vision_title: 'Hvorfor Loop Markt?',
-    about_vision_p: 'I en tid hvor personopplysninger ofte handles for profitt, brukte jeg år på å utvikle en plattform der personvern er grunnlaget, ikke bare en funksjon. Ved å kombinere kryptering av militærkvalitet med den innovative Lumo-økonomien, skaper Loop Marked et rom der sikkerhet er strukturelt garantert og engasjement belønnes ganske.',
-    about_win_title: 'En vinn-vinn for alle',
-    about_win_p: 'I dette økosystemet vinner alle. Selgere når et globalt publikum med lokalisert støtte på 22 språk. Kjøpere handler med total trygghet, vel vitende om at dataene deres er kryptert. Sammen bygger vi fremtiden for lokal og global handel – én sikker transaksjon om gangen.',
+    // ── About Us V2 ──
+    about_title: 'The Visionary Mastermind Bak Loop Marked',
+    about_subtitle: 'Loop Marked er resultatet av tusenvis av timer med nådeløs innovasjon, designet og bygget av en enkelt arkitekt drevet av en enestående hensikt.',
+    about_story_title: 'En solorevolusjon',
+    about_story_p1: 'Loop Marked ble født ut fra en radikal visjon: å skape verdens mest sikre og brukersentriske markedsplass. Hver enkelt piksel på denne nettsiden og hver linje med kode i mobilapplikasjonen ble bygget, utviklet og testet av én person. Denne reisen krevde tusenvis av timer med fokus, og gjorde en forstyrrende idé til et førsteklasses, globalt økosystem.',
+    about_story_p2: 'Bak kulissene var dette prosjektet et arbeid med absolutt dedikasjon. Mens den tekniske utførelsen var et solomesterverk, ble grunnlaget drevet av den urokkelige støtten og testingen fra en tett sammensveiset krets av familie og venner. Deres tro på visjonen ga styrken til å erobre alle komplekse hindringer og foredle høyytelsesopplevelsen du ser i dag.',
+    about_vision_title: 'The Genius of the Loop-merket konsept',
+    about_vision_p: 'I en verden hvor personvern ofte blir ignorert, brukte jeg år på å utvikle et system der sikkerhet er kjerne-DNA, ikke en ettertanke. «Mastermind»-konseptet bak Loop Marked er å skape en lukket sløyfeøkonomi der brukerne endelig har kontroll. Ved å integrere ende-til-ende-kryptering med den revolusjonerende Lumo-økonomien, skaper Loop Marked et rom der hver interaksjon er strukturelt sikker og hver bruker blir rimelig belønnet.',
+    about_core_title: 'Innovasjonen: Lumo & Stories',
+    about_core_p: 'I hjertet av Loop Marked-motoren ligger Lumo Economy og oppslukende historier. Dette handler ikke bare om kjøp og salg; det handler om å bygge et digitalt rykte og engasjere seg i et fellesskap som verdsetter personvernet ditt. Lumo-økosystemet gir mulighet for sømløse, sikre transaksjoner mens Stories bringer markedet til live, slik at brukerne kan vise frem verdenene sine 24 timer om gangen.',
+    about_win_title: 'Det ultimate vinn-vinn-økosystemet',
+    about_win_p: 'I dette revolusjonerende økosystemet vinner hver interessent. Selgere får tilgang til en global scene med støtte for 22 språk og RTL-kompatibilitet. Kjøpere handler med absolutt selvtillit, beskyttet av kryptering av militærkvalitet. Sammen endrer vi ikke bare hvordan folk handler; vi etablerer en ny global standard for fremtidens sikre, private og fellesskapsdrevne markedsplass.',
 };
 
 // ── Swedish ──
@@ -578,15 +584,18 @@ const sv = {
     dl_ios: 'Ladda ner på App Store',
     dl_android: 'Skaffa det på Google Play',
     // ── About Us ──
-    about_title: 'The Visionary Behind Loop Marked',
-    about_subtitle: 'Loop Marked är inte bara en app; det är kulmen på år av obevekligt engagemang av en sologrundare.',
-    about_story_title: 'Ensamresan',
-    about_story_p1: 'Loop Marked föddes ur en unik vision: att omdefiniera den digitala marknadsplatsen. Varje enskild pixel på den här webbplatsen och varje kodrad i mobilapplikationen byggdes, utvecklades och testades av en person. Denna resa krävde tusentals timmars engagemang och förvandlade ett störande koncept till ett globalt tillgängligt ekosystem.',
-    about_story_p2: 'Bakom kulisserna var detta projekt ett arbete av kärlek och motståndskraft. Medan utförandet var en soloinsats, stärktes grunden av det orubbliga stödet och testandet från en liten krets av vänner och familj. Deras tro på projektet gav bränslet för att övervinna alla tekniska hinder och fullända upplevelsen du ser idag.',
-    about_vision_title: 'Varför Loop Markt?',
-    about_vision_p: 'I en tid där personuppgifter ofta handlas i vinstsyfte har jag ägnat flera år åt att utveckla en plattform där integritet är grunden, inte bara en funktion. Genom att kombinera kryptering av militär kvalitet med den innovativa Lumo-ekonomin skapar Loop Marked ett utrymme där säkerheten är strukturellt garanterad och engagemanget belönas rättvist.',
-    about_win_title: 'En Win-Win för alla',
-    about_win_p: 'I detta ekosystem vinner alla. Säljare når en global publik med lokal support på 22 språk. Köpare handlar med total sinnesro och vet att deras data är krypterad. Tillsammans bygger vi framtiden för lokal och global handel – en säker transaktion i taget.',
+    // ── About Us V2 ──
+    about_title: 'The Visionary Mastermind Bakom Loop Marked',
+    about_subtitle: 'Loop Marked är resultatet av tusentals timmar av obeveklig innovation, designad och byggd av en enda arkitekt som drivs av ett unikt syfte.',
+    about_story_title: 'En solorevolution',
+    about_story_p1: 'Loop Marked föddes ur en radikal vision: att skapa världens säkraste och mest användarcentrerade marknadsplats. Varje enskild pixel på den här webbplatsen och varje kodrad i mobilapplikationen byggdes, utvecklades och testades av en person. Denna resa krävde tusentals timmars fokus, vilket förvandlade en störande idé till ett förstklassigt, globalt ekosystem.',
+    about_story_p2: 'Bakom kulisserna var detta projekt ett arbete av absolut hängivenhet. Medan det tekniska utförandet var ett solomästerverk, drevs grunden av det orubbliga stödet och testerna från en sammansvetsad krets av familj och vänner. Deras tro på visionen gav styrkan att övervinna varje komplext hinder och förfina den högpresterande upplevelsen du ser idag.',
+    about_vision_title: 'The Genius of the Loop Marked Concept',
+    about_vision_p: 'I en värld där integritet ofta ignoreras har jag ägnat år åt att konstruera ett system där säkerhet är kärnan i DNA, inte en eftertanke. "Mastermind"-konceptet bakom Loop Marked är att skapa en sluten ekonomi där användarna äntligen har kontroll. Genom att integrera end-to-end-kryptering med den revolutionerande Lumo-ekonomin skapar Loop Marked ett utrymme där varje interaktion är strukturellt säker och varje användare belönas rättvist.',
+    about_core_title: 'Innovationen: Lumo & Stories',
+    about_core_p: 'I hjärtat av Loop Marked-motorn ligger Lumo Economy och uppslukande berättelser. Det här handlar inte bara om att köpa och sälja; det handlar om att bygga ett digitalt rykte och engagera sig i en gemenskap som värdesätter din integritet. Lumo-ekosystemet möjliggör sömlösa, säkra transaktioner medan Stories väcker liv på marknaden, så att användare kan visa upp sina världar 24 timmar i taget.',
+    about_win_title: 'Det ultimata win-win-ekosystemet',
+    about_win_p: 'I detta revolutionerande ekosystem vinner varje intressent. Säljare får tillgång till en global scen med stöd för 22 språk och RTL-kompatibilitet. Köpare handlar med absolut förtroende, skyddad av kryptering av militär kvalitet. Tillsammans förändrar vi inte bara hur människor handlar; vi etablerar en ny global standard för framtidens säkra, privata och gemenskapsdrivna marknadsplats.',
 };
 
 // ── Danish ──
@@ -680,15 +689,18 @@ const da = {
     dl_ios: 'Download på App Store',
     dl_android: 'Få det på Google Play',
     // ── About Us ──
-    about_title: 'Visionæren bag løkken er markeret',
-    about_subtitle: 'Loop Marked er ikke bare en app; det er kulminationen på mange års ubønhørlig dedikation fra en solo-grundlægger.',
-    about_story_title: 'Solorejsen',
-    about_story_p1: 'Loop Marked blev født ud fra en enestående vision: at redefinere den digitale markedsplads. Hver enkelt pixel på denne hjemmeside og hver linje kode i mobilapplikationen blev bygget, udviklet og testet af én person. Denne rejse krævede tusindvis af timers dedikation, hvilket gjorde et forstyrrende koncept til et globalt tilgængeligt økosystem.',
-    about_story_p2: 'Bag kulisserne var dette projekt et arbejde med kærlighed og modstandskraft. Mens udførelsen var en soloindsats, blev grundlaget styrket af den urokkelige støtte og test fra en lille kreds af venner og familie. Deres tro på projektet gav brændstof til at overvinde enhver teknisk forhindring og perfektionere den oplevelse, du ser i dag.',
-    about_vision_title: 'Hvorfor Loop Markt?',
-    about_vision_p: 'I en æra, hvor personlige data ofte handles med fortjeneste, brugte jeg år på at udvikle en platform, hvor privatliv er grundlaget, ikke kun en funktion. Ved at kombinere kryptering af militærkvalitet med den innovative Lumo-økonomi skaber Loop Marked et rum, hvor sikkerheden er strukturelt garanteret, og engagementet belønnes rimeligt.',
-    about_win_title: 'En win-win for alle',
-    about_win_p: 'I dette økosystem vinder alle. Sælgere når ud til et globalt publikum med lokal support på 22 sprog. Købere handler med fuld ro i sindet, vel vidende at deres data er krypteret. Sammen bygger vi fremtiden for lokal og global handel - én sikker transaktion ad gangen.',
+    // ── About Us V2 ──
+    about_title: 'The Visionary Mastermind Behind Loop Marked',
+    about_subtitle: 'Loop Marked er resultatet af tusindvis af timers ubarmhjertig innovation, designet og bygget af en enkelt arkitekt drevet af et enestående formål.',
+    about_story_title: 'En solorevolution',
+    about_story_p1: 'Loop Marked blev født ud fra en radikal vision: at skabe verdens mest sikre og brugercentrerede markedsplads. Hver enkelt pixel på denne hjemmeside og hver linje kode i mobilapplikationen blev bygget, udviklet og testet af én person. Denne rejse krævede tusindvis af timers fokus, hvilket gjorde en forstyrrende idé til et premium, globalt økosystem.',
+    about_story_p2: 'Bag kulisserne var dette projekt et arbejde af absolut dedikation. Mens den tekniske udførelse var et solomesterværk, blev grundlaget drevet af den urokkelige støtte og test fra en tæt sammentømret kreds af familie og venner. Deres tro på visionen gav styrken til at overvinde enhver kompleks forhindring og forfine den højtydende oplevelse, du ser i dag.',
+    about_vision_title: 'The Genius of the Loop Marked Concept',
+    about_vision_p: 'I en verden, hvor privatlivets fred ofte ignoreres, brugte jeg år på at udvikle et system, hvor sikkerhed er kerne-DNA, ikke en eftertanke. "Mastermind"-konceptet bag Loop Marked er at skabe en lukket kredsløbsøkonomi, hvor brugerne endelig har kontrol. Ved at integrere end-to-end-kryptering med den revolutionerende Lumo-økonomi skaber Loop Marked et rum, hvor enhver interaktion er strukturelt sikker, og hver bruger bliver rimeligt belønnet.',
+    about_core_title: 'Innovationen: Lumo & Stories',
+    about_core_p: 'I hjertet af Loop Marked-motoren ligger Lumo Economy og fordybende historier. Dette handler ikke kun om køb og salg; det handler om at opbygge et digitalt omdømme og engagere sig i et fællesskab, der værdsætter dit privatliv. Lumo-økosystemet giver mulighed for sømløse, sikre transaktioner, mens Stories bringer markedspladsen til live, så brugerne kan fremvise deres verdener 24 timer ad gangen.',
+    about_win_title: 'Det ultimative win-win-økosystem',
+    about_win_p: 'I dette revolutionerende økosystem vinder enhver interessent. Sælgere får adgang til en global scene med understøttelse af 22 sprog og RTL-kompatibilitet. Købere handler med absolut tillid, beskyttet af kryptering af militærkvalitet. Sammen ændrer vi ikke bare, hvordan folk handler; vi etablerer en ny global standard for fremtidens sikre, private og samfundsdrevne markedsplads.',
 };
 
 // ── Finnish ──
@@ -780,15 +792,18 @@ const fi = {
     dl_ios: 'Lataa App Storesta',
     dl_android: 'Hanki se Google Playsta',
     // ── About Us ──
-    about_title: 'Silmukan takana oleva visionääri merkitty',
-    about_subtitle: 'Loop Marked ei ole vain sovellus; se on sooloperustajan vuosien hellittämättömän omistautumisen huipentuma.',
-    about_story_title: 'Yksinmatka',
-    about_story_p1: 'Loop Marked syntyi ainutlaatuisesta visiosta: määritellä digitaaliset markkinat uudelleen. Tämän verkkosivuston jokaisen pikselin ja mobiilisovelluksen jokaisen koodirivin suunnitteli, kehitti ja testasi yksi henkilö. Tämä matka vaati tuhansia tunteja omistautumista ja muutti häiritsevän konseptin maailmanlaajuisesti saavutettavaksi ekosysteemiksi.',
-    about_story_p2: 'Kulissien takana tämä projekti oli rakkauden ja joustavuuden työtä. Vaikka toteutus oli yksin, perustaa vahvisti horjumaton tuki ja testaus pieneltä ystävä- ja perhepiiriltä. Heidän uskonsa projektiin tarjosi polttoainetta jokaisen teknisen esteen voittamiseksi ja täydellisen kokemuksen, jonka näet tänään.',
-    about_vision_title: 'Miksi Loop Markt?',
-    about_vision_p: 'Aikakaudella, jolloin henkilötiedoilla käydään usein kauppaa voittoa tavoitellen, vietin vuosia sellaisen alustan suunnittelussa, jossa yksityisyys on perusta, ei vain ominaisuus. Yhdistämällä sotilasluokan salauksen innovatiiviseen Lumo-talouteen Loop Marked luo tilan, jossa turvallisuus on rakenteellisesti taattu ja sitoutuminen palkitaan reilusti.',
-    about_win_title: 'Win-Win kaikille',
-    about_win_p: 'Tässä ekosysteemissä kaikki voittavat. Myyjät tavoittavat maailmanlaajuisen yleisön paikallisella tuella 22 kielellä. Ostajat käyvät kauppaa täysin mielenrauhalla tietäen, että heidän tietonsa on salattu. Rakennamme yhdessä paikallisen ja globaalin kaupan tulevaisuutta – yksi turvallinen kauppa kerrallaan.',
+    // ── About Us V2 ──
+    about_title: 'Visionary Mastermind Behind Loop Marked',
+    about_subtitle: 'Loop Marked on tuhansien tuntien säälimättömän innovaation tulos, jonka on suunnitellut ja rakentanut yksittäinen arkkitehti, jolla on ainutlaatuinen tarkoitus.',
+    about_story_title: 'Yksinomainen vallankumous',
+    about_story_p1: 'Loop Marked syntyi radikaalista visiosta: luoda maailman turvallisin ja käyttäjäkeskeisin markkinapaikka. Tämän verkkosivuston jokaisen pikselin ja mobiilisovelluksen jokaisen koodirivin suunnitteli, kehitti ja testasi yksi henkilö. Tämä matka vaati tuhansia tunteja keskittymistä, mikä muutti häiritsevän idean huippuluokan globaaliksi ekosysteemiksi.',
+    about_story_p2: 'Kulissien takana tämä projekti oli täydellistä omistautumista. Vaikka tekninen toteutus oli yksinmestariteos, perustaa ruokkii tiiviin perheen ja ystäväpiirin horjumaton tuki ja testaus. Heidän uskonsa visioon antoi voimaa voittaa kaikki monimutkaiset esteet ja jalostaa korkean suorituskyvyn kokemusta, jonka näet tänään.',
+    about_vision_title: 'The Genius of the Loop Marked -konsepti',
+    about_vision_p: 'Maailmassa, jossa yksityisyyttä usein laiminlyödään, vietin vuosia järjestelmän suunnittelussa, jossa turvallisuus on DNA:n ydin, ei jälkikäteen. Loop Markedin "Mastermind"-konsepti on luoda suljetun kierron talous, jossa käyttäjät ovat vihdoin hallinnassa. Integroimalla päästä päähän -salauksen vallankumoukselliseen Lumo-talouteen Loop Marked luo tilan, jossa jokainen vuorovaikutus on rakenteellisesti turvallista ja jokainen käyttäjä palkitaan oikeudenmukaisesti.',
+    about_core_title: 'Innovaatio: Lumo & Stories',
+    about_core_p: 'Loop Marked -moottorin ytimessä ovat Lumo Economy ja mukaansatempaavat tarinat. Tämä ei ole vain ostamista ja myymistä; Kyse on digitaalisen maineen rakentamisesta ja osallistumisesta yhteisöön, joka arvostaa yksityisyyttäsi. Lumo-ekosysteemi mahdollistaa saumattoman ja turvallisen kaupankäynnin, kun taas Stories herättää markkinoiden henkiin, jolloin käyttäjät voivat esitellä maailmaansa 24 tuntia kerrallaan.',
+    about_win_title: 'Lopullinen win-win ekosysteemi',
+    about_win_p: 'Tässä vallankumouksellisessa ekosysteemissä jokainen sidosryhmä voittaa. Myyjät pääsevät maailmanlaajuiselle näyttämölle tuella 22 kielelle ja RTL-yhteensopivuus. Ostajat käyvät kauppaa ehdottoman luottamuksella, suojattu sotilasluokan salauksella. Yhdessä emme vain muuta ihmisten kaupankäyntiä; luomme uuden maailmanlaajuisen standardin tulevaisuuden turvalliselle, yksityiselle ja yhteisövetoiselle markkinapaikalle.',
 };
 
 // ── German ──
@@ -888,15 +903,18 @@ const de = {
     dl_ios: 'Im App Store herunterladen',
     dl_android: 'Holen Sie es sich bei Google Play',
     // ── About Us ──
-    about_title: 'Der Visionär hinter der Schleife markiert',
-    about_subtitle: 'Loop Marked ist nicht nur eine App; Es ist der Höhepunkt jahrelangen unermüdlichen Engagements eines Einzelgründers.',
-    about_story_title: 'Die Solo-Reise',
-    about_story_p1: 'Loop Marked entstand aus einer einzigartigen Vision: den digitalen Markt neu zu definieren. Jedes einzelne Pixel auf dieser Website und jede Codezeile in der mobilen Anwendung wurde von einer Person entworfen, entwickelt und getestet. Diese Reise erforderte Tausende von Stunden Hingabe und verwandelte ein bahnbrechendes Konzept in ein weltweit zugängliches Ökosystem.',
-    about_story_p2: 'Hinter den Kulissen war dieses Projekt eine Arbeit der Liebe und Belastbarkeit. Während die Durchführung eine Einzelleistung war, wurde das Fundament durch die unerschütterliche Unterstützung und Prüfung durch einen kleinen Freundes- und Familienkreis gestärkt. Ihr Glaube an das Projekt lieferte den Antrieb, jedes technische Hindernis zu überwinden und das Erlebnis, das Sie heute sehen, zu perfektionieren.',
-    about_vision_title: 'Warum Loop Markt?',
-    about_vision_p: 'In einer Zeit, in der persönliche Daten häufig mit Gewinn gehandelt werden, habe ich Jahre damit verbracht, eine Plattform zu entwickeln, bei der der Datenschutz die Grundlage und nicht nur eine Funktion darstellt. Durch die Kombination von Verschlüsselung auf Militärniveau mit der innovativen Lumo-Wirtschaft schafft Loop Marked einen Raum, in dem Sicherheit strukturell garantiert und Engagement fair belohnt wird.',
-    about_win_title: 'Eine Win-Win-Situation für alle',
-    about_win_p: 'In diesem Ökosystem gewinnt jeder. Verkäufer erreichen ein globales Publikum mit lokalisiertem Support in 22 Sprachen. Käufer können beruhigt handeln, da sie wissen, dass ihre Daten verschlüsselt sind. Gemeinsam gestalten wir die Zukunft des lokalen und globalen Handels – eine sichere Transaktion nach der anderen.',
+    // ── About Us V2 ──
+    about_title: 'Der visionäre Mastermind hinter Loop Marked',
+    about_subtitle: 'Loop Marked ist das Ergebnis tausender Stunden unermüdlicher Innovation, entworfen und gebaut von einem einzigen Architekten, angetrieben von einem einzigen Ziel.',
+    about_story_title: 'Eine Solo-Revolution',
+    about_story_p1: 'Loop Marked entstand aus einer radikalen Vision: den sichersten und benutzerzentriertesten Marktplatz der Welt zu schaffen. Jedes einzelne Pixel auf dieser Website und jede Codezeile in der mobilen Anwendung wurde von einer Person entworfen, entwickelt und getestet. Diese Reise erforderte Tausende von Stunden Konzentration und verwandelte eine bahnbrechende Idee in ein erstklassiges, globales Ökosystem.',
+    about_story_p2: 'Hinter den Kulissen war dieses Projekt eine Arbeit absoluter Hingabe. Während die technische Ausführung ein Solo-Meisterwerk war, wurde die Gründung durch die unerschütterliche Unterstützung und Prüfung durch einen engen Kreis von Familie und Freunden vorangetrieben. Ihr Glaube an die Vision gab uns die Kraft, jedes komplexe Hindernis zu überwinden und das Hochleistungserlebnis, das Sie heute sehen, zu verfeinern.',
+    about_vision_title: 'Das Genie des Loop-Marked-Konzepts',
+    about_vision_p: 'In einer Welt, in der der Datenschutz oft ignoriert wird, habe ich Jahre damit verbracht, ein System zu entwickeln, bei dem Sicherheit die Kern-DNA ist und kein nachträglicher Einfall. Das „Mastermind“-Konzept hinter Loop Marked besteht darin, eine geschlossene Wirtschaft zu schaffen, in der die Benutzer endlich die Kontrolle haben. Durch die Integration der Ende-zu-Ende-Verschlüsselung mit der revolutionären Lumo-Wirtschaft schafft Loop Marked einen Raum, in dem jede Interaktion strukturell sicher ist und jeder Benutzer angemessen entlohnt wird.',
+    about_core_title: 'Die Innovation: Lumo & Stories',
+    about_core_p: 'Das Herzstück der Loop Marked-Engine sind die Lumo Economy und immersive Stories. Dabei geht es nicht nur um Kaufen und Verkaufen; Es geht darum, einen digitalen Ruf aufzubauen und sich in einer Community zu engagieren, die Ihre Privatsphäre schätzt. Das Lumo-Ökosystem ermöglicht nahtlose, sichere Transaktionen, während Stories den Marktplatz zum Leben erwecken und es Benutzern ermöglichen, ihre Welten 24 Stunden am Stück zu präsentieren.',
+    about_win_title: 'Das ultimative Win-Win-Ökosystem',
+    about_win_p: 'In diesem revolutionären Ökosystem gewinnt jeder Stakeholder. Verkäufer erhalten Zugriff auf eine globale Bühne mit Unterstützung für 22 Sprachen und RTL-Kompatibilität. Käufer handeln mit absolutem Vertrauen, geschützt durch Verschlüsselung nach Militärstandard. Gemeinsam verändern wir nicht nur die Art und Weise, wie Menschen handeln; Wir etablieren einen neuen globalen Standard für den sicheren, privaten und gemeinschaftsgesteuerten Marktplatz der Zukunft.',
 };
 
 // ── French ──
@@ -994,15 +1012,18 @@ const fr = {
     dl_ios: 'Télécharger sur l\'App Store',
     dl_android: 'Obtenez-le sur Google Play',
     // ── About Us ──
-    about_title: 'Le visionnaire derrière la boucle marquée',
-    about_subtitle: 'Loop Marked n\'est pas seulement une application ; c\'est le point culminant d\'années de dévouement incessant d\'un fondateur solo.',
-    about_story_title: 'Le voyage en solo',
-    about_story_p1: 'Loop Marked est née d’une vision singulière : redéfinir le marché numérique. Chaque pixel de ce site Web et chaque ligne de code de l\'application mobile ont été architecturés, développés et testés par une seule personne. Ce voyage a nécessité des milliers d’heures de dévouement, transformant un concept disruptif en un écosystème accessible à l’échelle mondiale.',
-    about_story_p2: 'En coulisses, ce projet était un travail d’amour et de résilience. Bien que l\'exécution ait été un effort solo, les fondations ont été renforcées par le soutien indéfectible et les tests d\'un petit cercle d\'amis et de famille. Leur confiance dans le projet a fourni le carburant nécessaire pour surmonter tous les obstacles techniques et perfectionner l’expérience que vous voyez aujourd’hui.',
-    about_vision_title: 'Pourquoi Loop Markt?',
-    about_vision_p: 'À une époque où les données personnelles sont souvent échangées à des fins lucratives, j\'ai passé des années à concevoir une plateforme où la confidentialité est le fondement, pas seulement une fonctionnalité. En combinant un cryptage de niveau militaire avec l\'économie innovante de Lumo, Loop Marked crée un espace où la sécurité est structurellement garantie et l\'engagement est équitablement récompensé.',
-    about_win_title: 'Un gagnant-gagnant pour tous',
-    about_win_p: 'Dans cet écosystème, tout le monde gagne. Les vendeurs atteignent un public mondial avec une assistance localisée en 22 langues. Les acheteurs négocient en toute sérénité, sachant que leurs données sont cryptées. Ensemble, nous construisons l’avenir du commerce local et mondial – une transaction sécurisée à la fois.',
+    // ── About Us V2 ──
+    about_title: 'Le cerveau visionnaire derrière la boucle marquée',
+    about_subtitle: 'Loop Marked est le résultat de milliers d’heures d’innovation incessante, conçue et construite par un seul architecte animé par un objectif unique.',
+    about_story_title: 'Une révolution solo',
+    about_story_p1: 'Loop Marked est né d\'une vision radicale : créer la place de marché la plus sécurisée et la plus centrée sur l\'utilisateur au monde. Chaque pixel de ce site Web et chaque ligne de code de l\'application mobile ont été architecturés, développés et testés par une seule personne. Ce voyage a nécessité des milliers d’heures de concentration, transformant une idée disruptive en un écosystème mondial haut de gamme.',
+    about_story_p2: 'Dans les coulisses, ce projet a été un travail de dévouement absolu. Même si l’exécution technique était un chef-d’œuvre solo, la fondation a été alimentée par le soutien indéfectible et les tests d’un cercle très uni de famille et d’amis. Leur croyance en cette vision leur a donné la force de surmonter tous les obstacles complexes et d’affiner l’expérience de haute performance que vous voyez aujourd’hui.',
+    about_vision_title: 'Le génie du concept marqué Loop',
+    about_vision_p: 'Dans un monde où la confidentialité est souvent ignorée, j\'ai passé des années à concevoir un système où la sécurité est l\'ADN central, et non une réflexion après coup. Le concept « Mastermind » derrière Loop Marked est de créer une économie en boucle fermée où les utilisateurs ont enfin le contrôle. En intégrant le cryptage de bout en bout à l\'économie révolutionnaire de Lumo, Loop Marked crée un espace où chaque interaction est structurellement sécurisée et chaque utilisateur est équitablement récompensé.',
+    about_core_title: 'L\'innovation : Lumo et histoires',
+    about_core_p: 'Au cœur du moteur Loop Marked se trouvent l’économie Lumo et les histoires immersives. Il ne s’agit pas seulement d’acheter et de vendre ; il s\'agit de bâtir une réputation numérique et de s\'engager dans une communauté qui valorise votre vie privée. L\'écosystème Lumo permet des transactions transparentes et sécurisées tandis que les Stories donnent vie au marché, permettant aux utilisateurs de présenter leurs mondes 24 heures sur 24.',
+    about_win_title: 'L\'écosystème gagnant-gagnant ultime',
+    about_win_p: 'Dans cet écosystème révolutionnaire, chaque partie prenante est gagnante. Les vendeurs accèdent à une scène mondiale avec la prise en charge de 22 langues et la compatibilité RTL. Les acheteurs négocient en toute confiance, protégés par un cryptage de niveau militaire. Ensemble, nous ne changeons pas seulement la façon dont les gens font du commerce ; nous établissons une nouvelle norme mondiale pour le marché sécurisé, privé et communautaire du futur.',
 };
 
 // ── Spanish ──
@@ -1118,15 +1139,18 @@ const es = {
     dl_ios: 'Descargar en la tienda de aplicaciones',
     dl_android: 'Consíguelo en Google Play',
     // ── About Us ──
-    about_title: 'El visionario detrás de Loop Marked',
-    about_subtitle: 'Loop Marked no es sólo una aplicación; es la culminación de años de dedicación incansable por parte de un fundador en solitario.',
-    about_story_title: 'El viaje en solitario',
-    about_story_p1: 'Loop Marked nació de una visión singular: redefinir el mercado digital. Cada píxel de este sitio web y cada línea de código de la aplicación móvil fueron diseñados, desarrollados y probados por una sola persona. Este viaje requirió miles de horas de dedicación, convirtiendo un concepto disruptivo en un ecosistema accesible globalmente.',
-    about_story_p2: 'Detrás de escena, este proyecto fue un trabajo de amor y resiliencia. Si bien la ejecución fue un esfuerzo en solitario, la base se fortaleció con el apoyo inquebrantable y las pruebas de un pequeño círculo de amigos y familiares. Su fe en el proyecto proporcionó el combustible para superar todos los obstáculos técnicos y perfeccionar la experiencia que vemos hoy.',
-    about_vision_title: '¿Por qué LoopMarkt?',
-    about_vision_p: 'En una era en la que los datos personales a menudo se comercializan con fines de lucro, pasé años diseñando una plataforma donde la privacidad es la base, no solo una característica. Al combinar el cifrado de grado militar con la innovadora economía Lumo, Loop Marked crea un espacio donde la seguridad está estructuralmente garantizada y el compromiso se recompensa de manera justa.',
-    about_win_title: 'Un beneficio mutuo para todos',
-    about_win_p: 'En este ecosistema todos ganan. Los vendedores llegan a una audiencia global con soporte localizado en 22 idiomas. Los compradores comercian con total tranquilidad sabiendo que sus datos están cifrados. Juntos, estamos construyendo el futuro del comercio local y global: una transacción segura a la vez.',
+    // ── About Us V2 ──
+    about_title: 'El cerebro visionario detrás de Loop Marked',
+    about_subtitle: 'Loop Marked es el resultado de miles de horas de innovación incesante, diseñado y construido por un solo arquitecto impulsado por un propósito singular.',
+    about_story_title: 'Una revolución en solitario',
+    about_story_p1: 'Loop Marked nació de una visión radical: crear el mercado más seguro y centrado en el usuario del mundo. Cada píxel de este sitio web y cada línea de código de la aplicación móvil fueron diseñados, desarrollados y probados por una sola persona. Este viaje requirió miles de horas de concentración, convirtiendo una idea disruptiva en un ecosistema global premium.',
+    about_story_p2: 'Detrás de escena, este proyecto fue un trabajo de absoluta dedicación. Si bien la ejecución técnica fue una obra maestra en solitario, la base fue impulsada por el apoyo inquebrantable y las pruebas de un círculo muy unido de familiares y amigos. Su creencia en la visión les proporcionó la fuerza para superar todos los obstáculos complejos y perfeccionar la experiencia de alto rendimiento que vemos hoy.',
+    about_vision_title: 'El genio del concepto de bucle marcado',
+    about_vision_p: 'En un mundo donde a menudo se ignora la privacidad, pasé años diseñando un sistema donde la seguridad es el ADN central, no una idea de último momento. El concepto "Mastermind" detrás de Loop Marked es crear una economía de circuito cerrado donde los usuarios finalmente tengan el control. Al integrar el cifrado de extremo a extremo con la revolucionaria economía Lumo, Loop Marked crea un espacio donde cada interacción es estructuralmente segura y cada usuario recibe una recompensa justa.',
+    about_core_title: 'La innovación: Lumo e historias',
+    about_core_p: 'En el corazón del motor Loop Marked se encuentra Lumo Economy y las Historias inmersivas. No se trata sólo de comprar y vender; se trata de construir una reputación digital y participar en una comunidad que valora su privacidad. El ecosistema Lumo permite transacciones seguras y sin inconvenientes, mientras que las Historias dan vida al mercado, permitiendo a los usuarios mostrar sus mundos las 24 horas.',
+    about_win_title: 'El ecosistema definitivo en el que todos ganan',
+    about_win_p: 'En este ecosistema revolucionario, todas las partes interesadas ganan. Los vendedores acceden a un escenario global con soporte para 22 idiomas y compatibilidad RTL. Los compradores comercian con absoluta confianza, protegidos por cifrado de grado militar. Juntos, no sólo estamos cambiando la forma en que la gente comercia; Estamos estableciendo un nuevo estándar global para el mercado seguro, privado e impulsado por la comunidad del futuro.',
 };
 
 // ── Italian ──
@@ -1240,15 +1264,18 @@ const it = {
     dl_ios: 'Scarica sull\'App Store',
     dl_android: 'Scaricalo su Google Play',
     // ── About Us ──
-    about_title: 'Il visionario dietro il ciclo segnato',
-    about_subtitle: 'Loop Marked non è solo un\'app; è il culmine di anni di incessante dedizione da parte di un fondatore solista.',
-    about_story_title: 'Il viaggio in solitaria',
-    about_story_p1: 'Loop Marked nasce da una visione singolare: ridefinire il mercato digitale. Ogni singolo pixel su questo sito Web e ogni riga di codice nell\'applicazione mobile è stato progettato, sviluppato e testato da una persona. Questo viaggio ha richiesto migliaia di ore di dedizione, trasformando un concetto dirompente in un ecosistema accessibile a livello globale.',
-    about_story_p2: 'Dietro le quinte, questo progetto è stato un lavoro fatto di amore e resilienza. Sebbene l’esecuzione sia stata uno sforzo individuale, la fondazione è stata rafforzata dal sostegno incrollabile e dai test di una ristretta cerchia di amici e familiari. La loro fiducia nel progetto ha fornito il carburante per superare ogni ostacolo tecnico e perfezionare l\'esperienza che vedete oggi.',
-    about_vision_title: 'Perchè Loop Markt?',
-    about_vision_p: 'In un’epoca in cui i dati personali vengono spesso scambiati a scopo di lucro, ho passato anni a progettare una piattaforma in cui la privacy è il fondamento, non solo una funzionalità. Combinando la crittografia di livello militare con l’innovativa economia Lumo, Loop Marked crea uno spazio in cui la sicurezza è strutturalmente garantita e l’impegno è equamente ricompensato.',
-    about_win_title: 'Un vantaggio per tutti',
-    about_win_p: 'In questo ecosistema, tutti vincono. I venditori raggiungono un pubblico globale con supporto localizzato in 22 lingue. Gli acquirenti commerciano in totale tranquillità, sapendo che i loro dati sono crittografati. Insieme, stiamo costruendo il futuro del commercio locale e globale: una transazione sicura alla volta.',
+    // ── About Us V2 ──
+    about_title: 'La mente visionaria dietro Loop Marked',
+    about_subtitle: 'Loop Marked è il risultato di migliaia di ore di incessante innovazione, progettato e costruito da un unico architetto guidato da un unico scopo.',
+    about_story_title: 'Una rivoluzione solitaria',
+    about_story_p1: 'Loop Marked nasce da una visione radicale: creare il mercato più sicuro e incentrato sull\'utente al mondo. Ogni singolo pixel su questo sito Web e ogni riga di codice nell\'applicazione mobile è stato progettato, sviluppato e testato da una persona. Questo viaggio ha richiesto migliaia di ore di concentrazione, trasformando un\'idea dirompente in un ecosistema globale premium.',
+    about_story_p2: 'Dietro le quinte, questo progetto è stato un lavoro di assoluta dedizione. Sebbene l\'esecuzione tecnica sia stata un capolavoro solista, le fondamenta sono state alimentate dal supporto incrollabile e dai test di una cerchia ristretta di familiari e amici. La loro fede nella visione ha fornito la forza per superare ogni ostacolo complesso e perfezionare l\'esperienza ad alte prestazioni che vedete oggi.',
+    about_vision_title: 'Il concetto marcato Genius of the Loop',
+    about_vision_p: 'In un mondo in cui la privacy viene spesso ignorata, ho trascorso anni a progettare un sistema in cui la sicurezza è il DNA fondamentale e non un ripensamento. Il concetto "Mastermind" alla base di Loop Marked è quello di creare un\'economia a circuito chiuso in cui gli utenti abbiano finalmente il controllo. Integrando la crittografia end-to-end con la rivoluzionaria economia Lumo, Loop Marked crea uno spazio in cui ogni interazione è strutturalmente sicura e ogni utente è equamente ricompensato.',
+    about_core_title: 'L\'innovazione: Lumo e storie',
+    about_core_p: 'Al centro del motore Loop Marked si trovano la Lumo Economy e le storie coinvolgenti. Non si tratta solo di acquistare e vendere; si tratta di costruire una reputazione digitale e impegnarsi in una comunità che valorizza la tua privacy. L\'ecosistema Lumo consente transazioni sicure e senza intoppi mentre le Storie danno vita al mercato, consentendo agli utenti di mostrare i loro mondi 24 ore alla volta.',
+    about_win_title: 'L’ecosistema win-win definitivo',
+    about_win_p: 'In questo ecosistema rivoluzionario, ogni stakeholder vince. I venditori accedono a un palcoscenico globale con supporto per 22 lingue e compatibilità RTL. Gli acquirenti commerciano in assoluta sicurezza, protetti da crittografia di livello militare. Insieme, non stiamo solo cambiando il modo in cui le persone commerciano; stiamo stabilendo un nuovo standard globale per il mercato del futuro sicuro, privato e guidato dalla comunità.',
 };
 
 // ── Dutch ──
@@ -1361,15 +1388,18 @@ const nl = {
     dl_ios: 'Downloaden in de App Store',
     dl_android: 'Download het op Google Play',
     // ── About Us ──
-    about_title: 'De visionair achter Loop gemarkeerd',
-    about_subtitle: 'Loop Marked is niet zomaar een app; het is het resultaat van jarenlange meedogenloze toewijding van een solo-oprichter.',
-    about_story_title: 'De soloreis',
-    about_story_p1: 'Loop Marked is ontstaan ​​uit een unieke visie: het herdefiniëren van de digitale markt. Elke pixel op deze website en elke regel code in de mobiele applicatie is door één persoon ontworpen, ontwikkeld en getest. Deze reis vergde duizenden uren toewijding, waarbij een disruptief concept werd omgezet in een wereldwijd toegankelijk ecosysteem.',
-    about_story_p2: 'Achter de schermen was dit project een werk van liefde en veerkracht. Hoewel de uitvoering een solo-inspanning was, werd de basis versterkt door de niet aflatende steun en testen van een kleine kring van vrienden en familie. Hun geloof in het project vormde de brandstof om elk technisch obstakel te overwinnen en de ervaring die je vandaag de dag ziet te perfectioneren.',
-    about_vision_title: 'Waarom Loopmarkt?',
-    about_vision_p: 'In een tijdperk waarin persoonlijke gegevens vaak worden verhandeld voor winst, heb ik jarenlang een platform ontwikkeld waarin privacy de basis is, en niet slechts een functie. Door encryptie op militair niveau te combineren met de innovatieve Lumo-economie, creëert Loop Marked een ruimte waar veiligheid structureel wordt gegarandeerd en betrokkenheid eerlijk wordt beloond.',
-    about_win_title: 'Een win-win voor iedereen',
-    about_win_p: 'In dit ecosysteem wint iedereen. Verkopers bereiken een wereldwijd publiek met gelokaliseerde ondersteuning in 22 talen. Kopers handelen met een gerust hart, wetende dat hun gegevens gecodeerd zijn. Samen bouwen we aan de toekomst van de lokale en mondiale handel – één veilige transactie tegelijk.',
+    // ── About Us V2 ──
+    about_title: 'Het visionaire brein achter Loop gemarkeerd',
+    about_subtitle: 'Loop Marked is het resultaat van duizenden uren meedogenloze innovatie, ontworpen en gebouwd door één enkele architect, gedreven door één enkel doel.',
+    about_story_title: 'Een solo-revolutie',
+    about_story_p1: 'Loop Marked is ontstaan ​​uit een radicale visie: het creëren van \'s werelds meest veilige en gebruikersgerichte marktplaats. Elke pixel op deze website en elke regel code in de mobiele applicatie is door één persoon ontworpen, ontwikkeld en getest. Deze reis vergde duizenden uren aandacht, waardoor een disruptief idee werd omgezet in een premium, mondiaal ecosysteem.',
+    about_story_p2: 'Achter de schermen was dit project een werk van absolute toewijding. Hoewel de technische uitvoering een solo-meesterwerk was, werd de basis gevoed door de niet aflatende steun en testen van een hechte kring van familie en vrienden. Hun geloof in de visie gaf de kracht om elk complex obstakel te overwinnen en de hoogwaardige ervaring die je vandaag de dag ziet te verfijnen.',
+    about_vision_title: 'Het genie van het lusgemarkeerde concept',
+    about_vision_p: 'In een wereld waar privacy vaak wordt genegeerd, heb ik jarenlang een systeem ontwikkeld waarin veiligheid het kern-DNA is, en niet een bijzaak. Het "Mastermind"-concept achter Loop Marked is het creëren van een gesloten-luseconomie waarin gebruikers eindelijk de controle hebben. Door end-to-end encryptie te integreren met de revolutionaire Lumo-economie, creëert Loop Marked een ruimte waar elke interactie structureel veilig is en elke gebruiker eerlijk wordt beloond.',
+    about_core_title: 'De innovatie: Lumo & Stories',
+    about_core_p: 'De kern van de Loop Marked-engine bestaat uit de Lumo Economy en meeslepende verhalen. Dit gaat niet alleen over kopen en verkopen; het gaat over het opbouwen van een digitale reputatie en het deelnemen aan een gemeenschap die uw privacy waardeert. Het Lumo-ecosysteem zorgt voor naadloze, veilige transacties, terwijl Stories de markt tot leven brengen, waardoor gebruikers hun werelden 24 uur per dag kunnen laten zien.',
+    about_win_title: 'Het ultieme win-win-ecosysteem',
+    about_win_p: 'In dit revolutionaire ecosysteem wint elke stakeholder. Verkopers hebben toegang tot een mondiaal podium met ondersteuning voor 22 talen en RTL-compatibiliteit. Kopers handelen met absoluut vertrouwen, beschermd door codering van militaire kwaliteit. Samen veranderen we niet alleen de manier waarop mensen handelen; we vestigen een nieuwe mondiale standaard voor de veilige, private en gemeenschapsgestuurde marktplaats van de toekomst.',
 };
 
 // ── Portuguese ──
@@ -1482,15 +1512,18 @@ const pt = {
     dl_ios: 'Baixe na App Store',
     dl_android: 'Obtenha no Google Play',
     // ── About Us ──
-    about_title: 'O Visionário Atrás do Loop Marcado',
-    about_subtitle: 'Loop Marked não é apenas um aplicativo; é o culminar de anos de dedicação incansável de um fundador solo.',
-    about_story_title: 'A jornada solo',
-    about_story_p1: 'A Loop Marked nasceu de uma visão singular: redefinir o mercado digital. Cada pixel deste site e cada linha de código do aplicativo móvel foram arquitetados, desenvolvidos e testados por uma pessoa. Esta jornada exigiu milhares de horas de dedicação, transformando um conceito disruptivo num ecossistema globalmente acessível.',
-    about_story_p2: 'Nos bastidores, este projeto foi um trabalho de amor e resiliência. Embora a execução tenha sido um esforço individual, a base foi fortalecida pelo apoio inabalável e pelos testes de um pequeno círculo de amigos e familiares. A crença deles no projeto forneceu o combustível para superar todos os obstáculos técnicos e aperfeiçoar a experiência que você vê hoje.',
-    about_vision_title: 'Por que Loop Markt?',
-    about_vision_p: 'Numa era em que os dados pessoais são frequentemente negociados com fins lucrativos, passei anos a conceber uma plataforma onde a privacidade é a base e não apenas uma funcionalidade. Ao combinar a criptografia de nível militar com a economia inovadora da Lumo, a Loop Marked cria um espaço onde a segurança é estruturalmente garantida e o envolvimento é recompensado de forma justa.',
-    about_win_title: 'Uma situação em que todos ganham',
-    about_win_p: 'Neste ecossistema, todos ganham. Os vendedores alcançam um público global com suporte localizado em 22 idiomas. Os compradores negociam com total tranquilidade, sabendo que seus dados estão criptografados. Juntos, estamos a construir o futuro do comércio local e global — uma transação segura de cada vez.',
+    // ── About Us V2 ──
+    about_title: 'O mentor visionário por trás do Loop Marked',
+    about_subtitle: 'Loop Marked é o resultado de milhares de horas de inovação incansável, projetada e construída por um único arquiteto movido por um propósito único.',
+    about_story_title: 'Uma revolução individual',
+    about_story_p1: 'A Loop Marked nasceu de uma visão radical: criar o mercado mais seguro e centrado no usuário do mundo. Cada pixel deste site e cada linha de código do aplicativo móvel foram arquitetados, desenvolvidos e testados por uma pessoa. Essa jornada exigiu milhares de horas de foco, transformando uma ideia disruptiva em um ecossistema global premium.',
+    about_story_p2: 'Nos bastidores, este projeto foi um trabalho de dedicação absoluta. Embora a execução técnica tenha sido uma obra-prima solo, a base foi alimentada pelo apoio inabalável e pelos testes de um círculo unido de familiares e amigos. A crença deles na visão proporcionou a força necessária para superar todos os obstáculos complexos e refinar a experiência de alto desempenho que você vê hoje.',
+    about_vision_title: 'O gênio do conceito marcado em loop',
+    about_vision_p: 'Num mundo onde a privacidade é frequentemente ignorada, passei anos a conceber um sistema onde a segurança é o ADN central e não uma reflexão tardia. O conceito “Mastermind” por trás do Loop Marked é criar uma economia de circuito fechado onde os usuários estão finalmente no controle. Ao integrar a criptografia ponta a ponta com a revolucionária economia Lumo, o Loop Marked cria um espaço onde cada interação é estruturalmente segura e cada usuário é recompensado de forma justa.',
+    about_core_title: 'A inovação: Lumo e histórias',
+    about_core_p: 'No coração do mecanismo Loop Marked está a Economia Lumo e as Histórias imersivas. Não se trata apenas de comprar e vender; trata-se de construir uma reputação digital e envolver-se numa comunidade que valoriza a sua privacidade. O ecossistema Lumo permite transações seguras e contínuas, enquanto as Stories dão vida ao mercado, permitindo aos usuários mostrar seus mundos 24 horas por dia.',
+    about_win_title: 'O ecossistema ganha-ganha definitivo',
+    about_win_p: 'Neste ecossistema revolucionário, todas as partes interessadas ganham. Os vendedores acessam um cenário global com suporte para 22 idiomas e compatibilidade RTL. Os compradores negociam com absoluta confiança, protegidos por criptografia de nível militar. Juntos, não estamos apenas a mudar a forma como as pessoas comercializam; estamos estabelecendo um novo padrão global para o mercado do futuro seguro, privado e voltado para a comunidade.',
 };
 
 // ── Polish ──
@@ -1603,15 +1636,18 @@ const pl = {
     dl_ios: 'Pobierz w App Store',
     dl_android: 'Pobierz go w Google Play',
     // ── About Us ──
-    about_title: 'Oznaczono wizjonerską pętlę za pętlą',
-    about_subtitle: 'Loop Marked to nie tylko aplikacja; to kulminacja lat nieustannego poświęcenia solowego założyciela.',
-    about_story_title: 'Samotna podróż',
-    about_story_p1: 'Loop Marked narodził się z wyjątkowej wizji: zdefiniowania na nowo rynku cyfrowego. Każdy piksel na tej stronie i każda linia kodu w aplikacji mobilnej zostały zaprojektowane, opracowane i przetestowane przez jedną osobę. Ta podróż wymagała tysięcy godzin poświęcenia i przekształcenia przełomowej koncepcji w globalnie dostępny ekosystem.',
-    about_story_p2: 'Za kulisami ten projekt był dziełem miłości i odporności. Chociaż wykonanie było dziełem solowym, podstawy zostały wzmocnione dzięki niezachwianemu wsparciu i testom ze strony małego kręgu przyjaciół i rodziny. Ich wiara w projekt zapewniła paliwo do pokonania wszelkich przeszkód technicznych i udoskonalenia doświadczenia, które dzisiaj widzisz.',
-    about_vision_title: 'Dlaczego Loop Markt?',
-    about_vision_p: 'W epoce, w której dane osobowe często wymienia się w celach zarobkowych, spędziłem lata pracując nad platformą, w której prywatność jest podstawą, a nie tylko funkcją. Łącząc szyfrowanie na poziomie wojskowym z innowacyjną ekonomią Lumo, Loop Marked tworzy przestrzeń, w której bezpieczeństwo jest strukturalnie gwarantowane, a zaangażowanie jest godziwie nagradzane.',
-    about_win_title: 'Korzyści dla wszystkich',
-    about_win_p: 'W tym ekosystemie każdy wygrywa. Sprzedawcy docierają do odbiorców na całym świecie dzięki zlokalizowanemu wsparciu w 22 językach. Kupujący handlują z całkowitym spokojem, wiedząc, że ich dane są szyfrowane. Razem budujemy przyszłość handlu lokalnego i globalnego — jedna bezpieczna transakcja na raz.',
+    // ── About Us V2 ──
+    about_title: 'Oznaczono wizjonerskiego geniusza za pętlą',
+    about_subtitle: 'Loop Marked to wynik tysięcy godzin nieustannych innowacji, zaprojektowanych i zbudowanych przez jednego architekta kierującego się jednym celem.',
+    about_story_title: 'Rewolucja solowa',
+    about_story_p1: 'Loop Marked narodził się z radykalnej wizji: stworzyć najbezpieczniejszy i zorientowany na użytkownika rynek na świecie. Każdy piksel na tej stronie i każda linia kodu w aplikacji mobilnej zostały zaprojektowane, opracowane i przetestowane przez jedną osobę. Ta podróż wymagała tysięcy godzin skupienia i przekształcenia przełomowego pomysłu w globalny ekosystem premium.',
+    about_story_p2: 'Za kulisami ten projekt był pracą pełną poświęcenia. Chociaż wykonanie techniczne było solowym arcydziełem, podstawą było niezachwiane wsparcie i testy ze strony zgranego kręgu rodziny i przyjaciół. Ich wiara w wizję zapewniła siłę do pokonania każdej złożonej przeszkody i udoskonalenia wysokiej wydajności, którą widzisz dzisiaj.',
+    about_vision_title: 'Geniusz koncepcji oznaczonej pętlą',
+    about_vision_p: 'W świecie, w którym często ignoruje się prywatność, spędziłem lata opracowując system, w którym bezpieczeństwo jest podstawą, a nie refleksją. Koncepcja „Masmind” stojąca za Loop Marked polega na stworzeniu gospodarki o zamkniętym obiegu, w której użytkownicy ostatecznie mają kontrolę. Integrując kompleksowe szyfrowanie z rewolucyjną ekonomią Lumo, Loop Marked tworzy przestrzeń, w której każda interakcja jest strukturalnie bezpieczna, a każdy użytkownik jest sprawiedliwie nagradzany.',
+    about_core_title: 'Innowacja: Lumo i historie',
+    about_core_p: 'W sercu silnika Loop Marked leży ekonomia Lumo i wciągające historie. Tu nie chodzi tylko o kupno i sprzedaż; chodzi o budowanie cyfrowej reputacji i angażowanie się w społeczność, która ceni Twoją prywatność. Ekosystem Lumo umożliwia bezproblemowe i bezpieczne transakcje, a Historie ożywiają rynek, umożliwiając użytkownikom prezentowanie swoich światów przez 24 godziny na dobę.',
+    about_win_title: 'Najlepszy ekosystem, w którym wygrywają obie strony',
+    about_win_p: 'W tym rewolucyjnym ekosystemie wygrywa każdy interesariusz. Sprzedawcy mają dostęp do globalnej sceny dzięki obsłudze 22 języków i zgodności z RTL. Kupujący handlują z całkowitą pewnością, chronioną szyfrowaniem na poziomie wojskowym. Razem nie tylko zmieniamy sposób, w jaki ludzie handlują; ustanawiamy nowy globalny standard dla bezpiecznego, prywatnego i kierowanego przez społeczność rynku przyszłości.',
 };
 
 // ── Turkish ──
@@ -1724,15 +1760,18 @@ const tr = {
     dl_ios: 'App Store\'dan indirin',
     dl_android: 'Google Play\'den edinin',
     // ── About Us ──
-    about_title: 'Döngünün Arkasındaki Vizyoner İşaretli',
-    about_subtitle: 'Loop Marked yalnızca bir uygulama değildir; bu, tek bir kurucunun yıllar süren aralıksız bağlılığının doruk noktasıdır.',
-    about_story_title: 'Yalnız Yolculuk',
-    about_story_p1: 'Loop Marked tekil bir vizyondan doğdu: dijital pazarı yeniden tanımlamak. Bu web sitesindeki her bir piksel ve mobil uygulamadaki her kod satırı tek bir kişi tarafından tasarlandı, geliştirildi ve test edildi. Bu yolculuk, binlerce saatlik özveri gerektirdi ve yıkıcı bir konsepti küresel olarak erişilebilir bir ekosisteme dönüştürdü.',
-    about_story_p2: 'Perde arkasında bu proje bir sevgi ve dayanıklılık emeğiydi. Uygulama tek kişilik bir çaba olsa da, küçük bir arkadaş çevresi ve aileden gelen sarsılmaz destek ve testlerle temel güçlendirildi. Projeye olan inançları, her türlü teknik engelin üstesinden gelmek ve bugün gördüğünüz deneyimi mükemmelleştirmek için gereken yakıtı sağladı.',
-    about_vision_title: 'Neden Loop Markt?',
-    about_vision_p: 'Kişisel verilerin sıklıkla kâr amacıyla alınıp satıldığı bir çağda, gizliliğin yalnızca bir özellik değil temel olduğu bir platform tasarlamak için yıllarımı harcadım. Askeri düzeyde şifrelemeyi yenilikçi Lumo ekonomisiyle birleştiren Loop Marked, güvenliğin yapısal olarak garanti edildiği ve katılımın adil bir şekilde ödüllendirildiği bir alan yaratır.',
-    about_win_title: 'Herkes için Kazan-Kazan',
-    about_win_p: 'Bu ekosistemde herkes kazanır. Satıcılar 22 dilde yerelleştirilmiş destekle küresel bir hedef kitleye ulaşıyor. Alıcılar, verilerinin şifrelendiğini bilerek gönül rahatlığıyla ticaret yapar. Birlikte, yerel ve küresel ticaretin geleceğini inşa ediyoruz; her seferinde güvenli bir işlem gerçekleştiriyoruz.',
+    // ── About Us V2 ──
+    about_title: 'Loop\'un Arkasındaki Vizyoner Deha İşaretlendi',
+    about_subtitle: 'Loop Marked, tek bir amaç doğrultusunda hareket eden tek bir mimar tarafından tasarlanıp inşa edilen, binlerce saat süren aralıksız yeniliğin sonucudur.',
+    about_story_title: 'Tek Başına Bir Devrim',
+    about_story_p1: 'Loop Marked radikal bir vizyondan doğdu: dünyanın en güvenli ve kullanıcı odaklı pazarını yaratmak. Bu web sitesindeki her bir piksel ve mobil uygulamadaki her kod satırı tek bir kişi tarafından tasarlandı, geliştirildi ve test edildi. Bu yolculuk, binlerce saatlik odaklanmayı gerektirdi ve yıkıcı bir fikri birinci sınıf, küresel bir ekosisteme dönüştürdü.',
+    about_story_p2: 'Perde arkasında bu proje mutlak bir adanmışlık emeğiydi. Teknik uygulama tek başına bir şaheser olsa da, temel, aile ve arkadaşlardan oluşan sıkı sıkıya bağlı bir çevrenin sarsılmaz desteği ve testleriyle güçlendi. Vizyona olan inançları, her karmaşık engeli aşma ve bugün gördüğünüz yüksek performans deneyimini geliştirme gücünü sağladı.',
+    about_vision_title: 'Döngü İşaretli Konseptin Dehası',
+    about_vision_p: 'Gizliliğin sıklıkla göz ardı edildiği bir dünyada, güvenliğin sonradan akla gelen bir düşünce değil, temel DNA olduğu bir sistemi tasarlamak için yıllarımı harcadım. Loop Marked\'ın arkasındaki "Beyin" konsepti, kullanıcıların nihayet kontrolü elinde bulundurduğu kapalı döngü ekonomisi yaratmaktır. Uçtan uca şifrelemeyi devrim niteliğindeki Lumo ekonomisiyle entegre eden Loop Marked, her etkileşimin yapısal olarak güvenli olduğu ve her kullanıcının adil bir şekilde ödüllendirildiği bir alan yaratır.',
+    about_core_title: 'Yenilik: Lumo ve Hikayeler',
+    about_core_p: 'Loop Marked motorunun kalbinde Lumo Ekonomisi ve sürükleyici Hikayeler yatıyor. Bu sadece alıp satmakla ilgili değil; bu, dijital bir itibar oluşturmak ve gizliliğinize değer veren bir topluluğa dahil olmakla ilgilidir. Lumo ekosistemi sorunsuz, güvenli işlemlere olanak tanırken Hikayeler pazarı hayata geçirerek kullanıcıların dünyalarını 24 saat boyunca sergilemelerine olanak tanıyor.',
+    about_win_title: 'Nihai Kazan-Kazan Ekosistemi',
+    about_win_p: 'Bu devrim niteliğindeki ekosistemde her paydaş kazanıyor. Satıcılar, 22 dil desteği ve RTL uyumluluğu ile küresel bir sahneye erişiyor. Alıcılar, askeri düzeyde şifrelemeyle korunan mutlak güvenle ticaret yapar. Birlikte sadece insanların ticaret yapma şeklini değiştirmiyoruz; geleceğin güvenli, özel ve topluluk odaklı pazarı için yeni bir küresel standart oluşturuyoruz.',
 };
 
 // ── Russian ──
@@ -1846,15 +1885,18 @@ const ru = {
     dl_ios: 'Загрузите в App Store',
     dl_android: 'Загрузите его в Google Play',
     // ── About Us ──
-    about_title: 'Провидец за петлей отмечен',
-    about_subtitle: 'Loop Marked — это не просто приложение; это кульминация многолетней неустанной преданности делу основателя-одиночки.',
-    about_story_title: 'Одиночное путешествие',
-    about_story_p1: 'Loop Marked родился с единственной целью: переопределить цифровой рынок. Каждый пиксель на этом веб-сайте и каждая строка кода в мобильном приложении были спроектированы, разработаны и протестированы одним человеком. Это путешествие потребовало тысяч часов самоотдачи, превратив революционную концепцию в глобально доступную экосистему.',
-    about_story_p2: 'За кулисами этот проект был трудом любви и стойкости. Хотя исполнение было индивидуальным усилием, фундамент был укреплен непоколебимой поддержкой и испытаниями со стороны небольшого круга друзей и семьи. Их вера в проект послужила топливом для преодоления всех технических препятствий и совершенствования того опыта, который вы видите сегодня.',
-    about_vision_title: 'Почему Loop Markt?',
-    about_vision_p: 'В эпоху, когда личные данные часто продаются с целью получения прибыли, я потратил годы на разработку платформы, где конфиденциальность является основой, а не просто функцией. Сочетая шифрование военного уровня с инновационной экономикой Lumo, Loop Marked создает пространство, где безопасность структурно гарантирована, а участие справедливо вознаграждается.',
-    about_win_title: 'Беспроигрышный вариант для всех',
-    about_win_p: 'В этой экосистеме выигрывают все. Продавцы охватывают глобальную аудиторию благодаря локализованной поддержке на 22 языках. Покупатели торгуют с полным спокойствием, зная, что их данные зашифрованы. Вместе мы строим будущее местной и глобальной торговли — по одной безопасной транзакции за раз.',
+    // ── About Us V2 ──
+    about_title: 'Провидческий вдохновитель за петлей отмечен',
+    about_subtitle: 'Loop Marked — это результат тысяч часов неустанных инноваций, спроектированный и построенный одним архитектором, преследующим единую цель.',
+    about_story_title: 'Одиночная революция',
+    about_story_p1: 'Loop Marked родился из радикальной идеи: создать самый безопасный и ориентированный на пользователя рынок в мире. Каждый пиксель на этом веб-сайте и каждая строка кода в мобильном приложении были спроектированы, разработаны и протестированы одним человеком. Это путешествие потребовало тысяч часов сосредоточенности, превратив революционную идею в глобальную экосистему премиум-класса.',
+    about_story_p2: 'За кулисами этот проект представлял собой труд абсолютной самоотдачи. Хотя техническое исполнение было сольным шедевром, фонд опирался на непоколебимую поддержку и тестирование со стороны сплоченного круга семьи и друзей. Их вера в это видение дала силы преодолеть все сложные препятствия и усовершенствовать высокопроизводительный опыт, который вы видите сегодня.',
+    about_vision_title: 'Гениальность концепции с маркировкой «петля»',
+    about_vision_p: 'В мире, где конфиденциальность часто игнорируется, я потратил годы на разработку системы, в которой безопасность является основой ДНК, а не второстепенной мыслью. Концепция «Mastermind», лежащая в основе Loop Marked, заключается в создании экономики с замкнутым циклом, в которой пользователи, наконец, получают контроль. Интегрируя сквозное шифрование с революционной экономикой Lumo, Loop Marked создает пространство, где каждое взаимодействие является структурно безопасным и каждый пользователь справедливо вознаграждается.',
+    about_core_title: 'Инновации: Люмо и истории',
+    about_core_p: 'В основе движка Loop Marked лежит экономика Lumo и захватывающие истории. Речь идет не только о покупке и продаже; речь идет о создании цифровой репутации и участии в сообществе, которое ценит вашу конфиденциальность. Экосистема Lumo обеспечивает бесперебойные и безопасные транзакции, а Stories оживляют рынок, позволяя пользователям демонстрировать свои миры 24 часа в сутки.',
+    about_win_title: 'Абсолютная беспроигрышная экосистема',
+    about_win_p: 'В этой революционной экосистеме выигрывает каждая заинтересованная сторона. Продавцы получают доступ к глобальной сцене с поддержкой 22 языков и совместимостью с RTL. Покупатели торгуют с абсолютной уверенностью, защищенной шифрованием военного уровня. Вместе мы не просто меняем то, как люди торгуют; мы устанавливаем новый глобальный стандарт безопасного, частного и управляемого сообществом рынка будущего.',
 };
 
 // ── Ukrainian ──
@@ -1967,15 +2009,18 @@ const uk = {
     dl_ios: 'Завантажте в App Store',
     dl_android: 'Отримайте в Google Play',
     // ── About Us ──
-    about_title: 'Виділення за петлею позначено',
-    about_subtitle: 'Loop Marked — це не просто програма; це кульмінація років невпинної відданості сольного засновника.',
-    about_story_title: 'Самостійна подорож',
-    about_story_p1: 'Loop Marked народився з унікального бачення: змінити визначення цифрового ринку. Кожен окремий піксель на цьому веб-сайті та кожен рядок коду в мобільному додатку були спроектовані, розроблені та протестовані однією людиною. Ця подорож вимагала тисячі годин відданості, щоб перетворити руйнівну концепцію на глобально доступну екосистему.',
-    about_story_p2: 'За кадром цей проект був працею любові та стійкості. Незважаючи на те, що страта була власною спробою, фундамент був зміцнений непохитною підтримкою та випробуваннями вузького кола друзів і родини. Їхня віра в проект стала джерелом для подолання всіх технічних перешкод і вдосконалення досвіду, який ви бачите сьогодні.',
-    about_vision_title: 'Чому Loop Markt?',
-    about_vision_p: 'В епоху, коли особисті дані часто торгують заради прибутку, я витратив роки на розробку платформи, де конфіденційність є основою, а не просто функцією. Поєднуючи шифрування військового рівня з інноваційною економікою Lumo, Loop Marked створює простір, де безпека структурно гарантована, а залучення справедливо винагороджується.',
-    about_win_title: 'Безпрограшний варіант для всіх',
-    about_win_p: 'У цій екосистемі виграють усі. Продавці охоплюють глобальну аудиторію завдяки локалізованій підтримці 22 мовами. Покупці торгують абсолютно спокійно, знаючи, що їхні дані зашифровані. Разом ми будуємо майбутнє локальної та глобальної торгівлі — одна безпечна транзакція за раз.',
+    // ── About Us V2 ──
+    about_title: 'Провидець за петлею позначено',
+    about_subtitle: 'Loop Marked є результатом тисяч годин невпинних інновацій, розроблених і побудованих одним архітектором, керованим єдиною метою.',
+    about_story_title: 'Сольна революція',
+    about_story_p1: 'Loop Marked народився з радикального бачення: створити найбезпечніший у світі ринок, орієнтований на користувача. Кожен окремий піксель на цьому веб-сайті та кожен рядок коду в мобільному додатку були спроектовані, розроблені та протестовані однією людиною. Ця подорож вимагала тисячі годин зосередженості, щоб перетворити революційну ідею на преміальну глобальну екосистему.',
+    about_story_p2: 'За лаштунками цей проект був цілковито відданою працею. Незважаючи на те, що технічне виконання було шедевром для сольників, основа підживлювалася непохитною підтримкою та тестуванням тісного кола родини та друзів. Їхня віра в бачення дала сили подолати всі складні перешкоди та вдосконалити високопродуктивний досвід, який ви бачите сьогодні.',
+    about_vision_title: 'Геній позначеної концепції Loop',
+    about_vision_p: 'У світі, де конфіденційність часто ігнорується, я витратив роки на розробку системи, де безпека є основою ДНК, а не запізнілою думкою. Концепція «Mastermind», що лежить в основі Loop Marked, полягає у створенні економіки замкнутого циклу, де користувачі нарешті контролюють. Завдяки інтеграції наскрізного шифрування з революційною економікою Lumo Loop Marked створює простір, де кожна взаємодія є структурно безпечною, а кожен користувач справедливо винагороджується.',
+    about_core_title: 'Інновація: Lumo & Stories',
+    about_core_p: 'В основі механізму Loop Marked лежить Lumo Economy і захоплюючі історії. Це не просто купівля-продаж; це створення цифрової репутації та залучення до спільноти, яка цінує вашу конфіденційність. Екосистема Lumo дозволяє здійснювати безперебійні безпечні транзакції, а Stories оживляють ринок, дозволяючи користувачам демонструвати свої світи 24 години.',
+    about_win_title: 'Безпрограшна екосистема',
+    about_win_p: 'У цій революційній екосистемі кожна зацікавлена ​​сторона виграє. Продавці отримують доступ до глобальної арени завдяки підтримці 22 мов і сумісності з напрямком справа. Покупці торгують з абсолютною впевненістю, захищені військовим шифруванням. Разом ми не просто змінюємо спосіб торгівлі людьми; ми встановлюємо новий глобальний стандарт для безпечного, приватного та керованого спільнотою ринку майбутнього.',
 };
 
 // ── Arabic ──
@@ -2089,15 +2134,18 @@ const ar = {
     dl_ios: 'قم بالتنزيل على متجر التطبيقات',
     dl_android: 'احصل عليه على جوجل بلاي',
     // ── About Us ──
-    about_title: 'تم وضع علامة على الحلقة خلف البصيرة',
-    about_subtitle: 'Loop Marked ليس مجرد تطبيق؛ إنها تتويج لسنوات من التفاني المتواصل من قبل مؤسس منفرد.',
-    about_story_title: 'الرحلة المنفردة',
-    about_story_p1: 'ولدت Loop Marked من رؤية فريدة: إعادة تعريف السوق الرقمية. تم تصميم كل بكسل على هذا الموقع وكل سطر من التعليمات البرمجية في تطبيق الهاتف المحمول وتطويره واختباره بواسطة شخص واحد. تطلبت هذه الرحلة آلاف الساعات من التفاني، لتحويل المفهوم المبتكر إلى نظام بيئي يمكن الوصول إليه عالميًا.',
-    about_story_p2: 'خلف الكواليس، كان هذا المشروع بمثابة عمل من الحب والمرونة. في حين أن التنفيذ كان مجهودًا فرديًا، فقد تم تعزيز المؤسسة من خلال الدعم الثابت والاختبار من دائرة صغيرة من الأصدقاء والعائلة. لقد وفر إيمانهم بالمشروع الوقود للتغلب على كل عقبة فنية وتحسين التجربة التي تراها اليوم.',
-    about_vision_title: 'لماذا حلقة السوق؟',
-    about_vision_p: 'في عصر غالبًا ما يتم فيه تداول البيانات الشخصية من أجل الربح، قضيت سنوات في تصميم منصة تكون فيها الخصوصية هي الأساس، وليست مجرد ميزة. من خلال الجمع بين التشفير العسكري واقتصاد Lumo المبتكر، يخلق Loop Marked مساحة حيث يتم ضمان الأمان هيكليًا ويتم مكافأة المشاركة بشكل عادل.',
-    about_win_title: 'الفوز للجميع',
-    about_win_p: 'في هذا النظام البيئي، الجميع يفوز. يصل البائعون إلى جمهور عالمي بدعم محلي بـ 22 لغة. يتداول المشترون براحة بال تامة، لأنهم يعلمون أن بياناتهم مشفرة. معًا، نعمل على بناء مستقبل التجارة المحلية والعالمية - معاملة واحدة آمنة في كل مرة.',
+    // ── About Us V2 ──
+    about_title: 'تم وضع علامة على العقل المدبر صاحب الرؤية وراء الحلقة',
+    about_subtitle: 'إن Loop Marked هو نتيجة آلاف الساعات من الابتكار المتواصل، الذي تم تصميمه وبنائه بواسطة مهندس معماري واحد يقوده غرض واحد.',
+    about_story_title: 'ثورة منفردة',
+    about_story_p1: 'ولدت Loop Marked من رؤية جذرية: إنشاء السوق الأكثر أمانًا وتركيزًا على المستخدم في العالم. تم تصميم كل بكسل على هذا الموقع وكل سطر من التعليمات البرمجية في تطبيق الهاتف المحمول وتطويره واختباره بواسطة شخص واحد. تطلبت هذه الرحلة آلاف الساعات من التركيز، لتحويل فكرة مبتكرة إلى نظام بيئي عالمي متميز.',
+    about_story_p2: 'خلف الكواليس، كان هذا المشروع عملاً يتسم بالتفاني المطلق. في حين أن التنفيذ الفني كان بمثابة تحفة فنية منفردة، إلا أن الأساس كان مدعومًا بالدعم الثابت والاختبار من دائرة متماسكة من العائلة والأصدقاء. لقد وفر إيمانهم بالرؤية القوة للتغلب على كل عقبة معقدة وتحسين تجربة الأداء العالي التي تراها اليوم.',
+    about_vision_title: 'عبقرية مفهوم الحلقة المميزة',
+    about_vision_p: 'في عالم يتم فيه تجاهل الخصوصية غالبًا، أمضيت سنوات في هندسة نظام يكون فيه الأمان هو الحمض النووي الأساسي، وليس فكرة لاحقة. إن مفهوم "العقل المدبر" وراء Loop Marked هو إنشاء اقتصاد حلقة مغلقة حيث يكون للمستخدمين السيطرة في النهاية. من خلال دمج التشفير الشامل مع اقتصاد Lumo الثوري، يقوم Loop Marked بإنشاء مساحة يكون فيها كل تفاعل آمنًا من الناحية الهيكلية ويتم مكافأة كل مستخدم بشكل عادل.',
+    about_core_title: 'الابتكار: لومو وقصص',
+    about_core_p: 'في قلب محرك Loop Marked يكمن اقتصاد Lumo والقصص الغامرة. هذا لا يتعلق فقط بالبيع والشراء؛ يتعلق الأمر ببناء سمعة رقمية والانخراط في مجتمع يقدر خصوصيتك. يسمح نظام Lumo البيئي بإجراء معاملات سلسة وآمنة بينما تعمل القصص على إضفاء الحيوية على السوق، مما يسمح للمستخدمين بعرض عوالمهم على مدار 24 ساعة في المرة الواحدة.',
+    about_win_title: 'النظام البيئي المربح للجانبين',
+    about_win_p: 'في هذا النظام البيئي الثوري، يفوز كل أصحاب المصلحة. يصل البائعون إلى المسرح العالمي بدعم 22 لغة وتوافق RTL. يتداول المشترون بثقة مطلقة، محميًا بتشفير من الدرجة العسكرية. معًا، نحن لا نغير فقط الطريقة التي يتاجر بها الناس؛ نحن نعمل على إنشاء معيار عالمي جديد لسوق المستقبل الآمن والخاص والموجه نحو المجتمع.',
 };
 
 // ── Persian ──
@@ -2210,15 +2258,18 @@ const fa = {
     dl_ios: 'در اپ استور دانلود کنید',
     dl_android: 'آن را در Google Play دریافت کنید',
     // ── About Us ──
-    about_title: 'رویایی پشت حلقه مشخص شد',
-    about_subtitle: 'Loop Marked فقط یک برنامه نیست. این اوج سال ها فداکاری بی امان توسط یک بنیانگذار انفرادی است.',
-    about_story_title: 'سفر انفرادی',
-    about_story_p1: 'Loop Marked از یک دیدگاه منحصر به فرد متولد شد: تعریف مجدد بازار دیجیتال. هر پیکسل در این وب سایت و هر خط کد در برنامه تلفن همراه توسط یک نفر طراحی، توسعه و آزمایش شده است. این سفر به هزاران ساعت فداکاری نیاز داشت و یک مفهوم مخرب را به یک اکوسیستم قابل دسترسی جهانی تبدیل کرد.',
-    about_story_p2: 'این پروژه در پشت صحنه، کار عشق و مقاومت بود. در حالی که این اعدام یک تلاش انفرادی بود، بنیاد با حمایت و آزمایش بی‌وقفه حلقه کوچکی از دوستان و خانواده مستحکم شد. اعتقاد آنها به این پروژه سوختی برای غلبه بر هر مانع فنی و تکمیل تجربه ای که امروز می بینید را فراهم کرد.',
-    about_vision_title: 'چرا Loop Markt؟',
-    about_vision_p: 'در دورانی که داده‌های شخصی اغلب برای سود معامله می‌شوند، سال‌ها را صرف مهندسی پلتفرمی کردم که در آن حریم خصوصی پایه و اساس است، نه فقط یک ویژگی. با ترکیب رمزگذاری درجه نظامی با اقتصاد نوآورانه Lumo، Loop Marked فضایی را ایجاد می‌کند که در آن امنیت از نظر ساختاری تضمین می‌شود و تعامل نسبتاً پاداش می‌گیرد.',
-    about_win_title: 'برد-برد برای همه',
-    about_win_p: 'در این اکوسیستم همه برنده هستند. فروشندگان با پشتیبانی محلی به ۲۲ زبان به مخاطبان جهانی می‌رسند. خریداران با آگاهی کامل از رمزگذاری داده هایشان، با خیال راحت معامله می کنند. ما با هم در حال ساختن آینده تجارت محلی و جهانی هستیم - یک تراکنش امن در یک زمان.',
+    // ── About Us V2 ──
+    about_title: 'مغز متفکر رویایی پشت حلقه مشخص شد',
+    about_subtitle: 'Loop Marked نتیجه هزاران ساعت نوآوری بی امان است که توسط یک معمار منفرد طراحی و ساخته شده است که با هدفی منحصر به فرد هدایت می شود.',
+    about_story_title: 'یک انقلاب انفرادی',
+    about_story_p1: 'Loop Marked از یک دیدگاه رادیکال متولد شد: ایجاد امن ترین و کاربر محورترین بازار جهان. هر پیکسل در این وب سایت و هر خط کد در برنامه تلفن همراه توسط یک نفر طراحی، توسعه و آزمایش شده است. این سفر به هزاران ساعت تمرکز نیاز داشت تا یک ایده مخرب را به یک اکوسیستم جهانی و برتر تبدیل کند.',
+    about_story_p2: 'در پشت صحنه، این پروژه یک کار فداکاری مطلق بود. در حالی که اجرای فنی یک شاهکار انفرادی بود، پایه و اساس آن با پشتیبانی و آزمایش بی‌وقفه از سوی حلقه‌ای فشرده از خانواده و دوستان تقویت شد. اعتقاد آنها به چشم انداز قدرت را برای غلبه بر هر مانع پیچیده و بهبود تجربه با عملکرد بالا که امروز می بینید را فراهم می کند.',
+    about_vision_title: 'مفهوم نابغه حلقه مشخص شده',
+    about_vision_p: 'در دنیایی که معمولاً حریم خصوصی نادیده گرفته می‌شود، من سال‌ها صرف مهندسی سیستمی کردم که در آن امنیت هسته اصلی DNA است، نه یک فکر بعدی. مفهوم "Mastermind" پشت Loop Marked ایجاد یک اقتصاد حلقه بسته است که در نهایت کاربران کنترل را در دست دارند. با ادغام رمزگذاری سرتاسر با اقتصاد انقلابی Lumo، Loop Marked فضایی را ایجاد می‌کند که در آن هر تعاملی از نظر ساختاری ایمن است و هر کاربر به طور عادلانه پاداش می‌گیرد.',
+    about_core_title: 'نوآوری: لومو و داستان ها',
+    about_core_p: 'در قلب موتور Loop Marked، Lumo Economy و داستان های همهجانبه قرار دارد. این فقط در مورد خرید و فروش نیست. این در مورد ایجاد شهرت دیجیتال و مشارکت در جامعه ای است که برای حریم خصوصی شما ارزش قائل است. اکوسیستم Lumo امکان تراکنش‌های یکپارچه و ایمن را فراهم می‌کند در حالی که Stories بازار را زنده می‌کند و به کاربران این امکان را می‌دهد تا دنیای خود را 24 ساعت در یک زمان به نمایش بگذارند.',
+    about_win_title: 'اکوسیستم نهایی برد-برد',
+    about_win_p: 'در این اکوسیستم انقلابی، هر ذینفعی برنده است. فروشندگان با پشتیبانی از 22 زبان و سازگاری با RTL به یک صحنه جهانی دسترسی دارند. خریداران با اطمینان کامل معامله می کنند، که با رمزگذاری درجه نظامی محافظت می شود. با هم، ما فقط نحوه تجارت مردم را تغییر نمی دهیم. ما در حال ایجاد یک استاندارد جهانی جدید برای بازار امن، خصوصی و جامعه محور در آینده هستیم.',
 };
 
 // ── Kurdish ──
@@ -2331,15 +2382,18 @@ const ku = {
     dl_ios: 'Li ser App Store dakêşin',
     dl_android: 'Wê li Google Play-ê bistînin',
     // ── About Us ──
-    about_title: 'Visionary Behind Loop Marked',
-    about_subtitle: 'Loop Marked ne tenê sepanek e; ew encamdana salan e ku ji hêla damezrînerek solo ve dilsoz e.',
-    about_story_title: 'Rêwîtiya Solo',
-    about_story_p1: 'Loop Marked ji dîtiniyek yekane çêbû: ji nû ve pênasekirina bazara dîjîtal. Her pîxelek li ser vê malperê û her rêzika kodê ya di serîlêdana mobîl de ji hêla kesek ve hatî çêkirin, pêşkeftin û ceribandin. Vê rêwîtiyê bi hezaran demjimêrên dilsoziyê hewce kir, ku têgehek têkçûyî veguherîne ekosîstemek gerdûnî ya gihîştî.',
-    about_story_p2: 'Li pişt perdê ev proje kedeke hezkirin û berxwedanê bû. Digel ku darvekirin hewildanek solo bû, bingeh bi piştgirî û ceribandina bêserûber ji dorhêlek piçûk a heval û malbatê hate xurt kirin. Baweriya wan di projeyê de sotemenî peyda kir da ku her astengiyek teknîkî derbas bike û ezmûna ku hûn îro dibînin temam bikin.',
-    about_vision_title: 'Çima Loop Markt?',
-    about_vision_p: 'Di serdemek ku daneyên kesane bi gelemperî ji bo berjewendiyê têne bazirganî kirin, min bi salan endezyariyek platformek ku nepenî bingehek e, ne tenê taybetmendiyek, derbas kir. Bi berhevkirina şîfrekirina pola leşkerî bi aboriya Lumo-ya nûjen re, Loop Marked cîhek ku ewlehî bi strukturî tê garantî kirin û tevlêbûn bi rengek adil tê xelat kirin diafirîne.',
-    about_win_title: 'Serkeftinek ji bo Hemî',
-    about_win_p: 'Di vê ekosîstemê de her kes bi ser dikeve. Firoşkar bi piştgiriya herêmî ya bi 22 zimanan digihîjin temaşevanek gerdûnî. Xerîdar bi aramiya hişê xwe bazirganî dikin, dizanin ku daneyên wan şîfrekirî ne. Bi hev re, em pêşeroja bazirganiya herêmî û gerdûnî ava dikin - di demekê de danûstendinek ewledar.',
+    // ── About Us V2 ──
+    about_title: 'Visionary Mastermind Behind Loop Marked',
+    about_subtitle: 'Loop Marked encama bi hezaran demjimêrên nûjeniya bêserûber e, ku ji hêla mîmarek yekane ve hatî çêkirin û ji hêla armancek yekane ve hatî rêve kirin.',
+    about_story_title: 'Şoreşa Solo',
+    about_story_p1: 'Loop Marked ji dîtiniyek radîkal çêbû: afirandina bazara herî ewledar û bikarhêner-navendî ya cîhanê. Her pîxelek li ser vê malperê û her rêzika kodê ya di serîlêdana mobîl de ji hêla kesek ve hatî çêkirin, pêşkeftin û ceribandin. Vê rêwîtiyê bi hezaran demjimêrên baldarî hewce kir, ku ramanek têkbir veguherîne ekosîstema gerdûnî ya pêşîn.',
+    about_story_p2: 'Li pişt perdeyê, ev proje xebatek dilsoziya bêkêmasî bû. Digel ku darvekirina teknîkî şaheserek solo bû, bingeh ji hêla piştgirî û ceribandina bêdawî ya ji dorhêlek teng a malbat û hevalên xwe ve hate şewitandin. Baweriya wan bi vîzyonê hêz da ku her astengiyek tevlihev têk bibin û ezmûna performansa bilind a ku hûn îro dibînin safî bikin.',
+    about_vision_title: 'Genius of the Loop Marked Concept',
+    about_vision_p: 'Li cîhanek ku nepenî bi gelemperî tê paşguh kirin, min bi salan endezyariya pergalek ku ewlehî DNA-ya bingehîn e, ne ramanek paşerojê ye. Têgeha "Mastermind" ya li pişt Loop Marked ev e ku meriv aboriyek dorpêk a girtî biafirîne ku bikarhêner di dawiyê de di bin kontrolê de ne. Bi yekkirina şîfrekirina dawî-bi-dawî bi aboriya şoreşgerî ya Lumo re, Loop Marked cîhek ku her danûstendinek ji hêla strukturî ve ewle ye û her bikarhêner bi rengek adil tê xelat kirin diafirîne.',
+    about_core_title: 'Nûbûn: Lumo & Çîrok',
+    about_core_p: 'Di dilê motora Loop Marked de Aboriya Lumo û Çîrokên berbiçav hene. Ev ne tenê kirîn û firotinê ye; ew li ser avakirina navûdengek dîjîtal û tevlêbûna civatek ku qîmetê dide nepeniya we ye. Ekosîstema Lumo destûrê dide danûstendinên bêkêmasî, ewledar dema ku Stories sûkê zindî dike, rê dide bikarhêneran ku cîhanên xwe 24 demjimêran bi carekê nîşan bidin.',
+    about_win_title: 'Ekosîstema Win-Win ya Dawîn',
+    about_win_p: 'Di vê ekosîstema şoreşgerî de her alî bi ser dikeve. Firoşyar bi piştgiriya 22 zimanan û lihevhatina RTL-ê digihîjin qonaxek gerdûnî. Xerîdar bi pêbaweriya bêkêmasî, ku ji hêla şîfrekirina pola leşkerî ve hatî parastin, bazirganî dikin. Bi hev re, em ne tenê diguhezin ka meriv çawa bazirganiyê dike; em standardek nû ya gerdûnî ji bo bazara ewledar, taybet û civakê-rêveber a pêşerojê saz dikin.',
 };
 
 // ── Pashto ──
@@ -2452,15 +2506,18 @@ const ps = {
     dl_ios: 'په اپل سټور کې ډاونلوډ کړئ',
     dl_android: 'په ګوګل پلی کې یې ترلاسه کړئ',
     // ── About Us ──
-    about_title: 'د لوپ شاته لید لید نښه شوی',
-    about_subtitle: 'لوپ نښه شوی یوازې یو اپلیکیشن ندی؛ دا د یو واحد بنسټ ایښودونکي لخوا د کلونو نه ستړي کیدونکي وقف پایله ده.',
-    about_story_title: 'د سولو سفر',
-    about_story_p1: 'لوپ مارک شوی د یو واحد لید څخه زیږیدلی و: د ډیجیټل بازار ځای بیا تعریف کولو لپاره. په دې ویب پاڼه کې هر یو پکسل او په ګرځنده اپلیکیشن کې د کوډ هره کرښه د یو کس لخوا معمار، پراختیا او ازموینه شوې. دا سفر د زرګونو ساعتونو وقف کولو ته اړتیا لري، یو ګډوډ مفهوم په نړیواله کچه د لاسرسي وړ ایکوسیستم بدلوي.',
-    about_story_p2: 'د پردې تر شا، دا پروژه د مینې او لیوالتیا کار و. پداسې حال کې چې اعدام یوازې یوه هڅه وه، بنسټ د ملګرو او کورنۍ د یوې کوچنۍ حلقې څخه د نه منلو وړ ملاتړ او ازموینې لخوا پیاوړی شو. په پروژه کې د دوی باور د هر تخنیکي خنډ د لرې کولو لپاره تیل چمتو کړی او هغه تجربه چې تاسو یې نن ګورئ بشپړ کړئ.',
-    about_vision_title: 'ولې لوپ مارکیټ؟',
-    about_vision_p: 'په داسې دور کې چیرې چې شخصي معلومات اکثرا د ګټې لپاره تجارت کیږي ، ما کلونه د یو پلیټ فارم انجینرۍ تیر کړل چیرې چې محرمیت بنسټ دی ، نه یوازې یو ځانګړتیا. د نوښت شوي لومو اقتصاد سره د نظامي درجې کوډ کولو سره یوځای کولو سره ، لوپ مارک شوی یو داسې ځای رامینځته کوي چیرې چې امنیت په جوړښتي توګه تضمین شوی او ښکیلتیا په کافي اندازه انعام کیږي.',
-    about_win_title: 'د ټولو لپاره بریا',
-    about_win_p: 'پدې ایکوسیستم کې ، هرڅوک ګټي. پلورونکي په 22 ژبو کې د ځایی ملاتړ سره نړیوالو لیدونکو ته رسي. پیرودونکي د بشپړ ذهني سولې سره تجارت کوي ، پدې پوهیږي چې د دوی معلومات کوډ شوي دي. په ګډه، موږ د محلي او نړیوالې سوداګرۍ راتلونکی جوړوو - په یو وخت کې یو خوندي لیږد.',
+    // ── About Us V2 ──
+    about_title: 'د لوپ شاته لید لرونکی ماسټر مائنډ په نښه شوی',
+    about_subtitle: 'لوپ مارک شوی د زرګونو ساعتونو نه ستړي کیدونکي نوښت پایله ده چې د یو واحد معمار لخوا ډیزاین او جوړ شوی چې د واحد هدف لخوا پرمخ وړل کیږي.',
+    about_story_title: 'یو سولی انقلاب',
+    about_story_p1: 'لوپ مارکډ د یو بنسټیز لید څخه زیږیدلی و: د نړۍ ترټولو خوندي او کارونکي متمرکز بازار رامینځته کولو لپاره. په دې ویب پاڼه کې هر یو پکسل او په ګرځنده اپلیکیشن کې د کوډ هره کرښه د یو کس لخوا معمار، پراختیا او ازموینه شوې. دا سفر د زرګونو ساعتونو تمرکز ته اړتیا لري، یو ګډوډي مفکوره په پریمیم، نړیوال ایکوسیستم بدلوي.',
+    about_story_p2: 'د پردې تر شا، دا پروژه د بشپړ وقف کار و. پداسې حال کې چې تخنیکي اجرا کول یو واحد ماسټر پیس و، دا بنسټ د کورنۍ او ملګرو د یوې کلکې حلقې څخه د نه منلو وړ ملاتړ او ازموینې لخوا غوړ شوی و. په لید کې د دوی باور د هر پیچلي خنډ د فتح کولو ځواک چمتو کړی او د لوړ فعالیت تجربه چې تاسو یې نن ګورئ اصلاح کړئ.',
+    about_vision_title: 'د لوپ په نښه شوی مفهوم',
+    about_vision_p: 'په داسې نړۍ کې چیرې چې محرمیت اکثرا له پامه غورځول کیږي ، ما کلونه د داسې سیسټم انجینرۍ تیر کړل چیرې چې امنیت اصلي DNA دی ، نه وروسته فکر. د لوپ نښه شوي شاته د "ماسټر مائنډ" مفهوم د تړل شوي لوپ اقتصاد رامینځته کول دي چیرې چې کارونکي په پای کې کنټرول لري. د انقلابي لومو اقتصاد سره د پای څخه تر پای پورې کوډ کولو سره یوځای کولو سره، لوپ مارک شوی یو داسې ځای رامینځته کوي چیرې چې هر تعامل له ساختماني پلوه خوندي وي او هر کارونکي ته په کافي اندازه انعام ورکول کیږي.',
+    about_core_title: 'نوښت: لومو او کیسې',
+    about_core_p: 'د لوپ نښه شوي انجن په زړه کې د لومو اقتصاد او عمیق کیسې دي. دا یوازې د پیرودلو او پلور په اړه ندي؛ دا د ډیجیټل شهرت رامینځته کولو او په یوه ټولنه کې د ښکیلتیا په اړه دی چې ستاسو محرمیت ته ارزښت ورکوي. د لومو ایکوسیستم د بې ثباته، خوندي معاملو لپاره اجازه ورکوي پداسې حال کې چې کیسې بازار ته ژوند راوړي، کاروونکو ته اجازه ورکوي چې په یو وخت کې 24 ساعته خپل نړۍ وښيي.',
+    about_win_title: 'د نهایی ګټلو ایکوسیستم',
+    about_win_p: 'پدې انقلابي ایکوسیستم کې ، هر برخه اخیستونکی ګټي. پلورونکي د 22 ژبو ملاتړ او RTL مطابقت سره نړیوال مرحلې ته لاسرسی لري. پیرودونکي په بشپړ باور سره تجارت کوي ، د نظامي درجې کوډ کولو لخوا خوندي شوی. په ګډه، موږ یوازې دا نه بدلوو چې څنګه خلک تجارت کوي؛ موږ د راتلونکي خوندي، خصوصي او د ټولنې لخوا پرمخ وړل شوي بازار لپاره یو نوی نړیوال معیار رامینځته کوو.',
 };
 
 // ── Japanese ──
@@ -2574,15 +2631,18 @@ const ja = {
     dl_ios: 'App Storeでダウンロード',
     dl_android: 'Google Play で入手',
     // ── About Us ──
-    about_title: 'ループのビハインドの先見者がマークされました',
-    about_subtitle: 'Loop Marked は単なるアプリではありません。それは、一人の創設者による長年にわたる絶え間ない献身的な努力の集大成です。',
-    about_story_title: '一人旅',
-    about_story_p1: 'Loop Marked は、デジタル マーケットプレイスを再定義するという唯一のビジョンから生まれました。この Web サイト上のすべてのピクセルとモバイル アプリケーションのすべてのコード行は、1 人の人物によって設計、開発、テストされました。この旅には、破壊的なコンセプトを世界的にアクセス可能なエコシステムに変えるために、何千時間もの献身的な努力が必要でした。',
-    about_story_p2: '舞台裏では、このプロジェクトは愛と回復力の努力でした。死刑執行は単独で行われたが、その基盤は友人や家族の小さな輪からの揺るぎない支援と試練によって強化された。プロジェクトに対する彼らの信念は、あらゆる技術的な障害を克服し、今日見られるエクスペリエンスを完成させるための原動力となりました。',
-    about_vision_title: 'なぜループマルクトなのか？',
-    about_vision_p: '個人データが利益を得るために取引されることが多い時代に、私はプライバシーが単なる機能ではなく基盤となるプラットフォームを設計するのに何年も費やしました。軍事グレードの暗号化と革新的な Lumo エコノミーを組み合わせることで、Loop Marked はセキュリティが構造的に保証され、関与が公正に報われるスペースを作り出します。',
-    about_win_title: 'すべてにとってWin-Win',
-    about_win_p: 'このエコシステムでは誰もが勝ちます。販売者は、22 か国語によるローカライズされたサポートにより、世界中のユーザーにリーチできます。購入者は、自分のデータが暗号化されていることを知っているため、完全に安心して取引できます。私たちは、一度に 1 つずつ安全な取引を行い、地域および世界の貿易の未来を一緒に構築しています。',
+    // ── About Us V2 ──
+    about_title: 'ループの背後にある先見の明のある黒幕がマークされる',
+    about_subtitle: 'Loop Marked は、何千時間もの絶え間ない革新の成果であり、単一の目的に突き動かされた 1 人の建築家によって設計および構築されました。',
+    about_story_title: 'ソロ革命',
+    about_story_p1: 'Loop Marked は、世界で最も安全でユーザー中心のマーケットプレイスを作成するという根本的なビジョンから生まれました。この Web サイト上のすべてのピクセルとモバイル アプリケーションのすべてのコード行は、1 人の人物によって設計、開発、テストされました。この旅には何千時間もの集中力が必要で、破壊的なアイデアをプレミアムなグローバルエコシステムに変えました。',
+    about_story_p2: 'このプロジェクトは舞台裏で献身的に尽力されました。技術的な実行は単独の傑作でしたが、この財団は家族や友人の緊密なサークルからの揺るぎないサポートとテストによって支えられました。彼らのビジョンに対する信念は、あらゆる複雑な障害を克服し、今日見られる高性能エクスペリエンスを洗練させる強さをもたらしました。',
+    about_vision_title: 'ループマークの天才コンセプト',
+    about_vision_p: 'プライバシーが無視されることが多い世界において、私はセキュリティが後付けではなく核となる DNA であるシステムの設計に何年も費やしました。 Loop Marked の背後にある「Mastermind」のコンセプトは、ユーザーが最終的に制御できる閉ループ経済を構築することです。エンドツーエンドの暗号化を革新的な Lumo エコノミーと統合することにより、Loop Marked は、すべてのインタラクションが構造的に安全であり、すべてのユーザーが公平に報酬を得ることができるスペースを作成します。',
+    about_core_title: 'イノベーション: Lumo とストーリー',
+    about_core_p: 'Loop Marked エンジンの中心には、Lumo エコノミーと没入型ストーリーがあります。これは売買だけの話ではありません。それはデジタルでの評判を築き、プライバシーを尊重するコミュニティに参加することです。 Lumo エコシステムはシームレスで安全な取引を可能にし、ストーリーはマーケットプレイスに命を吹き込み、ユーザーは一度に 24 時間自分の世界を紹介できるようになります。',
+    about_win_title: '究極のWin-Winエコシステム',
+    about_win_p: 'この革新的なエコシステムでは、すべての利害関係者が勝利します。販売者は、22 言語のサポートと RTL 互換性を備えたグローバル ステージにアクセスできます。軍事レベルの暗号化によって保護されているため、バイヤーは絶対的な自信を持って取引できます。私たちは力を合わせて人々の取引方法を変えるだけではありません。私たちは、将来の安全でプライベートな、コミュニティ主導の市場のための新しい世界標準を確立しています。',
 };
 
 // ── Korean ──
@@ -2695,15 +2755,18 @@ const ko = {
     dl_ios: '앱 스토어에서 다운로드',
     dl_android: 'Google Play에서 구매하세요',
     // ── About Us ──
-    about_title: '비저너리 비하인드 루프 표시됨',
-    about_subtitle: 'Loop Marked는 단순한 앱이 아닙니다. 이는 한 솔로 창업자의 수년간의 끊임없는 헌신의 정점입니다.',
-    about_story_title: '솔로 여행',
-    about_story_p1: 'Loop Marked는 디지털 시장을 재정의한다는 단일 비전에서 탄생했습니다. 이 웹사이트의 모든 단일 픽셀과 모바일 애플리케이션의 모든 코드 라인은 한 사람이 설계, 개발 및 테스트했습니다. 이 여정에는 수천 시간의 헌신이 필요했으며 파괴적인 개념을 전 세계적으로 접근 가능한 생태계로 전환했습니다.',
-    about_story_p2: '이 프로젝트의 이면에는 사랑과 회복력의 노동이 있었습니다. 실행은 혼자서 이루어졌지만 소수의 친구와 가족들의 변함없는 지원과 테스트를 통해 기반이 강화되었습니다. 프로젝트에 대한 그들의 믿음은 모든 기술적 장애물을 극복하고 오늘날 볼 수 있는 경험을 완벽하게 만드는 원동력이 되었습니다.',
-    about_vision_title: '왜 루프마켓인가?',
-    about_vision_p: '개인 데이터가 종종 이익을 위해 거래되는 시대에 저는 개인 정보 보호가 단순한 기능이 아닌 기반이 되는 플랫폼을 설계하는 데 수년을 보냈습니다. Loop Marked는 군사급 암호화와 혁신적인 Lumo 경제를 결합하여 보안이 구조적으로 보장되고 참여가 공정하게 보상되는 공간을 만듭니다.',
-    about_win_title: '모두를 위한 상생',
-    about_win_p: '이 생태계에서는 모두가 승리합니다. 판매자는 22개 언어로 현지화된 지원을 통해 전 세계 고객에게 다가갑니다. 구매자는 자신의 데이터가 암호화되어 있다는 사실을 알고 안심하고 거래합니다. 우리는 함께 한 번에 하나의 안전한 거래로 지역 및 글로벌 무역의 미래를 구축하고 있습니다.',
+    // ── About Us V2 ──
+    about_title: '비하인드 루프에 대한 비전 있는 마스터마인드 표시',
+    about_subtitle: 'Loop Marked는 단일 목적에 따라 단일 건축가가 설계하고 구축한 수천 시간의 끊임없는 혁신의 결과입니다.',
+    about_story_title: '솔로 혁명',
+    about_story_p1: 'Loop Marked는 세계에서 가장 안전하고 사용자 중심적인 시장을 만들겠다는 급진적인 비전에서 탄생했습니다. 이 웹사이트의 모든 단일 픽셀과 모바일 애플리케이션의 모든 코드 라인은 한 사람이 설계, 개발 및 테스트했습니다. 이 여정에는 파괴적인 아이디어를 프리미엄 글로벌 생태계로 바꾸는 데 수천 시간의 집중이 필요했습니다.',
+    about_story_p2: '이 프로젝트의 이면에는 절대적인 헌신이 담겨 있었습니다. 기술적 실행은 단독으로 걸작을 만든 반면, 기반은 가족과 친구들로 구성된 긴밀한 관계의 확고한 지원과 테스트에 힘입어 이루어졌습니다. 비전에 대한 그들의 믿음은 모든 복잡한 장애물을 극복하고 오늘날 볼 수 있는 고성능 경험을 개선할 수 있는 힘을 제공했습니다.',
+    about_vision_title: '루프 마크 컨셉의 천재',
+    about_vision_p: '개인 정보 보호가 종종 무시되는 세상에서 저는 보안이 나중에 고려되지 않고 핵심 DNA가 되는 시스템을 설계하는 데 수년을 보냈습니다. Loop Marked의 "Mastermind" 개념은 사용자가 최종적으로 통제할 수 있는 폐쇄 루프 경제를 만드는 것입니다. Loop Marked는 혁신적인 Lumo 경제와 엔드투엔드 암호화를 통합하여 모든 상호 작용이 구조적으로 안전하고 모든 사용자가 공정하게 보상받는 공간을 만듭니다.',
+    about_core_title: '혁신: Lumo & 스토리',
+    about_core_p: 'Loop Marked 엔진의 중심에는 Lumo 경제와 몰입형 스토리가 있습니다. 이것은 단지 구매 및 판매에 관한 것이 아닙니다. 이는 디지털 평판을 구축하고 개인 정보를 소중히 여기는 커뮤니티에 참여하는 것입니다. Lumo 생태계는 원활하고 안전한 거래를 가능하게 하며 Stories는 시장에 생기를 불어넣어 사용자가 한 번에 24시간 자신의 세계를 선보일 수 있도록 해줍니다.',
+    about_win_title: '궁극적인 상생 생태계',
+    about_win_p: '이 혁신적인 생태계에서는 모든 이해관계자가 승리합니다. 판매자는 22개 언어와 RTL 호환성을 지원하여 글로벌 무대에 접근합니다. 구매자는 군사급 암호화로 보호되어 절대적인 신뢰를 갖고 거래합니다. 우리는 함께 사람들의 거래 방식만 바꾸는 것이 아닙니다. 우리는 안전하고 프라이빗하며 커뮤니티 중심의 미래 시장을 위한 새로운 글로벌 표준을 확립하고 있습니다.',
 };
 
 // ── Chinese ──
@@ -2817,15 +2880,18 @@ const zh = {
     dl_ios: '在应用商店下载',
     dl_android: '在 Google Play 上获取',
     // ── About Us ──
-    about_title: '循环标记背后的远见卓识',
-    about_subtitle: 'Loop Marked 不仅仅是一个应用程序；这是一位独立创始人多年不懈奉献的结晶。',
-    about_story_title: '独行之旅',
-    about_story_p1: 'Loop Marked 诞生于一个独特的愿景：重新定义数字市场。该网站上的每个像素以及移动应用程序中的每一行代码都是由一个人设计、开发和测试的。这一旅程需要数千小时的奉献，将一个颠覆性的概念转变为一个全球可访问的生态系统。',
-    about_story_p2: '在幕后，这个项目是爱和韧性的劳动。虽然执行是一个人的努力，但通过一小群朋友和家人坚定不移的支持和测试，基础得到了加强。他们对该项目的信念为克服每一个技术障碍并完善您今天看到的体验提供了动力。',
-    about_vision_title: '为什么选择循环市场？',
-    about_vision_p: '在个人数据经常被交易以获取利润的时代，我花了数年时间设计一个平台，其中隐私是基础，而不仅仅是一个功能。通过将军用级加密与创新的 Lumo 经济相结合，Loop Marked 创造了一个安全得到结构性保证且参与得到公平回报的空间。',
-    about_win_title: '所有人的双赢',
-    about_win_p: '在这个生态系统中，每个人都是赢家。卖家通过 22 种语言的本地化支持覆盖全球受众。买家知道他们的数据已加密，因此可以放心交易。我们正在共同建设本地和全球贸易的未来——一次一笔安全的交易。',
+    // ── About Us V2 ──
+    about_title: '循环标记背后的有远见的策划者',
+    about_subtitle: 'Loop Marked 是由一位建筑师出于单一目的而设计和建造的数千小时不懈创新的成果。',
+    about_story_title: '单独的革命',
+    about_story_p1: 'Loop Marked 诞生于一个激进的愿景：创建世界上最安全、以用户为中心的市场。该网站上的每个像素以及移动应用程序中的每一行代码都是由一个人设计、开发和测试的。这一旅程需要数千小时的专注，将颠覆性想法转变为优质的全球生态系统。',
+    about_story_p2: '在幕后，这个项目是绝对奉献的劳动。虽然技术执行是一项单独的杰作，但其基础是由家人和朋友的坚定支持和测试推动的。他们对愿景的信念提供了克服每一个复杂障碍并完善您今天看到的高性能体验的力量。',
+    about_vision_title: '循环标记概念的天才',
+    about_vision_p: '在一个隐私经常被忽视的世界里，我花了数年时间设计一个系统，其中安全是核心 DNA，而不是事后的想法。 Loop Marked 背后的“Mastermind”理念是创建一个由用户最终掌控的闭环经济。通过将端到端加密与革命性的 Lumo 经济相结合，Loop Marked 创建了一个空间，在该空间中，每次交互在结构上都是安全的，并且每个用户都得到公平的奖励。',
+    about_core_title: '创新：Lumo 和故事',
+    about_core_p: 'Loop Marked 引擎的核心是 Lumo 经济和沉浸式故事。这不仅仅是买卖；这不仅仅是买卖。这是关于建立数字声誉并参与重视您的隐私的社区。 Lumo 生态系统可实现无缝、安全的交易，而 Stories 则让市场变得栩栩如生，让用户能够 24 小时展示他们的世界。',
+    about_win_title: '终极双赢生态系统',
+    about_win_p: '在这个革命性的生态系统中，每个利益相关者都是赢家。通过支持 22 种语言和 RTL 兼容性，卖家可以进入全球舞台。买家可以在军用级加密的保护下充满信心地进行交易。我们共同努力，不仅改变了人们的交易方式，而且还改变了人们的交易方式。我们正在为未来安全、私密和社区驱动的市场建立新的全球标准。',
 };
 
 export const translations = { en, nb, sv, da, fi, de, fr, es, it, nl, pt, pl, tr, ru, uk, ar, fa, ku, ps, ja, ko, zh };
