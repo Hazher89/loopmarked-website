@@ -11,6 +11,7 @@ export default defineConfig({
                 privacy: resolve(__dirname, 'privacy.html'),
                 terms: resolve(__dirname, 'terms.html'),
                 download: resolve(__dirname, 'download.html'),
+                about: resolve(__dirname, 'about.html'),
             },
         },
     },
