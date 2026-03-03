@@ -40,7 +40,8 @@ function applyTranslations() {
         } else if (el.tagName === 'INPUT' && el.placeholder) {
             el.placeholder = val;
         } else {
-            el.textContent = val;
+            // Use innerHTML to support tags like <strong> or <br> in translations
+            el.innerHTML = val;
         }
     });
 }
