@@ -228,6 +228,11 @@ const en = {
     terms_6_p: 'We reserve the right to modify these Terms of Service at any time. We will notify users of significant changes through the app. Continued use of the platform after changes constitutes acceptance of the new terms.',
     terms_7_title: '7. Contact Us',
     terms_7_p: 'If you have any questions about these Terms, feel free to reach out via the in-app support chat, or by emailing <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.',
+    // ── Download Page ──
+    dl_title: 'Get Loop Marked',
+    dl_subtitle: 'The premium, privacy-first marketplace is available on iOS and Android. Download now to start trading safely.',
+    dl_ios: 'Download on the App Store',
+    dl_android: 'Get it on Google Play',
 };
 
 // ── Norwegian ──
@@ -435,6 +440,11 @@ const nb = {
     terms_6_p: 'Vi forbeholder oss retten til å endre disse vilkårene for bruk når som helst. Vi vil varsle brukere om betydelige endringer gjennom appen. Fortsatt bruk av plattformen etter endringer utgjør aksept av de nye vilkårene.',
     terms_7_title: '7. Kontakt oss',
     terms_7_p: 'Hvis du har spørsmål om disse vilkårene, kan du gjerne ta kontakt via brukerstøttechatten i appen, eller ved å sende en e-post til <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.',
+    // ── Download Page ──
+    dl_title: 'Få Loop-merket',
+    dl_subtitle: 'Den førsteklasses, personvern-første markedsplassen er tilgjengelig på iOS og Android. Last ned nå for å begynne å handle trygt.',
+    dl_ios: 'Last ned på App Store',
+    dl_android: 'Få den på Google Play',
 };
 
 // ── Swedish ──
@@ -542,6 +552,11 @@ const sv = {
     terms_6_p: 'Vi förbehåller oss rätten att när som helst ändra dessa användarvillkor. Vi kommer att meddela användare om betydande ändringar via appen. Fortsatt användning av plattformen efter ändringar utgör godkännande av de nya villkoren.',
     terms_7_title: '7. Kontakta oss',
     terms_7_p: 'Om du har några frågor om dessa villkor är du välkommen att kontakta supportchatten i appen eller genom att maila <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.',
+    // ── Download Page ──
+    dl_title: 'Få Loop Marked',
+    dl_subtitle: 'Den premium, integritetsförsta marknadsplatsen är tillgänglig på iOS och Android. Ladda ner nu för att börja handla säkert.',
+    dl_ios: 'Ladda ner på App Store',
+    dl_android: 'Skaffa det på Google Play',
 };
 
 // ── Danish ──
@@ -629,6 +644,11 @@ const da = {
     terms_6_p: 'Vi forbeholder os retten til at ændre disse servicevilkår til enhver tid. Vi vil underrette brugere om væsentlige ændringer gennem appen. Fortsat brug af platformen efter ændringer udgør accept af de nye vilkår.',
     terms_7_title: '7. Kontakt os',
     terms_7_p: 'Hvis du har spørgsmål om disse vilkår, er du velkommen til at kontakte os via supportchatten i appen eller ved at sende en e-mail til <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.',
+    // ── Download Page ──
+    dl_title: 'Få Loop Marked',
+    dl_subtitle: 'Den førsteklasses, privatlivsførste markedsplads er tilgængelig på iOS og Android. Download nu for at begynde at handle sikkert.',
+    dl_ios: 'Download på App Store',
+    dl_android: 'Få det på Google Play',
 };
 
 // ── Finnish ──
@@ -714,6 +734,11 @@ const fi = {
     terms_6_p: 'Pidätämme oikeuden muuttaa näitä palveluehtoja milloin tahansa. Ilmoitamme käyttäjille merkittävistä muutoksista sovelluksen kautta. Alustan käytön jatkaminen muutosten jälkeen merkitsee uusien ehtojen hyväksymistä.',
     terms_7_title: '7. Ota yhteyttä',
     terms_7_p: 'Jos sinulla on kysyttävää näistä ehdoista, ota rohkeasti yhteyttä sovelluksen sisäisen tukikeskustelun kautta tai lähettämällä sähköpostia osoitteeseen <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.',
+    // ── Download Page ──
+    dl_title: 'Merkitse silmukka',
+    dl_subtitle: 'Ensiluokkainen, tietosuoja etusijalla oleva kauppapaikka on saatavilla iOS:lle ja Androidille. Lataa nyt aloittaaksesi kaupankäynnin turvallisesti.',
+    dl_ios: 'Lataa App Storesta',
+    dl_android: 'Hanki se Google Playsta',
 };
 
 // ── German ──
@@ -807,6 +832,11 @@ const de = {
     terms_6_p: 'Wir behalten uns das Recht vor, diese Nutzungsbedingungen jederzeit zu ändern. Wir werden Benutzer über die App über wesentliche Änderungen informieren. Die weitere Nutzung der Plattform nach Änderungen stellt die Annahme der neuen Bedingungen dar.',
     terms_7_title: '7. Kontaktieren Sie uns',
     terms_7_p: 'Wenn Sie Fragen zu diesen Bedingungen haben, wenden Sie sich bitte über den In-App-Support-Chat oder per E-Mail an <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.',
+    // ── Download Page ──
+    dl_title: 'Holen Sie sich eine Loop-Markierung',
+    dl_subtitle: 'Der erstklassige, datenschutzorientierte Marktplatz ist für iOS und Android verfügbar. Laden Sie es jetzt herunter, um sicher mit dem Handel zu beginnen.',
+    dl_ios: 'Im App Store herunterladen',
+    dl_android: 'Holen Sie es sich bei Google Play',
 };
 
 // ── French ──
@@ -898,6 +928,11 @@ const fr = {
     terms_6_p: 'Nous nous réservons le droit de modifier les présentes Conditions de Service à tout moment. Nous informerons les utilisateurs des changements importants via l\'application. La poursuite de l\'utilisation de la plateforme après des modifications constitue l\'acceptation des nouvelles conditions.',
     terms_7_title: '7. Contactez-nous',
     terms_7_p: 'Si vous avez des questions sur ces Conditions, n\'hésitez pas à nous contacter via le chat d\'assistance intégré à l\'application ou en envoyant un e-mail à <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.',
+    // ── Download Page ──
+    dl_title: 'Marquer la boucle',
+    dl_subtitle: 'Le marché premium axé sur la confidentialité est disponible sur iOS et Android. Téléchargez-le maintenant pour commencer à trader en toute sécurité.',
+    dl_ios: 'Télécharger sur l\'App Store',
+    dl_android: 'Obtenez-le sur Google Play',
 };
 
 // ── Spanish ──
@@ -1007,6 +1042,11 @@ const es = {
     terms_6_p: 'Nos reservamos el derecho de modificar estos Términos de servicio en cualquier momento. Notificaremos a los usuarios sobre cambios importantes a través de la aplicación. El uso continuado de la plataforma después de los cambios constituye la aceptación de los nuevos términos.',
     terms_7_title: '7. Contáctenos',
     terms_7_p: 'Si tiene alguna pregunta sobre estos Términos, no dude en comunicarse con nosotros a través del chat de soporte en la aplicación o enviando un correo electrónico a <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.',
+    // ── Download Page ──
+    dl_title: 'Obtener bucle marcado',
+    dl_subtitle: 'El mercado premium que prioriza la privacidad está disponible en iOS y Android. Descárguelo ahora para comenzar a operar de forma segura.',
+    dl_ios: 'Descargar en la tienda de aplicaciones',
+    dl_android: 'Consíguelo en Google Play',
 };
 
 // ── Italian ──
@@ -1114,6 +1154,11 @@ const it = {
     terms_6_p: 'Ci riserviamo il diritto di modificare i presenti Termini di servizio in qualsiasi momento. Informeremo gli utenti dei cambiamenti significativi tramite l\'app. L\'uso continuato della piattaforma dopo le modifiche costituisce l\'accettazione dei nuovi termini.',
     terms_7_title: '7. Contattaci',
     terms_7_p: 'In caso di domande sui presenti Termini, non esitare a contattarci tramite la chat di supporto in-app o inviando un\'e-mail a <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.',
+    // ── Download Page ──
+    dl_title: 'Ottieni il loop contrassegnato',
+    dl_subtitle: 'Il marketplace premium, incentrato sulla privacy, è disponibile su iOS e Android. Scaricalo ora per iniziare a fare trading in sicurezza.',
+    dl_ios: 'Scarica sull\'App Store',
+    dl_android: 'Scaricalo su Google Play',
 };
 
 // ── Dutch ──
@@ -1220,6 +1265,11 @@ const nl = {
     terms_6_p: 'Wij behouden ons het recht voor om deze Servicevoorwaarden op elk moment te wijzigen. We zullen gebruikers via de app op de hoogte stellen van belangrijke wijzigingen. Voortgezet gebruik van het platform na wijzigingen houdt aanvaarding van de nieuwe voorwaarden in.',
     terms_7_title: '7. Neem contact met ons op',
     terms_7_p: 'Als u vragen heeft over deze Voorwaarden, neem dan gerust contact op via de in-app supportchat of door een e-mail te sturen naar <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.',
+    // ── Download Page ──
+    dl_title: 'Laat de lus markeren',
+    dl_subtitle: 'De premium, op privacy gerichte marktplaats is beschikbaar op iOS en Android. Download nu om veilig te beginnen met handelen.',
+    dl_ios: 'Downloaden in de App Store',
+    dl_android: 'Download het op Google Play',
 };
 
 // ── Portuguese ──
@@ -1326,6 +1376,11 @@ const pt = {
     terms_6_p: 'Reservamo-nos o direito de modificar estes Termos de Serviço a qualquer momento. Notificaremos os usuários sobre mudanças significativas por meio do aplicativo. O uso continuado da plataforma após as alterações constitui aceitação dos novos termos.',
     terms_7_title: '7. Contate-nos',
     terms_7_p: 'Se você tiver alguma dúvida sobre estes Termos, sinta-se à vontade para entrar em contato por meio do chat de suporte no aplicativo ou enviando um e-mail para <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.',
+    // ── Download Page ──
+    dl_title: 'Obter loop marcado',
+    dl_subtitle: 'O mercado premium que prioriza a privacidade está disponível para iOS e Android. Baixe agora para começar a negociar com segurança.',
+    dl_ios: 'Baixe na App Store',
+    dl_android: 'Obtenha no Google Play',
 };
 
 // ── Polish ──
@@ -1432,6 +1487,11 @@ const pl = {
     terms_6_p: 'Zastrzegamy sobie prawo do zmiany niniejszego Regulaminu w dowolnym momencie. O istotnych zmianach będziemy powiadamiać użytkowników za pośrednictwem aplikacji. Dalsze korzystanie z platformy po zmianach oznacza akceptację nowego regulaminu.',
     terms_7_title: '7. Skontaktuj się z nami',
     terms_7_p: 'Jeśli masz jakiekolwiek pytania dotyczące niniejszych Warunków, skontaktuj się z nami za pośrednictwem czatu pomocy technicznej w aplikacji lub wysyłając e-mail na adres <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.',
+    // ── Download Page ──
+    dl_title: 'Uzyskaj oznaczenie pętli',
+    dl_subtitle: 'Rynek premium, w którym najważniejsza jest prywatność, jest dostępny na iOS i Androida. Pobierz teraz, aby bezpiecznie rozpocząć handel.',
+    dl_ios: 'Pobierz w App Store',
+    dl_android: 'Pobierz go w Google Play',
 };
 
 // ── Turkish ──
@@ -1538,6 +1598,11 @@ const tr = {
     terms_6_p: 'Bu Hizmet Koşullarını herhangi bir zamanda değiştirme hakkını saklı tutuyoruz. Kullanıcıları önemli değişiklikler konusunda uygulama aracılığıyla bilgilendireceğiz. Değişikliklerden sonra platformun kullanılmaya devam edilmesi, yeni şartların kabul edildiği anlamına gelir.',
     terms_7_title: '7. Bize Ulaşın',
     terms_7_p: 'Bu Şartlar hakkında herhangi bir sorunuz varsa, uygulama içi destek sohbeti aracılığıyla veya <a href="mailto:support@loopmarked.com">support@loopmarked.com</a> adresine e-posta göndererek bize ulaşmaktan çekinmeyin.',
+    // ── Download Page ──
+    dl_title: 'Döngü İşaretini Alın',
+    dl_subtitle: 'Birinci sınıf, gizliliğe öncelik veren pazar yeri iOS ve Android\'de mevcuttur. Güvenli bir şekilde ticarete başlamak için hemen indirin.',
+    dl_ios: 'App Store\'dan indirin',
+    dl_android: 'Google Play\'den edinin',
 };
 
 // ── Russian ──
@@ -1645,6 +1710,11 @@ const ru = {
     terms_6_p: 'Мы оставляем за собой право изменять настоящие Условия обслуживания в любое время. Мы будем уведомлять пользователей о существенных изменениях через приложение. Продолжение использования платформы после изменений означает принятие новых условий.',
     terms_7_title: '7. Свяжитесь с нами',
     terms_7_p: 'Если у вас есть какие-либо вопросы по поводу настоящих Условий, вы можете задать их через чат поддержки в приложении или по электронной почте <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.',
+    // ── Download Page ──
+    dl_title: 'Получить маркировку цикла',
+    dl_subtitle: 'Премиальная торговая площадка, ориентированная на конфиденциальность, доступна на iOS и Android. Загрузите сейчас, чтобы начать торговать безопасно.',
+    dl_ios: 'Загрузите в App Store',
+    dl_android: 'Загрузите его в Google Play',
 };
 
 // ── Ukrainian ──
@@ -1751,6 +1821,11 @@ const uk = {
     terms_6_p: 'Ми залишаємо за собою право змінювати ці Умови надання послуг у будь-який час. Ми повідомлятимемо користувачів про значні зміни через додаток. Продовження використання платформи після змін означає згоду з новими умовами.',
     terms_7_title: '7. Зв\'яжіться з нами',
     terms_7_p: 'Якщо у вас виникли запитання щодо цих Умов, не соромтеся зв’язатися через чат служби підтримки в програмі або надіслати електронний лист на <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.',
+    // ── Download Page ──
+    dl_title: 'Отримайте позначку циклу',
+    dl_subtitle: 'Преміальний маркетплейс, який займає першочергову позицію щодо конфіденційності, доступний для iOS та Android. Завантажте зараз, щоб почати безпечно торгувати.',
+    dl_ios: 'Завантажте в App Store',
+    dl_android: 'Отримайте в Google Play',
 };
 
 // ── Arabic ──
@@ -1858,6 +1933,11 @@ const ar = {
     terms_6_p: 'نحن نحتفظ بالحق في تعديل شروط الخدمة هذه في أي وقت. سنقوم بإخطار المستخدمين بالتغييرات المهمة من خلال التطبيق. ويشكل الاستمرار في استخدام المنصة بعد التغييرات قبولًا للشروط الجديدة.',
     terms_7_title: '7. اتصل بنا',
     terms_7_p: 'إذا كانت لديك أي أسئلة حول هذه الشروط، فلا تتردد في التواصل معنا عبر دردشة الدعم داخل التطبيق، أو عبر إرسال بريد إلكتروني إلى <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>.',
+    // ── Download Page ──
+    dl_title: 'احصل على علامة الحلقة',
+    dl_subtitle: 'يتوفر السوق المتميز الذي يضع الخصوصية أولاً على نظامي iOS وAndroid. قم بالتنزيل الآن لبدء التداول بأمان.',
+    dl_ios: 'قم بالتنزيل على متجر التطبيقات',
+    dl_android: 'احصل عليه على جوجل بلاي',
 };
 
 // ── Persian ──
@@ -1964,6 +2044,11 @@ const fa = {
     terms_6_p: 'ما حق تغییر این شرایط خدمات را در هر زمان برای خود محفوظ می داریم. تغییرات مهم را از طریق برنامه به کاربران اطلاع خواهیم داد. ادامه استفاده از پلتفرم پس از تغییرات به منزله پذیرش شرایط جدید است.',
     terms_7_title: '7. تماس با ما',
     terms_7_p: 'اگر درباره این شرایط سؤالی دارید، می‌توانید از طریق چت پشتیبانی درون‌برنامه یا با ایمیل <a href="mailto:support@loopmarked.com">support@loopmarked.com</a> تماس بگیرید.',
+    // ── Download Page ──
+    dl_title: 'حلقه علامت گذاری کنید',
+    dl_subtitle: 'بازار پریمیوم و برای حفظ حریم خصوصی در iOS و Android در دسترس است. اکنون دانلود کنید تا با خیال راحت تجارت را شروع کنید.',
+    dl_ios: 'در اپ استور دانلود کنید',
+    dl_android: 'آن را در Google Play دریافت کنید',
 };
 
 // ── Kurdish ──
@@ -2070,6 +2155,11 @@ const ku = {
     terms_6_p: 'Em mafê xwe diparêzin ku van Mercên Karûbar di her kêliyê de biguhezînin. Em ê bikarhêneran ji guhertinên girîng bi navgîniya sepanê agahdar bikin. Berdewamkirina karanîna platformê piştî guhertinan pejirandina şertên nû ye.',
     terms_7_title: '7. Têkilî Bi me re',
     terms_7_p: 'Ger pirsên we li ser van Mercên hanê hebin, bi dilxwazî ​​xwe bigihînin sohbeta piştevaniya nav-app, an jî bi e-nameyê <a href="mailto:support@loopmarked.com">support@loopmarked.com</a> re bişînin.',
+    // ── Download Page ──
+    dl_title: 'Loop Nîşankirî bistînin',
+    dl_subtitle: 'Bazara pêşîn, nepenîtiyê-yekemîn li ser iOS û Android-ê heye. Naha dakêşin da ku bi ewlehî dest bi bazirganiyê bikin.',
+    dl_ios: 'Li ser App Store dakêşin',
+    dl_android: 'Wê li Google Play-ê bistînin',
 };
 
 // ── Pashto ──
@@ -2176,6 +2266,11 @@ const ps = {
     terms_6_p: 'موږ حق لرو چې هر وخت د دې خدماتو شرایط تعدیل کړو. موږ به کاروونکو ته د ایپ له لارې د پام وړ بدلونونو خبر ورکړو. د بدلونونو وروسته د پلیټ فارم دوامداره کارول د نوي شرایطو منل رامینځته کوي.',
     terms_7_title: '7. موږ سره اړیکه ونیسئ',
     terms_7_p: 'که تاسو د دې شرایطو په اړه کومه پوښتنه لرئ، د اپلیکیشن د ملاتړ چټ له لارې یا د بریښنالیک له لارې د <a href="mailto:support@loopmarked.com">support@loopmarked.com</a> ته د رسیدو لپاره وړیا احساس وکړئ.',
+    // ── Download Page ──
+    dl_title: 'لوپ په نښه کړئ',
+    dl_subtitle: 'پریمیم، د محرمیت لومړی بازار په iOS او Android کې شتون لري. په خوندي ډول سوداګرۍ پیل کولو لپاره همدا اوس ډاونلوډ کړئ.',
+    dl_ios: 'په اپل سټور کې ډاونلوډ کړئ',
+    dl_android: 'په ګوګل پلی کې یې ترلاسه کړئ',
 };
 
 // ── Japanese ──
@@ -2283,6 +2378,11 @@ const ja = {
     terms_6_p: '当社は、これらの利用規約をいつでも変更する権利を留保します。重要な変更についてはアプリを通じてユーザーに通知します。変更後もプラットフォームを継続して使用すると、新しい規約に同意したものとみなされます。',
     terms_7_title: '7. お問い合わせ',
     terms_7_p: '本規約についてご質問がある場合は、アプリ内サポート チャットまたは電子メール <a href="mailto:support@loopmarked.com">support@loopmarked.com</a> でお気軽にお問い合わせください。',
+    // ── Download Page ──
+    dl_title: 'ループのマークを取得',
+    dl_subtitle: 'プライバシー最優先のプレミアム マーケットプレイスは、iOS と Android で利用できます。今すぐダウンロードして安全に取引を始めてください。',
+    dl_ios: 'App Storeでダウンロード',
+    dl_android: 'Google Play で入手',
 };
 
 // ── Korean ──
@@ -2389,6 +2489,11 @@ const ko = {
     terms_6_p: '당사는 언제든지 본 서비스 약관을 수정할 권리를 보유합니다. 중요한 변경사항은 앱을 통해 사용자에게 공지하겠습니다. 변경 후에도 플랫폼을 계속 사용하면 새로운 약관에 동의하는 것으로 간주됩니다.',
     terms_7_title: '7. 문의하기',
     terms_7_p: '본 약관에 대해 질문이 있는 경우 언제든지 앱 내 지원 채팅을 통해 문의하거나 <a href="mailto:support@loopmarked.com">support@loopmarked.com</a>으로 이메일을 보내 문의하세요.',
+    // ── Download Page ──
+    dl_title: '루프 표시 받기',
+    dl_subtitle: '개인정보 보호를 최우선으로 하는 프리미엄 마켓플레이스는 iOS와 Android에서 이용 가능합니다. 지금 다운로드하여 안전하게 거래를 시작해 보세요.',
+    dl_ios: '앱 스토어에서 다운로드',
+    dl_android: 'Google Play에서 구매하세요',
 };
 
 // ── Chinese ──
@@ -2496,6 +2601,11 @@ const zh = {
     terms_6_p: '我们保留随时修改这些服务条款的权利。我们将通过应用程序通知用户重大变化。更改后继续使用该平台即表示接受新条款。',
     terms_7_title: '7. 联系我们',
     terms_7_p: '如果您对这些条款有任何疑问，请随时通过应用内支持聊天或发送电子邮件 <a href="mailto:support@loopmarked.com">support@loopmarked.com</a> 与我们联系。',
+    // ── Download Page ──
+    dl_title: '获取循环标记',
+    dl_subtitle: '这个隐私优先的优质市场可在 iOS 和 Android 上使用。立即下载以开始安全交易。',
+    dl_ios: '在应用商店下载',
+    dl_android: '在 Google Play 上获取',
 };
 
 export const translations = { en, nb, sv, da, fi, de, fr, es, it, nl, pt, pl, tr, ru, uk, ar, fa, ku, ps, ja, ko, zh };
