@@ -12,6 +12,7 @@ export default defineConfig({
                 terms: resolve(__dirname, 'terms.html'),
                 download: resolve(__dirname, 'download.html'),
                 about: resolve(__dirname, 'about.html'),
+                support: resolve(__dirname, 'support.html'),
             },
         },
     },
