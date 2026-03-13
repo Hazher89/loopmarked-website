@@ -272,11 +272,7 @@ const en = {
     contentAndListings: '6. Content and Listings',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. Transactions and Fees',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. Intellectual Property',
     intellectualPropertyContent: '• The Loop Marked brand, logo, design, source code, algorithms, and all related intellectual property are owned exclusively by Loop Marked and are protected by international copyright, trademark, and patent laws.<br>• You retain ownership of the content you create (photos, descriptions) but grant Loop Marked a perpetual, non-exclusive license to use, display, and distribute this content within the App and for promotional purposes.<br>• You may not copy, reproduce, modify, reverse engineer, distribute, or create derivative works based on any part of the App without explicit written permission from Loop Marked.<br>• Any feedback, suggestions, or ideas you submit to Loop Marked become our property and may be used without compensation or attribution.',
     termination: '9. Termination',
@@ -571,11 +567,7 @@ const nb = {
     contentAndListings: '6. Innhold og annonser',
     contentAndListingsContent: '• Du er alene ansvarlig for nøyaktigheten, fullstendigheten og lovligheten til annonsene dine.<br>• Du må være den juridiske eieren av gjenstanden du lister opp, eller ha eksplisitt skriftlig autorisasjon fra eieren til å selge på deres vegne.<br>• Alle bilder må nøyaktig og sannferdig representere den faktiske gjenstanden som tilbys.<br>• Annonser må ikke inneholde villedende beskrivelser, falske påstander eller villedende prising.<br>• Loop Marked forbeholder seg retten til å fjerne, endre eller begrense enhver annonse etter eget skjønn uten forhåndsvarsel.<br>• Annonser må overholde alle gjeldende lokale, nasjonale og internasjonale lover og forskrifter.',
     transactionsAndFees: '7. Transaksjoner og avgifter',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• Alle transaksjoner på Loop Marked utføres med Lumo.<br>• Transaksjoner anses som fullførte først når både kjøper og selger har bekreftet mottak og tilfredshet.<br>• Loop Marked er ikke ansvarlig for tvister mellom brukere angående gjenstandens tilstand, levering eller kvalitet.<br>• Brukere oppfordres til å møtes lokalt og inspisere gjenstander før de bekrefter handelen.<br>• Loop Marked tilbyr ikke deponering, forsikring eller beskyttelsestjenester for kjøper/selger. Alle handler skjer på eget ansvar.',
     intellectualProperty: '8. Immaterielle rettigheter',
     intellectualPropertyContent: '• Loop Marked-merket, logoen, designet, kildekoden, algoritmene og all relatert immateriell eiendom eies eksklusivt av Loop Marked og er beskyttet av internasjonale opphavsretts-, varemerke- og patentlover.<br>• Du beholder eierskapet til innholdet du oppretter (bilder, beskrivelser), men gir Loop Marked en evig, ikke-eksklusiv lisens til å bruke, vise og distribuere dette innholdet i appen og for markedsføringsformål.<br>• Du kan ikke kopiere, reprodusere, endre, dekompilere, distribuere eller lage avledede verk basert på noen del av appen uten eksplisitt skriftlig tillatelse fra Loop Marked.',
     termination: '9. Oppsigelse',
@@ -777,12 +769,8 @@ const sv = {
     contentAndListings: '6. Innehåll och annonser',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. Transaktioner och avgifter',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
-    intellectualProperty: '8. Immateriell egendom',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    intellectualProperty: '8. Immateriell egedom',
     intellectualPropertyContent: '• Allt innehåll i appen är skyddat av upphovsrätt<br>• Du behåller äganderätten till innehåll du skapar<br>• Genom att använda appen ger du oss en licens att använda ditt innehåll<br>• Du får inte kopiera, modifiera eller distribuera appinnehåll utan tillstånd',
     termination: '9. Uppsägning',
     terminationContent: '• Loop Marked reserves the right to suspend, restrict, or permanently terminate your account at any time, with or without notice, for any reason including but not limited to violations of these Terms.<br>• Upon termination, you lose access to your account and all associated Lumo balances. Forfeited Lumo is non-refundable.<br>• Upon termination, all your active listings and messages will be removed from the platform.<br>• Blocking another user does not constitute account termination; both accounts remain active with mutual interaction restrictions in place.<br>• You may request account deletion at any time through the App\'s settings. Deletion is permanent and irreversible.<br>• Certain provisions of these Terms (including Limitation of Liability, Intellectual Property, and Dispute Resolution) survive termination.',
@@ -932,11 +920,7 @@ const da = {
     contentAndListings: '6. Indhold og annoncer',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. Transaktioner og gebyrer',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. Immateriel ejendom',
     intellectualPropertyContent: '• Alt indhold i appen er beskyttet af ophavsret<br>• Du beholder ejerskab af indhold, du opretter<br>• Ved at bruge appen giver du os en licens til at bruge dit indhold<br>• Du må ikke kopiere, modificere eller distribuere appindhold uden tilladelse',
     termination: '9. Ophør',
@@ -1085,11 +1069,7 @@ const fi = {
     contentAndListings: '6. Sisältö ja ilmoitukset',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. Transaktiot ja maksut',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. Henkinen omaisuus',
     intellectualPropertyContent: '• Kaikki sovelluksen sisältö on tekijänoikeuksien suojassa<br>• Säilytät omistusoikeuden luomaasi sisältöön<br>• Käyttämällä sovellusta annat meille luvan käyttää sisältöäsi<br>• Et saa kopioida, muokata tai jakaa sovelluksen sisältöä ilman lupaa',
     termination: '9. Lopettaminen',
@@ -1246,11 +1226,7 @@ const de = {
     contentAndListings: '6. Inhalte und Anzeigen',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. Transaktionen und Gebühren',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. Geistiges Eigentum',
     intellectualPropertyContent: '• Alle Inhalte in der App sind urheberrechtlich geschützt<br>• Sie behalten das Eigentum an den von Ihnen erstellten Inhalten<br>• Durch die Nutzung der App gewähren Sie uns eine Lizenz zur Nutzung Ihrer Inhalte<br>• Sie dürfen App-Inhalte nicht ohne Erlaubnis kopieren, ändern oder verteilen',
     termination: '9. Kündigung',
@@ -1405,11 +1381,7 @@ const fr = {
     contentAndListings: '6. Contenu et Annonces',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. Transactions et Frais',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. Propriété Intellectuelle',
     intellectualPropertyContent: '• Tout le contenu de l\'application est protégé par le droit d\'auteur<br>• Vous conservez la propriété du contenu que vous créez<br>• En utilisant l\'application, vous nous accordez une licence pour utiliser votre contenu<br>• Vous ne pouvez pas copier, modifier ou distribuer le contenu de l\'application sans autorisation',
     termination: '9. Résiliation',
@@ -1582,11 +1554,7 @@ const es = {
     contentAndListings: '6. Contenido y Anuncios',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. Transacciones y Tarifas',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. Propiedad Intelectual',
     intellectualPropertyContent: '• Todo el contenido en la aplicación está protegido por derechos de autor<br>• Conservas la propiedad del contenido que creas<br>• Al usar la aplicación, nos otorgas una licencia para usar tu contenido<br>• No puedes copiar, modificar o distribuir el contenido de la aplicación sin permiso',
     termination: '9. Terminación',
@@ -1757,11 +1725,7 @@ const it = {
     contentAndListings: '6. Contenuto e Annunci',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. Transazioni e Commissioni',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. Proprietà Intellettuale',
     intellectualPropertyContent: '• Tutto il contenuto nell\'applicazione è protetto da copyright<br>• Mantieni la proprietà del contenuto che crei<br>• Utilizzando l\'applicazione, ci concedi una licenza per utilizzare il tuo contenuto<br>• Non puoi copiare, modificare o distribuire il contenuto dell\'applicazione senza permesso',
     termination: '9. Risoluzione',
@@ -1931,11 +1895,7 @@ const nl = {
     contentAndListings: '6. Inhoud en Advertenties',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. Transacties en Kosten',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. Intellectueel Eigendom',
     intellectualPropertyContent: '• Alle inhoud in de app is beschermd door auteursrecht<br>• U behoudt het eigendom van de inhoud die u maakt<br>• Door de app te gebruiken, verleent u ons een licentie om uw inhoud te gebruiken<br>• U mag app-inhoud niet kopiëren, wijzigen of distribueren zonder toestemming',
     termination: '9. Beëindiging',
@@ -2105,11 +2065,7 @@ const pt = {
     contentAndListings: '6. Conteúdo e Anúncios',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. Transações e Taxas',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. Propriedade Intelectual',
     intellectualPropertyContent: '• Todo o conteúdo no aplicativo é protegido por direitos autorais<br>• Você mantém a propriedade do conteúdo que cria<br>• Ao usar o aplicativo, você nos concede uma licença para usar seu conteúdo<br>• Você não pode copiar, modificar ou distribuir o conteúdo do aplicativo sem permissão',
     termination: '9. Rescisão',
@@ -2279,11 +2235,7 @@ const pl = {
     contentAndListings: '6. Treść i Ogłoszenia',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. Transakcje i Opłaty',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. Własność Intelektualna',
     intellectualPropertyContent: '• Cała zawartość aplikacji jest chroniona prawami autorskimi<br>• Zachowujesz własność treści, którą tworzysz<br>• Korzystając z aplikacji, udzielasz nam licencji na korzystanie z Twojej treści<br>• Nie możesz kopiować, modyfikować ani rozpowszechniać treści aplikacji bez pozwolenia',
     termination: '9. Zakończenie',
@@ -2453,11 +2405,7 @@ const tr = {
     contentAndListings: '6. İçerik ve İlanlar',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. İşlemler ve Ücretler',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. Fikri Mülkiyet',
     intellectualPropertyContent: '• Uygulamadaki tüm içerik telif hakkıyla korunmaktadır<br>• Oluşturduğunuz içeriğin sahipliğini elinizde tutarsınız<br>• Uygulamayı kullanarak, içeriğinizi kullanmamız için bize lisans verirsiniz<br>• İzin olmadan uygulama içeriğini kopyalayamaz, değiştiremez veya dağıtamazsınız',
     termination: '9. Sonlandırma',
@@ -2628,11 +2576,7 @@ const ru = {
     contentAndListings: '6. Контент и объявления',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. Транзакции и комиссии',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. Интеллектуальная собственность',
     intellectualPropertyContent: '• Весь контент в приложении защищен авторским правом<br>• Вы сохраняете право собственности на созданный вами контент<br>• Используя приложение, вы предоставляете нам лицензию на использование вашего контента<br>• Вы не можете копировать, изменять или распространять контент приложения без разрешения',
     termination: '9. Прекращение',
@@ -2802,11 +2746,7 @@ const uk = {
     contentAndListings: '6. Контент та оголошення',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. Транзакції та комісії',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. Інтелектуальна власність',
     intellectualPropertyContent: '• Весь контент у додатку захищений авторським правом<br>• Ви зберігаєте право власності на створений вами контент<br>• Використовуючи додаток, ви надаєте нам ліцензію на використання вашого контенту<br>• Ви не можете копіювати, змінювати або поширювати контент додатку без дозволу',
     termination: '9. Припинення',
@@ -2977,11 +2917,7 @@ const ar = {
     contentAndListings: '6. المحتوى والإعلانات',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. المعاملات والرسوم',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. الملكية الفكرية',
     intellectualPropertyContent: '• جميع المحتويات في التطبيق محمية بحقوق الطبع والنشر<br>• تحتفظ بملكية المحتوى الذي تنشئه<br>• باستخدام التطبيق، تمنحنا ترخيصاً لاستخدام محتواك<br>• لا يجوز لك نسخ أو تعديل أو توزيع محتوى التطبيق دون إذن',
     termination: '9. الإنهاء',
@@ -3151,11 +3087,7 @@ const fa = {
     contentAndListings: '6. المحتوى والإعلانات',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. المعاملات والرسوم',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. الملكية الفكرية',
     intellectualPropertyContent: '• جميع المحتويات في التطبيق محمية بحقوق الطبع والنشر<br>• تحتفظ بملكية المحتوى الذي تنشئه<br>• باستخدام التطبيق، تمنحنا ترخيصاً لاستخدام محتواك<br>• لا يجوز لك نسخ أو تعديل أو توزيع محتوى التطبيق دون إذن',
     termination: '9. الإنهاء',
@@ -3325,11 +3257,7 @@ const ku = {
     contentAndListings: '6. ناوەڕۆک و لیستەکان',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. مامەڵە و ڕسومات',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. خاوەندارێتی هزری',
     intellectualPropertyContent: '• مارکەی Loop Marked، لۆگۆ، دیزاین، کۆدی سەرچاوە، ئەلگۆریتمەکان و هەموو خاوەندارێتی فیکری پەیوەندیدار بە تایبەتی لەلایەن Loop Marked ەوە خاوەندارێتی دەکرێت و بە یاسا نێودەوڵەتییەکانی مافی چاپکردن، نیشانە بازرگانییەکان و پاتێنت پارێزراون.<br>• تۆ خاوەندارێتی ئەو ناوەڕۆکە دەهێڵیتەوە کە دروستی دەکەیت (وێنەکان، وەسفەکان) بەڵام مۆڵەتێکی هەمیشەیی و ناتایبەت بە Loop Marked دەدەیت بۆ بەکارهێنان، پیشاندان و دابەشکردنی ئەم ناوەڕۆکە لەناو ئەپەکەدا و بۆ مەبەستی بانگەشەکردن.<br>• ناتوانیت کۆپی بکەیت، بەرهەمبهێنیتەوە، دەستکاری بکەیت، ئەندازیاری پێچەوانە بکەیتەوە، دابەشی بکەیت، یان بەرهەمی وەرگیراو دروست بکەیت لەسەر بنەمای هیچ بەشێکی ئەپەکە بەبێ مۆڵەتی نووسراوی ڕوون لە Loop Marked.<br>هەر فیدباکێک، پێشنیارێک، یان بیرۆکەیەک کە پێشکەشی Loop Marked دەکەیت دەبێتە موڵکی ئێمە و لەوانەیە بەبێ قەرەبووکردنەوە یان ئیسباتکردن بەکاربهێنرێت.',
     termination: '9. کۆتاییهێنان',
@@ -3499,11 +3427,7 @@ const ps = {
     contentAndListings: '6. منځپانګې او لیستونه',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. لیږدونه او فیسونه',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. فکري ملکیت',
     intellectualPropertyContent: '• د لوپ نښه شوی برانډ، لوګو، ډیزاین، سرچینې کوډ، الګوریتمونه، او ټول اړونده فکري ملکیت په ځانګړې توګه د لوپ نښه شوي ملکیت لري او د نړیوال کاپي حق، سوداګریزې نښې، او د پیټینټ قوانینو لخوا خوندي شوي.<br>• تاسو د هغه مینځپانګې ملکیت ساتئ چې تاسو یې رامینځته کوئ (عکسونه ، توضیحات) مګر لوپ په نښه شوي یو تلپاتې ، غیر ځانګړي جواز د دې مینځپانګې کارولو ، ښودلو او توزیع کولو لپاره په اپلیکیشن کې او د پروموشنل موخو لپاره ورکړئ.<br>• تاسو نشي کولی د لوپ مارک شوي واضح لیکلې اجازې پرته د اپلیکیشن هرې برخې پراساس کاپي ، بیا تولید ، ترمیم ، ریورس انجینر ، توزیع یا مشتق کارونه رامینځته نه کړئ.<br>• کوم فیډبیک، وړاندیزونه، یا نظرونه چې تاسو لوپ مارک شوي ته وړاندې کوئ زموږ ملکیت دی او کیدای شي پرته له خسارې یا منسوب څخه وکارول شي.',
     termination: '9. ختمول',
@@ -3674,11 +3598,7 @@ const ja = {
     contentAndListings: '6. コンテンツとリスト',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. 取引と手数料',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. 知的財産',
     intellectualPropertyContent: '• アプリ内のすべてのコンテンツは著作権で保護されています<br>• 作成したコンテンツの所有権を保持します<br>• アプリを使用することで、コンテンツを使用するライセンスを付与します<br>• 許可なくアプリコンテンツをコピー、変更、または配布することはできません',
     termination: '9. 終了',
@@ -3848,11 +3768,7 @@ const ko = {
     contentAndListings: '6. 콘텐츠 및 목록',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. 거래 및 수수료',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. 지적 재산권',
     intellectualPropertyContent: '• 앱의 모든 콘텐츠는 저작권으로 보호됩니다<br>• 생성한 콘텐츠의 소유권을 유지합니다<br>• 앱을 사용함으로써 콘텐츠를 사용할 수 있는 라이선스를 부여합니다<br>• 허가 없이 앱 콘텐츠를 복사, 수정 또는 배포할 수 없습니다',
     termination: '9. 종료',
@@ -4023,11 +3939,7 @@ const zh = {
     contentAndListings: '6. 内容和列表',
     contentAndListingsContent: '• You are solely responsible for the accuracy, completeness, and legality of your listings.<br>• You must be the legal owner of any item you list, or have explicit written authorization from the owner to sell on their behalf.<br>• All images must accurately and truthfully represent the actual item being offered.<br>• Listings must not contain misleading descriptions, false claims, or deceptive pricing.<br>• Loop Marked reserves the right to remove, modify, or restrict any listing at its sole discretion without prior notice.<br>• Listings must comply with all applicable local, national, and international laws and regulations.<br>• You grant Loop Marked a non-exclusive, worldwide, royalty-free license to display, reproduce, and distribute your listing content within the App.',
     transactionsAndFees: '7. 交易和费用',
-    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.
-• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.
-• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.
-• Users are encouraged to meet locally and inspect items before confirming trades.
-• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
+    transactionsAndFeesContent: '• All transactions on Loop Marked are conducted using Lumo.<br>• Transactions are considered complete only when both the trader and lister have confirmed receipt and satisfaction.<br>• Loop Marked is not responsible for disputes between users regarding item condition, delivery, or quality.<br>• Users are encouraged to meet locally and inspect items before confirming trades.<br>• Loop Marked does not provide escrow, insurance, or trader/lister protection services. All trades are conducted at your own risk.',
     intellectualProperty: '8. 知识产权',
     intellectualPropertyContent: '• 应用程序中的所有内容均受版权保护<br>• 您保留所创建内容的所有权<br>• 通过使用应用程序，您授予我们使用您内容的许可<br>• 未经许可，您不得复制、修改或分发应用程序内容',
     termination: '9. 终止',
