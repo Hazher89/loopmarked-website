@@ -265,6 +265,11 @@
 .dashboard-content {
     padding: 40px;
     flex: 1;
+    min-height: 0;
+}
+
+.content-section {
+    display: none;
 }
 
 .content-section.active {
