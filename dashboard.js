@@ -13,6 +13,22 @@ let currentUser = null;
 let activeChatId = null;
 let activeChatSubscription = null;
 
+const CATEGORIES = {
+    'electronics': ['accessories', 'audio_hi_fi', 'cameras_photo', 'computer_components', 'drones_robotics', 'home_appliances', 'laptops_computers', 'networking_internet', 'phones_tablets', 'printers_scanners', 'smart_home', 'tv_video', 'video_games_consoles', 'wearables_gadgets', 'other_electronics'],
+    'clothing': ['accessories', 'bags', 'jewelry', 'kids_clothing', 'mens_clothing', 'outerwear', 'shoes', 'sports_wear', 'underwear', 'watches', 'womens_clothing', 'other_clothing'],
+    'furniture': ['beds_mattresses', 'bookcases_shelving', 'cabinets_sideboards', 'chairs', 'desks_office', 'dining_sets', 'dressers_storage', 'kids_furniture', 'kitchen_furniture', 'ottomans_benches', 'outdoor_furniture', 'sofas_couches', 'tables', 'wardrobes_closets', 'other_furniture'],
+    'home_garden': ['bathroom', 'bbq_outdoor', 'bedding', 'building_materials', 'cleaning', 'cookware', 'curtains_blinds', 'garden_furniture', 'garden_plants', 'garden_tools', 'heating_cooling', 'home_decor', 'kitchen_dining', 'lighting', 'rugs_carpets', 'security_safety', 'small_appliances', 'storage_organization', 'tools_diy', 'other_home_garden'],
+    'vehicles': ['atv_utv_snowmobile', 'bicycles', 'boats_marine', 'car_parts_accessories', 'cars', 'motorcycles', 'rv_campers', 'scooters_mopeds', 'tires_rims', 'trucks_trailers', 'vans_commercial', 'other_vehicles'],
+    'baby_kids': ['baby_clothing', 'baby_furniture', 'baby_gear', 'baby_safety', 'baby_toys', 'car_seats', 'diapers', 'feeding', 'kids_books', 'kids_clothing_2_8', 'kids_clothing_9_16', 'kids_toys_3_7', 'kids_toys_8_plus', 'maternity', 'other_baby_kids'],
+    'beauty': ['bath_body', 'beauty_tools', 'fragrances', 'hair_styling', 'haircare', 'makeup_accessories', 'makeup_eyes', 'makeup_face', 'makeup_lips', 'makeup_sets', 'mens_grooming', 'nail_care', 'personal_hygiene', 'skincare', 'other_beauty'],
+    'books': ['biography', 'childrens_books', 'comics', 'cookbooks', 'fiction', 'magazines', 'non_fiction', 'reference', 'self_help', 'textbooks', 'other_books'],
+    'property': ['apartments_rent', 'apartments_sale', 'commercial_property', 'houses_rent', 'houses_sale', 'land_plots', 'parking_garage', 'rooms_shared', 'vacation_rentals', 'other_property'],
+    'sports': ['basketball', 'camping_hiking', 'cycling', 'fishing', 'fitness_equipment', 'golf', 'outdoor_gear', 'soccer', 'sports_accessories', 'tennis', 'water_sports', 'winter_sports', 'other_sports'],
+    'toys': ['action_figures', 'arts_crafts', 'board_games', 'building_blocks', 'collectibles', 'dolls', 'educational_toys', 'electronic_toys', 'outdoor_toys', 'puzzles', 'other_toys'],
+    'services': ['beauty_wellness', 'business_services', 'cleaning_services', 'events_entertainment', 'gardening_landscaping', 'handyman', 'home_services', 'it_tech_support', 'moving_transport', 'pet_services', 'photography_video', 'tutoring_lessons', 'other_services'],
+    'other': []
+};
+
 // ═══════ AUTH GUARD & INIT ═══════
 async function init() {
     const { data: { session } } = await supabase.auth.getSession();
@@ -193,29 +209,36 @@ async function loadMarketplace() {
 
         // 2) Read current filter values from UI
         const categoryEl = document.getElementById('marketplaceCategory');
+        const subCategoryEl = document.getElementById('marketplaceSubCategory');
         const searchEl = document.getElementById('marketplaceSearch');
         const selectedCategory = categoryEl?.value || '';
+        const selectedSubCategory = subCategoryEl?.value || '';
         const searchText = (searchEl?.value || '').trim().toLowerCase();
 
-        // 3) Build query with STRICT filtering (same as Flutter app)
+        // 3) Build query with STRICT filtering
         let query = supabase
             .from('listings')
-            .select('id, title, price, seller_id, location, created_at, country_code, category')
+            .select('id, title, price, seller_id, location, created_at, country_code, category, category_id, sub_category_id')
             .eq('approval_status', 'approved')
             .eq('is_deleted', false)
             .eq('is_sold', false);
 
-        // 4) ALWAYS filter by user's country — NEVER show other countries
+        // 4) ALWAYS filter by user's country
         if (userCountry) {
             query = query.eq('country_code', userCountry);
         }
 
         // 5) Category filter
         if (selectedCategory) {
-            query = query.eq('category', selectedCategory);
+            query = query.or(`category.eq.${selectedCategory},category_id.eq.${selectedCategory}`);
         }
 
-        // 6) Search filter (ilike for title)  
+        // 6) Subcategory filter
+        if (selectedSubCategory) {
+            query = query.eq('sub_category_id', selectedSubCategory);
+        }
+
+        // 7) Search filter
         if (searchText) {
             query = query.ilike('title', `%${searchText}%`);
         }
@@ -234,11 +257,40 @@ async function loadMarketplace() {
 }
 
 // Marketplace filter event listeners
-document.getElementById('marketplaceCategory')?.addEventListener('change', () => loadMarketplace());
+document.getElementById('marketplaceCategory')?.addEventListener('change', (e) => {
+    const subEl = document.getElementById('marketplaceSubCategory');
+    const cat = e.target.value;
+    if (cat && CATEGORIES[cat] && CATEGORIES[cat].length > 0) {
+        subEl.innerHTML = '<option value="">All Subcategories</option>' +
+            CATEGORIES[cat].map(s => `<option value="${s}">${s.replace(/_/g, ' ')}</option>`).join('');
+        subEl.style.display = 'block';
+    } else {
+        subEl.style.display = 'none';
+        subEl.value = '';
+    }
+    loadMarketplace();
+});
+document.getElementById('marketplaceSubCategory')?.addEventListener('change', () => loadMarketplace());
+
 let _searchDebounce = null;
 document.getElementById('marketplaceSearch')?.addEventListener('input', () => {
     clearTimeout(_searchDebounce);
     _searchDebounce = setTimeout(() => loadMarketplace(), 400);
+});
+
+// Create listing category listener
+document.getElementById('newListingCategory')?.addEventListener('change', (e) => {
+    const group = document.getElementById('subCategoryGroup');
+    const subEl = document.getElementById('newListingSubCategory');
+    const cat = e.target.value;
+    if (cat && CATEGORIES[cat] && CATEGORIES[cat].length > 0) {
+        subEl.innerHTML = '<option value="">Select Subcategory</option>' +
+            CATEGORIES[cat].map(s => `<option value="${s}">${s.replace(/_/g, ' ')}</option>`).join('');
+        group.style.display = 'block';
+    } else {
+        group.style.display = 'none';
+        subEl.value = '';
+    }
 });
 
 async function loadMyListings() {
@@ -477,6 +529,9 @@ window.submitNewListing = async function () {
                 description: description || '',
                 price: priceLumet,
                 category: category,
+                category_id: category, // Save as ID too
+                sub_category_id: document.getElementById('newListingSubCategory').value || null,
+                sub_category_value: document.getElementById('newListingSubCategory').selectedOptions[0]?.text || null,
                 condition: condition,
                 location: location || 'Unknown',
                 seller_id: currentUser.id,

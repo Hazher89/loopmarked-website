@@ -208,7 +208,19 @@
                             <option value="electronics">Electronics</option>
                             <option value="clothing">Clothing</option>
                             <option value="furniture">Furniture</option>
+                            <option value="home_garden">Home & Garden</option>
+                            <option value="sports">Sports</option>
                             <option value="vehicles">Vehicles</option>
+                            <option value="baby_kids">Baby & Kids</option>
+                            <option value="beauty">Beauty</option>
+                            <option value="books">Books</option>
+                            <option value="property">Property</option>
+                            <option value="toys">Toys</option>
+                            <option value="services">Services</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <select id="marketplaceSubCategory" class="filter-select" style="display:none;">
+                            <option value="">All Subcategories</option>
                         </select>
                     </div>
                     <div class="listings-grid" id="marketplaceGrid">
@@ -484,16 +496,28 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Category</label>
+                    <label>Category *</label>
                     <select id="newListingCategory" class="popup-input">
                         <option value="electronics">Electronics</option>
                         <option value="clothing">Clothing</option>
-                        <option value="home">Home & Garden</option>
+                        <option value="furniture">Furniture</option>
+                        <option value="home_garden">Home & Garden</option>
                         <option value="sports">Sports</option>
                         <option value="vehicles">Vehicles</option>
+                        <option value="baby_kids">Baby & Kids</option>
+                        <option value="beauty">Beauty</option>
                         <option value="books">Books</option>
+                        <option value="property">Property</option>
                         <option value="toys">Toys</option>
+                        <option value="services">Services</option>
                         <option value="other" selected>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="subCategoryGroup" style="display:none;">
+                    <label>Subcategory *</label>
+                    <select id="newListingSubCategory" class="popup-input">
+                        <option value="">Select Subcategory</option>
                     </select>
                 </div>
 
