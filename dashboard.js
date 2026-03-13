@@ -981,25 +981,38 @@ function setupRealtime() {
 }
 
 // ═══════ SIDEBAR NAVIGATION ═══════
-// ═══════ SIDEBAR NAVIGATION ═══════
+function loadSection(section) {
+    // Tab switching
+    document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+    const activeLink = document.querySelector(`.sidebar-link[data-section="${section}"]`);
+    if (activeLink) activeLink.classList.add('active');
+
+    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+    const targetSection = document.getElementById(`section-${section}`);
+    if (targetSection) targetSection.classList.add('active');
+
+    // Title update
+    const title = section.charAt(0).toUpperCase() + section.slice(1);
+    const titleEl = document.getElementById('pageTitle');
+    if (titleEl) titleEl.textContent = title;
+
+    document.getElementById('sidebar')?.classList.remove('open');
+
+    // Actions based on section
+    if (section === 'messages') loadConversations();
+    if (section === 'marketplace') loadMarketplace();
+    if (section === 'listings') loadMyListings();
+    if (section === 'wallet') loadWallet();
+    if (section === 'profile') loadProfile();
+}
+
+// Global exposure for onClick events
+window.loadSection = loadSection;
+
 document.querySelectorAll('.sidebar-link[data-section]').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
-        const section = link.dataset.section;
-
-        // Tab switching
-        document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-        document.getElementById(`section-${section}`).classList.add('active');
-
-        // Title update
-        const title = section.charAt(0).toUpperCase() + section.slice(1);
-        document.getElementById('pageTitle').textContent = title;
-        document.getElementById('sidebar').classList.remove('open');
-
-        // Lazy load chats if switching to messages
-        if (section === 'messages') loadConversations();
+        loadSection(link.dataset.section);
     });
 });
 
@@ -1206,9 +1219,17 @@ const notifDropdown = document.getElementById('notifDropdown');
 if (notifBell) {
     notifBell.onclick = (e) => {
         e.stopPropagation();
-        const isVisible = notifDropdown.style.display === 'block';
-        notifDropdown.style.display = isVisible ? 'none' : 'block';
-        if (!isVisible) loadNotifications();
+        // Use computed style or classes for reliability
+        const isCurrentlyVisible = notifDropdown.classList.contains('show');
+        
+        if (isCurrentlyVisible) {
+            notifDropdown.classList.remove('show');
+            notifDropdown.style.display = 'none';
+        } else {
+            notifDropdown.style.display = 'block';
+            notifDropdown.classList.add('show');
+            loadNotifications();
+        }
     };
 }
 
