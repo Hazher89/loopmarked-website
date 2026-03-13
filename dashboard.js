@@ -340,7 +340,7 @@ window.openListingDetail = async function (listingId) {
 
         // Seller Info
         if (seller) {
-            document.getElementById('detailSellerName').textContent = seller.full_name || seller.username || 'Seller';
+            document.getElementById('detailSellerName').textContent = seller.full_name || seller.username || 'User';
             document.getElementById('detailSellerAvatar').src = seller.avatar_url || '/images/app-icon.png';
             document.getElementById('detailSellerAvatar').onerror = function () { this.src = '/images/app-icon.png'; };
         } else {
