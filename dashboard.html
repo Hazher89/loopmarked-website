@@ -109,6 +109,21 @@
                     <h1 class="topbar-title" id="pageTitle">Overview</h1>
                 </div>
                 <div class="topbar-right">
+                    <!-- Notification Bell -->
+                    <div class="topbar-notifications" id="notifBell">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                        </svg>
+                        <span class="notif-badge" id="notifBadge" style="display:none;"></span>
+                        <div class="notif-dropdown" id="notifDropdown" style="display:none;">
+                            <div class="notif-header">Notifications</div>
+                            <div class="notif-list" id="notifList">
+                                <div class="notif-empty">No new notifications</div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Lumo Pill -->
                     <div class="lumo-pill" id="lumoPill">
                         <div class="lumo-coin">L</div>
@@ -201,31 +216,62 @@
 
                 <!-- ═══ MARKETPLACE ═══ -->
                 <section class="content-section" id="section-marketplace">
-                    <div class="section-actions">
-                        <input type="text" id="marketplaceSearch" class="search-input" placeholder="Search items..." />
-                        <select id="marketplaceCategory" class="filter-select">
-                            <option value="">All Categories</option>
-                            <option value="electronics">Electronics</option>
-                            <option value="clothing">Clothing</option>
-                            <option value="furniture">Furniture</option>
-                            <option value="home_garden">Home & Garden</option>
-                            <option value="sports">Sports</option>
-                            <option value="vehicles">Vehicles</option>
-                            <option value="baby_kids">Baby & Kids</option>
-                            <option value="beauty">Beauty</option>
-                            <option value="books">Books</option>
-                            <option value="property">Property</option>
-                            <option value="toys">Toys</option>
-                            <option value="services">Services</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <select id="marketplaceSubCategory" class="filter-select" style="display:none;">
-                            <option value="">All Subcategories</option>
-                        </select>
+                    <!-- Ad Slot: Google AdMob / Unity (Top Banner) -->
+                    <div class="ad-slot top-banner">
+                        <div class="ad-placeholder">
+                            <span>Sponsor Message — Powered by Unity Ads</span>
+                        </div>
                     </div>
+
+                    <div class="marketplace-controls">
+                        <div class="search-bar-advanced">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <input type="text" id="marketplaceSearch" class="search-input-alt" placeholder="Find cars, electronics, services..." />
+                        </div>
+                        
+                        <div class="filter-row">
+                            <select id="marketplaceCategory" class="filter-select-alt">
+                                <option value="">All Categories</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="clothing">Clothing</option>
+                                <option value="furniture">Furniture</option>
+                                <option value="home_garden">Home & Garden</option>
+                                <option value="sports">Sports</option>
+                                <option value="vehicles">Vehicles</option>
+                                <option value="baby_kids">Baby & Kids</option>
+                                <option value="beauty">Beauty</option>
+                                <option value="books">Books</option>
+                                <option value="property">Property</option>
+                                <option value="toys">Toys</option>
+                                <option value="services">Services</option>
+                                <option value="other">Other</option>
+                            </select>
+                            
+                            <select id="marketplaceSubCategory" class="filter-select-alt" style="display:none;">
+                                <option value="">Subcategory</option>
+                            </select>
+
+                            <select id="marketplaceSort" class="filter-select-alt">
+                                <option value="newest">Newest First</option>
+                                <option value="price_low">Price: Low to High</option>
+                                <option value="price_high">Price: High to Low</option>
+                                <option value="popular">Most Popular</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="listings-grid" id="marketplaceGrid">
                         <div class="empty-state-dash">
                             <div class="loading-spinner"></div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Ad Slot: Google AdMob -->
+                    <div class="ad-sidebar-fixed">
+                        <div class="ad-placeholder-vertical">
+                            <span>Google AdMob Banner</span>
                         </div>
                     </div>
                 </section>
@@ -243,27 +289,60 @@
                     </div>
                 </section>
 
-                <!-- ═══ WALLET ═══ -->
+                <!-- ═══ WALLET & CALCULATOR ═══ -->
                 <section class="content-section" id="section-wallet">
-                    <div class="wallet-hero">
-                        <div class="wallet-hero-glow"></div>
-                        <div class="wallet-hero-label">LUMO BALANCE</div>
-                        <div class="wallet-hero-balance" id="walletBalance">—</div>
-                        <div class="wallet-hero-unit">LUMO</div>
-                        <div class="wallet-hero-sub" id="walletSub">— Lumet</div>
+                    <div class="wallet-grid">
+                        <div class="wallet-hero">
+                            <div class="wallet-hero-glow"></div>
+                            <div class="wallet-hero-label">LUMO BALANCE</div>
+                            <div class="wallet-hero-balance" id="walletBalance">—</div>
+                            <div class="wallet-hero-unit">LUMO</div>
+                            <div class="wallet-hero-sub" id="walletSub">— Lumet</div>
+                        </div>
+
+                        <!-- Advanced Pricing Simulator -->
+                        <div class="overview-card calculator-card">
+                            <h3>Advanced Price Simulator</h3>
+                            <p class="calc-desc">Calculate fees, conversion rates, and listing value.</p>
+                            <div class="calc-form">
+                                <div class="calc-input-group">
+                                    <label>Amount in Local Currency</label>
+                                    <input type="number" id="calcLocalAmount" placeholder="e.g. 500" oninput="runPriceSimulator()">
+                                </div>
+                                <div class="calc-results" id="calcResults">
+                                    <div class="calc-res-item">
+                                        <span>Estimated Lumo:</span>
+                                        <strong id="simLumo">0.0 L</strong>
+                                    </div>
+                                    <div class="calc-res-item">
+                                        <span>Marketplace Fee (2.5%):</span>
+                                        <strong id="simFee">0.0 L</strong>
+                                    </div>
+                                    <div class="calc-res-item highlight">
+                                        <span>Net Value:</span>
+                                        <strong id="simNet">0.0 L</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Earn Actions (Simulated) -->
+
+                    <!-- Earn Actions -->
                     <div class="earn-actions-grid">
                         <div class="earn-card" onclick="simulateAdWatch()">
                             <div class="earn-icon">🎬</div>
-                            <h3>Watch Ad</h3>
-                            <p>Earn 0.5 Lumo instantly</p>
-                            <span class="earn-badge">HOT</span>
+                            <div class="earn-content">
+                                <h3>Watch Rewarded Ad</h3>
+                                <p>Earn 0.5 Lumo (AdMob/Unity)</p>
+                            </div>
+                            <span class="earn-badge">BONUS</span>
                         </div>
                         <div class="earn-card" onclick="claimDailyBonus()">
                             <div class="earn-icon">🎁</div>
-                            <h3>Daily Bonus</h3>
-                            <p>Check in daily for rewards</p>
+                            <div class="earn-content">
+                                <h3>Daily Lumo Drop</h3>
+                                <p>Free Lumo waiting for you</p>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -291,10 +370,9 @@
                 <!-- ═══ PROFILE ═══ -->
                 <section class="content-section" id="section-profile">
                     <div class="profile-hero" id="profileCover">
-                        <!-- Cover Photo -->
                         <button class="edit-cover-btn" onclick="triggerCoverUpload()">📷 Edit Cover</button>
                     </div>
-                    <div class="profile-card profile-main-card">
+                    <div class="profile-main-card">
                         <div class="profile-avatar-container">
                             <div class="profile-avatar" id="profileAvatar">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
@@ -311,7 +389,7 @@
 
                         <div class="profile-actions">
                             <button class="secondary-btn" onclick="openEditProfile()">Edit Profile</button>
-                            <button class="secondary-btn" onclick="openSettings()">Settings</button>
+                            <button class="secondary-btn" onclick="openSettings()">Account Settings</button>
                         </div>
 
                         <div class="profile-meta">

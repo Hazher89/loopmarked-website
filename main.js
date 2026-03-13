@@ -1,7 +1,8 @@
-/* ═══════════════════════════════════════════════════════════════
-   LOOP MARKED — Main JavaScript
-   Apple-style scroll animations & interactions
-   ═══════════════════════════════════════════════════════════════ */
+import { createClient } from '@supabase/supabase-js';
+
+const SUPABASE_URL = 'https://jyfnjuxijkqkjxsreezo.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_SWb674hU1E-fh9ahe9XS3w_V91MMTk2';
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // ── Navbar scroll effect (Apple-style frosted glass) ──
 const navbar = document.getElementById('navbar');
@@ -177,4 +178,51 @@ document.querySelectorAll('.showcase-features').forEach(list => {
     staggerObserver.observe(list);
 });
 
-console.log('✨ Loop Marked Website Loaded — Apple-style animations active');
+// ── Marketplace Preview ──
+async function loadMarketplacePreview() {
+    const previewGrid = document.getElementById('previewGrid');
+    if (!previewGrid) return;
+
+    try {
+        const { data, error } = await supabase
+            .from('listings')
+            .select('id, title, price, location, images')
+            .eq('approval_status', 'approved')
+            .eq('is_deleted', false)
+            .eq('is_sold', false)
+            .order('created_at', { ascending: false })
+            .limit(4);
+
+        if (error) throw error;
+
+        if (data && data.length > 0) {
+            previewGrid.innerHTML = data.map(item => {
+                const img = (item.images && item.images.length > 0) ? item.images[0] : '/images/app-icon.png';
+                return `
+                    <div class="listing-card-preview" onclick="window.location.href='/auth.html'">
+                        <div class="preview-img-container">
+                            <img src="${img}" class="preview-img" loading="lazy" />
+                            <div class="preview-price">${item.price} L</div>
+                        </div>
+                        <div class="preview-content">
+                            <div class="preview-title">${item.title}</div>
+                            <div class="preview-meta">
+                                <span>${item.location || 'Local'}</span>
+                                <span style="color: var(--accent-cyan);">View Details</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        } else {
+            previewGrid.innerHTML = '<div class="preview-loading">No active listings found. Be the first to list!</div>';
+        }
+    } catch (err) {
+        console.error('Preview error:', err);
+        previewGrid.innerHTML = '<div class="preview-loading">Unable to load listings. Check your connection.</div>';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', loadMarketplacePreview);
+
+console.log('✨ Loop Marked Website Loaded — Apple-style animations & marketplace preview active');

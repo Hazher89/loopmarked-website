@@ -9,6 +9,9 @@ const SUPABASE_URL = 'https://jyfnjuxijkqkjxsreezo.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_SWb674hU1E-fh9ahe9XS3w_V91MMTk2';
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+console.log("📍 Page URL:", window.location.href);
+console.log("📍 Page Hash:", window.location.hash ? "Present (Private)" : "None");
+
 let currentUser = null;
 let activeChatId = null;
 let activeChatSubscription = null;
@@ -30,17 +33,83 @@ const CATEGORIES = {
 };
 
 // ═══════ AUTH GUARD & INIT ═══════
+// ── Auth Guard & Init ──
 async function init() {
-    const { data: { session } } = await supabase.auth.getSession();
+    console.log("🚀 Initializing Dashboard...");
+    
+    // Check if we have an auth hash in the URL
+    const hasHash = window.location.hash.includes('access_token') || 
+                  window.location.hash.includes('id_token') || 
+                  window.location.hash.includes('error');
+
+    if (hasHash) {
+        console.log("🛠️ Detection: Auth callback hash present. Waiting for Supabase to process...");
+        
+        const params = new URLSearchParams(window.location.hash.substring(1));
+        const error = params.get('error');
+        const errorDesc = params.get('error_description');
+        
+        if (error) {
+            console.error("❌ Auth Callback Error:", error, errorDesc);
+            alert(`Authentication Error: ${errorDesc || error}`);
+            window.location.href = '/auth.html?error=' + encodeURIComponent(errorDesc || error);
+            return;
+        }
+
+        // Wait a bit longer for Google/Apple callbacks to settle
+        await new Promise(resolve => setTimeout(resolve, 1500));
+    }
+
+    let { data: { session }, error: sessionError } = await supabase.auth.getSession();
+
+    // If still no session but we have a hash, wait specifically for the SIGNED_IN event
+    if (!session && hasHash) {
+        console.log("⏳ Session not found in initial getSession, waiting for auth state change...");
+        await new Promise((resolve) => {
+            const { data: { subscription } } = supabase.auth.onAuthStateChange((event, newSession) => {
+                console.log("🔄 Auth Event:", event);
+                if (newSession) {
+                    session = newSession;
+                    subscription.unsubscribe();
+                    resolve();
+                }
+            });
+            // Timeout after 5 seconds just in case
+            setTimeout(() => {
+                subscription.unsubscribe();
+                resolve();
+            }, 5000);
+        });
+    }
 
     if (!session) {
-        window.location.href = '/auth.html';
+        if (hasHash) {
+            console.warn("⚠️ Hash was present but no session could be established after 6 seconds. If this is a loop, please check Supabase Site URL settings.");
+            alert("Login failed to finalize. Check if you have third-party cookies allowed or if the redirect URL matches Supabase settings.");
+        }
+        console.error("🚪 Final check: No active session found. Redirecting to login.");
+        if (sessionError) console.error("Auth Error Info:", sessionError);
+        window.location.replace('/auth.html');
         return;
     }
 
     currentUser = session.user;
-    document.getElementById('loadingScreen').style.display = 'none';
-    document.getElementById('dashboardLayout').style.display = 'flex';
+    console.log("✅ Authenticated as:", currentUser.email);
+    
+    // Smooth transition: hide loading and show dashboard
+    const loadingScreen = document.getElementById('loadingScreen');
+    const layout = document.getElementById('dashboardLayout');
+    
+    if (loadingScreen) loadingScreen.style.opacity = '0';
+    setTimeout(() => {
+        if (loadingScreen) loadingScreen.style.display = 'none';
+        if (layout) {
+            layout.style.display = 'flex';
+            layout.style.opacity = '0';
+            layout.style.transition = 'opacity 0.5s ease-out';
+            requestAnimationFrame(() => layout.style.opacity = '1');
+        }
+    }, 400);
 
     // Load initial data
     await Promise.all([
@@ -145,12 +214,14 @@ async function loadTransactions() {
 
                 return `
           <div class="tx-row">
-            <div class="tx-row-icon ${isCredit ? 'credit' : 'debit'}">${isCredit ? '↗' : '↘'}</div>
+            <div class="tx-row-icon">${isCredit ? '💎' : '💸'}</div>
             <div class="tx-row-info">
               <div class="tx-row-desc">${desc}</div>
               <div class="tx-row-date">${dateStr}</div>
             </div>
-            <div class="tx-row-amount ${isCredit ? 'credit' : 'debit'}">${isCredit ? '+' : ''}${lumo} L</div>
+            <div class="tx-row-amount" style="color: ${isCredit ? 'var(--accent-cyan)' : 'var(--accent-red)'}">
+                ${isCredit ? '+' : '-'}${lumo} L
+            </div>
           </div>
         `;
             }).join('');
@@ -204,48 +275,37 @@ async function getUserCountryCode() {
 
 async function loadMarketplace() {
     try {
-        // 1) Get current user's country_code
         const userCountry = await getUserCountryCode();
 
-        // 2) Read current filter values from UI
+        const searchEl = document.getElementById('marketplaceSearch');
         const categoryEl = document.getElementById('marketplaceCategory');
         const subCategoryEl = document.getElementById('marketplaceSubCategory');
-        const searchEl = document.getElementById('marketplaceSearch');
+        const sortEl = document.getElementById('marketplaceSort');
+
+        const searchText = (searchEl?.value || '').trim().toLowerCase();
         const selectedCategory = categoryEl?.value || '';
         const selectedSubCategory = subCategoryEl?.value || '';
-        const searchText = (searchEl?.value || '').trim().toLowerCase();
+        const selectedSort = sortEl?.value || 'newest';
 
-        // 3) Build query with STRICT filtering
         let query = supabase
             .from('listings')
-            .select('id, title, price, seller_id, location, created_at, country_code, category, category_id, sub_category_id')
+            .select('id, title, price, seller_id, location, created_at, country_code, category, category_id, sub_category_id, favorite_count')
             .eq('approval_status', 'approved')
             .eq('is_deleted', false)
             .eq('is_sold', false);
 
-        // 4) ALWAYS filter by user's country
-        if (userCountry) {
-            query = query.eq('country_code', userCountry);
-        }
+        if (userCountry) query = query.eq('country_code', userCountry);
+        if (selectedCategory) query = query.or(`category.eq.${selectedCategory},category_id.eq.${selectedCategory}`);
+        if (selectedSubCategory) query = query.eq('sub_category_id', selectedSubCategory);
+        if (searchText) query = query.ilike('title', `%${searchText}%`);
 
-        // 5) Category filter
-        if (selectedCategory) {
-            query = query.or(`category.eq.${selectedCategory},category_id.eq.${selectedCategory}`);
-        }
+        // Apply Sorting
+        if (selectedSort === 'price_low') query = query.order('price', { ascending: true });
+        else if (selectedSort === 'price_high') query = query.order('price', { ascending: false });
+        else if (selectedSort === 'popular') query = query.order('favorite_count', { ascending: false });
+        else query = query.order('created_at', { ascending: false });
 
-        // 6) Subcategory filter
-        if (selectedSubCategory) {
-            query = query.eq('sub_category_id', selectedSubCategory);
-        }
-
-        // 7) Search filter
-        if (searchText) {
-            query = query.ilike('title', `%${searchText}%`);
-        }
-
-        const { data, error } = await query
-            .order('created_at', { ascending: false })
-            .limit(50);
+        const { data } = await query.limit(50);
 
         if (data) {
             document.getElementById('statListings').textContent = data.length;
@@ -271,6 +331,7 @@ document.getElementById('marketplaceCategory')?.addEventListener('change', (e) =
     loadMarketplace();
 });
 document.getElementById('marketplaceSubCategory')?.addEventListener('change', () => loadMarketplace());
+document.getElementById('marketplaceSort')?.addEventListener('change', () => loadMarketplace());
 
 let _searchDebounce = null;
 document.getElementById('marketplaceSearch')?.addEventListener('input', () => {
@@ -330,15 +391,17 @@ async function renderListings(listings, containerId, isOwner = false) {
 
         return `
             <div class="listing-card" onclick="openListingDetail('${item.id}')">
-                <div class="listing-image">
-                    <img src="${imageUrl}" alt="${item.title}" loading="lazy" onerror="this.src='/images/app-icon.png'" />
+                <div class="listing-img-container">
+                    <img src="${imageUrl}" alt="${item.title}" class="listing-img" loading="lazy" onerror="this.src='/images/app-icon.png'" />
+                    <div class="listing-price-badge">${priceLumo} L</div>
                 </div>
-                <div class="listing-details">
-                    <div class="listing-price">${priceLumo} L</div>
-                    <div class="listing-title">${item.title}</div>
+                <div class="listing-content">
+                    <h3 class="listing-title">${item.title}</h3>
                     <div class="listing-meta">
-                        <span>${item.location || 'Unknown'}</span>
-                        <span>${dateStr}</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+                        </svg>
+                        ${item.location || 'Loop'} • ${dateStr}
                     </div>
                 </div>
             </div>
@@ -1119,6 +1182,85 @@ loadProfile = async function () {
             document.getElementById('editBio').value = data.bio || '';
         }
     } catch (e) { }
+}
+
+// ═══════ PRICE SIMULATOR ═══════
+window.runPriceSimulator = function() {
+    const amount = parseFloat(document.getElementById('calcLocalAmount').value) || 0;
+    
+    // Simulation logic (1 Lumo ≈ $10, 2.5% fee) - ADJUST AS PER APP ECONOMY
+    const lumoRate = 10; 
+    const estimatedLumo = amount / lumoRate;
+    const fee = estimatedLumo * 0.025;
+    const net = estimatedLumo - fee;
+
+    document.getElementById('simLumo').textContent = estimatedLumo.toFixed(1) + ' L';
+    document.getElementById('simFee').textContent = fee.toFixed(2) + ' L';
+    document.getElementById('simNet').textContent = net.toFixed(1) + ' L';
+}
+
+// ═══════ NOTIFICATIONS ═══════
+const notifBell = document.getElementById('notifBell');
+const notifDropdown = document.getElementById('notifDropdown');
+
+if (notifBell) {
+    notifBell.onclick = (e) => {
+        e.stopPropagation();
+        const isVisible = notifDropdown.style.display === 'block';
+        notifDropdown.style.display = isVisible ? 'none' : 'block';
+        if (!isVisible) loadNotifications();
+    };
+}
+
+document.addEventListener('click', () => {
+    if (notifDropdown) notifDropdown.style.display = 'none';
+});
+
+async function loadNotifications() {
+    const list = document.getElementById('notifList');
+    try {
+        const { data } = await supabase
+            .from('notifications')
+            .select('*')
+            .eq('user_id', currentUser.id)
+            .order('created_at', { ascending: false })
+            .limit(10);
+            
+        if (data && data.length > 0) {
+            list.innerHTML = data.map(n => `
+                <div class="notif-item ${n.is_read ? '' : 'unread'}">
+                    <div class="notif-text">${n.content}</div>
+                    <div class="notif-time">${new Date(n.created_at).toLocaleDateString()}</div>
+                </div>
+            `).join('');
+            document.getElementById('notifBadge').style.display = 'none'; // Mark as "seen" visual
+        } else {
+            list.innerHTML = '<div class="notif-empty">No new notifications</div>';
+        }
+    } catch (e) { console.error(e); }
+}
+
+async function checkNotificationsCount() {
+    try {
+        const { count } = await supabase
+            .from('notifications')
+            .select('*', { count: 'exact', head: true })
+            .eq('user_id', currentUser.id)
+            .eq('is_read', false);
+            
+        if (count > 0) {
+            document.getElementById('notifBadge').style.display = 'block';
+        }
+    } catch (e) {}
+}
+
+// Update original init to include notification check
+const originalInit = init;
+init = async function() {
+    await originalInit();
+    checkNotificationsCount();
+    // Refresh count every 2 mins
+    setInterval(checkNotificationsCount, 120000);
 }
 
 init();

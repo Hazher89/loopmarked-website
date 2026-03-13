@@ -10,16 +10,38 @@ const SUPABASE_ANON_KEY = 'sb_publishable_SWb674hU1E-fh9ahe9XS3w_V91MMTk2';
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // ── Check if already logged in ──
-supabase.auth.getSession().then(({ data: { session } }) => {
+async function checkCurrentSession() {
+    // If we have an auth hash in the URL, DO NOTHING.
+    // Let the hash be processed by the auth provider callback.
+    if (window.location.hash.includes('access_token') || 
+        window.location.hash.includes('id_token') || 
+        window.location.hash.includes('error')) {
+        console.log("🛠️ Auth hash detected in URL, skipping auto-redirect.");
+        return;
+    }
+
+    const { data: { session } } = await supabase.auth.getSession();
     if (session) {
+        console.log("✅ Session found on login page, redirecting to dashboard...");
         window.location.href = '/dashboard.html';
     }
-});
+}
+checkCurrentSession();
+
+// ── Check for error in URL params ──
+const urlParams = new URLSearchParams(window.location.search);
+const error = urlParams.get('error');
+if (error) {
+    showMessage(error, 'error');
+}
 
 // ── Listen for auth state changes ──
 supabase.auth.onAuthStateChange((event, session) => {
-    if (event === 'SIGNED_IN' && session) {
-        window.location.href = '/dashboard.html';
+    console.log("🔑 Auth Event on Login Page:", event);
+    if ((event === 'SIGNED_IN' || event === 'USER_UPDATED') && session) {
+        console.log("✅ Success! Redirecting to dashboard...");
+        // Use replace instead of href to avoid history back-loop
+        window.location.replace('/dashboard.html');
     }
 });
 

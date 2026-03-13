@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 :root {
   --bg-primary: #000000;
   --bg-secondary: #0a0a0f;
@@ -161,6 +165,24 @@ body {
 .nav-link:hover::after {
   width: 100%;
 }
+.nav-link.nav-highlight {
+  color: var(--accent-cyan);
+  background: rgba(0, 240, 255, 0.1);
+  padding: 8px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.nav-link.nav-highlight:hover {
+  background: rgba(0, 240, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.nav-link.nav-highlight::after {
+  display: none;
+}
 
 .navbar-actions {
   display: flex;
@@ -169,6 +191,9 @@ body {
 }
 
 /* ── Buttons ──────────────────────────────────────────────── */
+.btn-hero-login {
+  box-shadow: 0 15px 45px rgba(0, 240, 255, 0.4);
+}
 .btn-primary-sm {
   display: inline-flex;
   align-items: center;
@@ -769,6 +794,142 @@ body {
   font-size: 14px;
   color: var(--text-secondary);
   line-height: 1.65;
+}
+/* ═══════ MARKETPLACE PREVIEW ═══════ */
+.market-preview-section {
+  padding: 120px 0;
+  background: radial-gradient(circle at center, rgba(0, 240, 255, 0.03) 0%, transparent 70%), var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.listings-grid-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.preview-loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 0;
+  color: var(--text-tertiary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.listing-card-preview {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.4s var(--ease-out-expo);
+  cursor: pointer;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.listing-card-preview:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--accent-cyan);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.preview-img-container {
+  height: 200px;
+  background: #111;
+  position: relative;
+}
+
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-price {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  font-size: 14px;
+}
+
+.preview-content {
+  padding: 20px;
+}
+
+.preview-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preview-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.btn-primary-glow {
+  display: inline-flex;
+  padding: 18px 48px;
+  background: var(--gradient-primary);
+  color: #000;
+  font-weight: 800;
+  border-radius: 50px;
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-primary-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 50px rgba(0, 240, 255, 0.5);
+}
+/* ═══════ LOGIN CALLOUT ═══════ */
+.login-callout-section {
+  padding: 80px 0;
+  background: var(--bg-primary);
+}
+
+.login-card-big {
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 32px;
+  padding: 64px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+.login-card-big::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0,240,255,0.1), transparent);
+  filter: blur(60px);
+  z-index: -1;
+}
+
+.login-card-content {
+  position: relative;
+  z-index: 2;
 }
 
 /* ═══════ FEATURES ═══════ */
