@@ -273,57 +273,23 @@ async function getUserCountryCode() {
     return _userCountryCode;
 }
 
-// ═══════ MARKETPLACE (ADVANCED) ═══════
-let _marketplaceFilterTimeout = null;
-
-function updateFilterTags() {
-    const activeFiltersBar = document.getElementById('activeFilters');
-    if (!activeFiltersBar) return;
-
-    activeFiltersBar.innerHTML = '';
-
-    const search = document.getElementById('marketplaceSearch')?.value;
-    const cat = document.getElementById('marketplaceCategory')?.value;
-    const sub = document.getElementById('marketplaceSubCategory')?.value;
-
-    if (search) createTag('Search: ' + search, () => { document.getElementById('marketplaceSearch').value = ''; loadMarketplace(); });
-    if (cat) createTag('Category: ' + cat, () => { document.getElementById('marketplaceCategory').value = ''; loadMarketplace(); });
-    if (sub) createTag('Sub: ' + sub, () => { document.getElementById('marketplaceSubCategory').value = ''; loadMarketplace(); });
-
-    function createTag(text, onRemove) {
-        const tag = document.createElement('div');
-        tag.className = 'filter-tag';
-        tag.innerHTML = `<span>${text}</span><span class="filter-tag-remove">✕</span>`;
-        tag.querySelector('.filter-tag-remove').onclick = onRemove;
-        activeFiltersBar.appendChild(tag);
-    }
-}
-
-window.clearAllFilters = function() {
-    document.getElementById('marketplaceSearch').value = '';
-    document.getElementById('marketplaceCategory').value = '';
-    document.getElementById('marketplaceSubCategory').value = '';
-    document.getElementById('marketplaceSort').value = 'newest';
-    loadMarketplace();
-}
-
 async function loadMarketplace() {
-    updateFilterTags();
-    
     try {
         const userCountry = await getUserCountryCode();
-        const searchText = document.getElementById('marketplaceSearch').value.trim().toLowerCase();
-        const selectedCategory = document.getElementById('marketplaceCategory').value;
-        const selectedSubCategory = document.getElementById('marketplaceSubCategory').value;
-        const selectedSort = document.getElementById('marketplaceSort').value;
+
+        const searchEl = document.getElementById('marketplaceSearch');
+        const categoryEl = document.getElementById('marketplaceCategory');
+        const subCategoryEl = document.getElementById('marketplaceSubCategory');
+        const sortEl = document.getElementById('marketplaceSort');
+
+        const searchText = (searchEl?.value || '').trim().toLowerCase();
+        const selectedCategory = categoryEl?.value || '';
+        const selectedSubCategory = subCategoryEl?.value || '';
+        const selectedSort = sortEl?.value || 'newest';
 
         let query = supabase
             .from('listings')
-            .select(`
-                id, title, price, seller_id, location, created_at, 
-                country_code, category, sub_category_id, favorite_count,
-                images
-            `)
+            .select('id, title, price, seller_id, location, created_at, country_code, category, category_id, sub_category_id, favorite_count')
             .eq('approval_status', 'approved')
             .eq('is_deleted', false)
             .eq('is_sold', false);
@@ -339,8 +305,7 @@ async function loadMarketplace() {
         else if (selectedSort === 'popular') query = query.order('favorite_count', { ascending: false });
         else query = query.order('created_at', { ascending: false });
 
-        const { data, error } = await query.limit(50);
-        if (error) throw error;
+        const { data } = await query.limit(50);
 
         if (data) {
             document.getElementById('statListings').textContent = data.length;
@@ -351,28 +316,27 @@ async function loadMarketplace() {
     }
 }
 
-// Side-listeners
+// Marketplace filter event listeners
 document.getElementById('marketplaceCategory')?.addEventListener('change', (e) => {
-    const subGroup = document.getElementById('subCategoryGroupSidebar');
     const subEl = document.getElementById('marketplaceSubCategory');
     const cat = e.target.value;
-    
-    if (cat && CATEGORIES[cat]) {
-        subEl.innerHTML = '<option value="">All Subcategories</option>' + 
+    if (cat && CATEGORIES[cat] && CATEGORIES[cat].length > 0) {
+        subEl.innerHTML = '<option value="">All Subcategories</option>' +
             CATEGORIES[cat].map(s => `<option value="${s}">${s.replace(/_/g, ' ')}</option>`).join('');
-        subGroup.style.display = 'block';
+        subEl.style.display = 'block';
     } else {
-        subGroup.style.display = 'none';
+        subEl.style.display = 'none';
         subEl.value = '';
     }
     loadMarketplace();
 });
-
 document.getElementById('marketplaceSubCategory')?.addEventListener('change', () => loadMarketplace());
 document.getElementById('marketplaceSort')?.addEventListener('change', () => loadMarketplace());
+
+let _searchDebounce = null;
 document.getElementById('marketplaceSearch')?.addEventListener('input', () => {
-    clearTimeout(_marketplaceFilterTimeout);
-    _marketplaceFilterTimeout = setTimeout(() => loadMarketplace(), 500);
+    clearTimeout(_searchDebounce);
+    _searchDebounce = setTimeout(() => loadMarketplace(), 400);
 });
 
 // Create listing category listener
@@ -413,7 +377,10 @@ async function renderListings(listings, containerId, isOwner = false) {
         return;
     }
 
-    // Parallel image fetching
+    // Show loading state
+    container.innerHTML = `<div class="empty-state-dash"><div class="loading-spinner"></div></div>`;
+
+    // Fetch images from Storage in parallel for all listings
     const imagePromises = listings.map(item => getListingImageUrl(item.id));
     const imageUrls = await Promise.all(imagePromises);
 
@@ -421,17 +388,14 @@ async function renderListings(listings, containerId, isOwner = false) {
         const priceLumo = (item.price / 100).toFixed(0);
         const imageUrl = imageUrls[idx] || '/images/app-icon.png';
         const dateStr = new Date(item.created_at).toLocaleDateString();
-        const category = item.category ? item.category.toUpperCase() : 'OTHER';
 
         return `
             <div class="listing-card" onclick="openListingDetail('${item.id}')">
                 <div class="listing-img-container">
                     <img src="${imageUrl}" alt="${item.title}" class="listing-img" loading="lazy" onerror="this.src='/images/app-icon.png'" />
-                    <div class="listing-price-badge">${priceLumo} LUMO</div>
-                    <button class="listing-fav-btn" onclick="event.stopPropagation()">❤</button>
+                    <div class="listing-price-badge">${priceLumo} L</div>
                 </div>
                 <div class="listing-content">
-                    <div class="category-tag-tiny">${category}</div>
                     <h3 class="listing-title">${item.title}</h3>
                     <div class="listing-meta">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -449,49 +413,80 @@ window.openListingDetail = async function (listingId) {
     const modal = document.getElementById('listingDetailModal');
     modal.style.display = 'flex';
 
-    try {
-        const { data: listing, error } = await supabase.from('listings').select('*').eq('id', listingId).single();
-        if (error) throw error;
+    // Show loading state
+    document.getElementById('detailTitle').textContent = 'Loading...';
+    document.getElementById('detailDescription').textContent = '...';
+    document.getElementById('detailActions').innerHTML = '';
 
+    try {
+        // 1. Fetch listing (simple query, NO FK join)
+        const { data: listing, error } = await supabase
+            .from('listings')
+            .select('*')
+            .eq('id', listingId)
+            .single();
+
+        if (error) throw error;
+        if (!listing) throw new Error('Listing not found');
+
+        // 2. Fetch seller profile separately
         let seller = null;
         if (listing.seller_id) {
-            const { data: p } = await supabase.from('profiles').select('*').eq('id', listing.seller_id).single();
-            seller = p;
+            const { data: profile } = await supabase
+                .from('profiles')
+                .select('full_name, avatar_url, username')
+                .eq('id', listing.seller_id)
+                .single();
+            seller = profile;
         }
 
+        // 3. Fetch image
         const imageUrl = await getListingImageUrl(listing.id) || '/images/app-icon.png';
 
+        // 4. Populate Modal
         document.getElementById('detailImage').src = imageUrl;
-        document.getElementById('detailTitle').textContent = listing.title;
-        document.getElementById('detailPrice').textContent = (listing.price / 100).toFixed(0) + ' LUMO';
-        document.getElementById('detailLocation').textContent = listing.location || 'Unknown';
-        document.getElementById('detailCategory').textContent = (listing.category || 'OTHER').toUpperCase();
+        document.getElementById('detailImage').onerror = function () { this.src = '/images/app-icon.png'; };
+        document.getElementById('detailTitle').textContent = listing.title || 'Untitled';
+        document.getElementById('detailPrice').textContent = (listing.price / 100).toFixed(0) + ' L';
+        document.getElementById('detailLocation').textContent = listing.location || listing.city_name || 'Unknown';
+        document.getElementById('detailCategory').textContent = listing.category || 'General';
         document.getElementById('detailDate').textContent = new Date(listing.created_at).toLocaleDateString();
-        document.getElementById('detailDescription').textContent = listing.description || 'No description.';
+        document.getElementById('detailDescription').textContent = listing.description || 'No description provided.';
 
+        // Seller Info
         if (seller) {
-            document.getElementById('detailSellerName').textContent = seller.full_name || 'User';
+            document.getElementById('detailSellerName').textContent = seller.full_name || seller.username || 'User';
             document.getElementById('detailSellerAvatar').src = seller.avatar_url || '/images/app-icon.png';
-        }
-
-        const actions = document.getElementById('detailActions');
-        actions.innerHTML = '';
-
-        if (listing.seller_id !== currentUser.id) {
-            const btn = document.createElement('button');
-            btn.className = 'premium-publish-btn';
-            btn.style.flex = '1';
-            btn.textContent = 'Make Offer / Chat';
-            btn.onclick = () => { closeListingDetail(); contactSeller(listing.id, listing.seller_id); };
-            actions.appendChild(btn);
+            document.getElementById('detailSellerAvatar').onerror = function () { this.src = '/images/app-icon.png'; };
         } else {
-            const btn = document.createElement('button');
-            btn.className = 'secondary-btn';
-            btn.textContent = 'Edit Listing';
-            actions.appendChild(btn);
+            document.getElementById('detailSellerName').textContent = 'Unknown Seller';
         }
+
+        // Actions
+        const actionsContainer = document.getElementById('detailActions');
+        actionsContainer.innerHTML = '';
+
+        if (listing.seller_id === currentUser.id) {
+            const editBtn = document.createElement('button');
+            editBtn.className = 'action-btn btn-secondary';
+            editBtn.textContent = '✎ Edit Listing';
+            editBtn.onclick = () => alert('Please use the Loop Marked mobile app to edit listings for now.');
+            actionsContainer.appendChild(editBtn);
+        } else {
+            const contactBtn = document.createElement('button');
+            contactBtn.className = 'action-btn btn-primary';
+            contactBtn.textContent = '💬 Make Offer / Chat';
+            contactBtn.onclick = () => {
+                closeListingDetail();
+                contactSeller(listing.id, listing.seller_id);
+            };
+            actionsContainer.appendChild(contactBtn);
+        }
+
     } catch (e) {
-        console.error('Detail error:', e);
+        console.error('Error loading listing detail:', e);
+        document.getElementById('detailTitle').textContent = 'Error';
+        document.getElementById('detailDescription').textContent = 'Could not load this listing. ' + (e.message || '');
     }
 }
 
@@ -651,31 +646,42 @@ window.submitNewListing = async function () {
 // ═══════ MESSAGES (CHAT) ═══════
 async function loadConversations() {
     try {
+        // Fetch chats where user is buyer OR seller
         const { data: chats, error } = await supabase
             .from('chats')
-            .select('*, listing:listings(title, images)')
+            .select(`
+                *,
+                listing:listings(title, image_urls)
+            `)
             .or(`buyer_id.eq.${currentUser.id},seller_id.eq.${currentUser.id}`)
             .order('updated_at', { ascending: false });
 
         const container = document.getElementById('chatList');
         if (!chats || chats.length === 0) {
-            container.innerHTML = `<div class="empty-state-dash"><h3>No messages</h3><p>Your conversations will appear here.</p></div>`;
+            container.innerHTML = `<div class="empty-state-dash"><p>No conversations yet.</p></div>`;
             return;
         }
 
-        container.innerHTML = ''; 
+        // We need to fetch profiles for the OTHER user in each chat
+        container.innerHTML = ''; // limited clear
 
         for (const chat of chats) {
             const otherUserId = chat.buyer_id === currentUser.id ? chat.seller_id : chat.buyer_id;
-            const { data: profile } = await supabase.from('profiles').select('full_name, avatar_url').eq('id', otherUserId).single();
+
+            // Fetch profile for name/avatar
+            const { data: profile } = await supabase
+                .from('profiles')
+                .select('full_name, avatar_url')
+                .eq('id', otherUserId)
+                .single();
 
             const name = profile?.full_name || 'User';
             const avatar = profile?.avatar_url || '/images/app-icon.png';
-            const listingTitle = chat.listing?.title || 'Closed item';
-            const lastMsg = chat.last_message_preview || 'New message';
+            const listingTitle = chat.listing?.title || 'Item';
+            const lastMsg = chat.last_message_preview || 'Start chatting...';
 
             const div = document.createElement('div');
-            div.className = `chat-item ${activeChatId === chat.id ? 'active' : ''}`;
+            div.className = 'chat-item';
             div.dataset.id = chat.id;
             div.onclick = () => selectChat(chat.id, name, avatar, listingTitle);
 
@@ -683,13 +689,14 @@ async function loadConversations() {
                 <div class="chat-avatar"><img src="${avatar}" alt="${name}"></div>
                 <div class="chat-info">
                     <div class="chat-name">${name}</div>
-                    <div class="chat-preview"><strong>${listingTitle}</strong> • ${lastMsg}</div>
+                    <div class="chat-preview">${listingTitle} • ${lastMsg}</div>
                 </div>
             `;
             container.appendChild(div);
         }
+
     } catch (err) {
-        console.error('Chat error:', err);
+        console.error('Chat list error:', err);
     }
 }
 
@@ -698,31 +705,34 @@ async function loadConversations() {
 window.selectChat = async function (chatId, name, avatar, listingTitle) {
     activeChatId = chatId;
 
+    // UI Update
     document.querySelectorAll('.chat-item').forEach(el => el.classList.remove('active'));
     document.querySelector(`.chat-item[data-id="${chatId}"]`)?.classList.add('active');
 
+    // Setup Chat Window
     const chatWindow = document.getElementById('chatWindow');
     chatWindow.innerHTML = `
-        <div class="chat-window-inner">
-            <div class="chat-header">
-                <div class="chat-avatar" style="width:32px;height:32px;"><img src="${avatar}" alt="${name}"></div>
-                <div class="chat-header-info">
-                    <h3>${name}</h3>
-                    <span>${listingTitle}</span>
-                </div>
+        <div class="chat-header">
+            <div class="chat-avatar" style="width:32px;height:32px;"><img src="${avatar}" alt="${name}"></div>
+            <div class="chat-header-info">
+                <h3>${name}</h3>
+                <span>${listingTitle}</span>
             </div>
-            <div class="chat-messages" id="messageList">
-                <div class="loading-spinner"></div>
-            </div>
-            <div class="chat-input-area">
-                <button class="create-offer-btn" onclick="openCreateOffer()" title="Make an Offer" style="background:none; border:none; font-size:24px; cursor:pointer;">💰</button>
-                <input type="text" class="chat-input" id="messageInput" placeholder="Message ${name}..." onkeypress="handleEnter(event)">
-                <button class="send-btn" onclick="sendMessage()">➤</button>
-            </div>
+        </div>
+        <div class="chat-messages" id="messageList">
+            <div class="loading-spinner"></div>
+        </div>
+        <div class="chat-input-area">
+            <button class="create-offer-btn" onclick="openCreateOffer()" title="Make an Offer">💰</button>
+            <input type="text" class="chat-input" id="messageInput" placeholder="Type a message..." onkeypress="handleEnter(event)">
+            <button class="send-btn" onclick="sendMessage()">➤</button>
         </div>
     `;
 
+    // Load Messages
     loadMessages(chatId);
+
+    // Realtime subscription for this chat
     subscribeToChat(chatId);
 }
 
@@ -971,38 +981,25 @@ function setupRealtime() {
 }
 
 // ═══════ SIDEBAR NAVIGATION ═══════
-function loadSection(section) {
-    // Tab switching
-    document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
-    const activeLink = document.querySelector(`.sidebar-link[data-section="${section}"]`);
-    if (activeLink) activeLink.classList.add('active');
-
-    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-    const targetSection = document.getElementById(`section-${section}`);
-    if (targetSection) targetSection.classList.add('active');
-
-    // Title update
-    const title = section.charAt(0).toUpperCase() + section.slice(1);
-    const titleEl = document.getElementById('pageTitle');
-    if (titleEl) titleEl.textContent = title;
-
-    document.getElementById('sidebar')?.classList.remove('open');
-
-    // Actions based on section
-    if (section === 'messages') loadConversations();
-    if (section === 'marketplace') loadMarketplace();
-    if (section === 'listings') loadMyListings();
-    if (section === 'wallet') loadWallet();
-    if (section === 'profile') loadProfile();
-}
-
-// Global exposure for onClick events
-window.loadSection = loadSection;
-
+// ═══════ SIDEBAR NAVIGATION ═══════
 document.querySelectorAll('.sidebar-link[data-section]').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
-        loadSection(link.dataset.section);
+        const section = link.dataset.section;
+
+        // Tab switching
+        document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+        document.getElementById(`section-${section}`).classList.add('active');
+
+        // Title update
+        const title = section.charAt(0).toUpperCase() + section.slice(1);
+        document.getElementById('pageTitle').textContent = title;
+        document.getElementById('sidebar').classList.remove('open');
+
+        // Lazy load chats if switching to messages
+        if (section === 'messages') loadConversations();
     });
 });
 
@@ -1209,17 +1206,9 @@ const notifDropdown = document.getElementById('notifDropdown');
 if (notifBell) {
     notifBell.onclick = (e) => {
         e.stopPropagation();
-        // Use computed style or classes for reliability
-        const isCurrentlyVisible = notifDropdown.classList.contains('show');
-        
-        if (isCurrentlyVisible) {
-            notifDropdown.classList.remove('show');
-            notifDropdown.style.display = 'none';
-        } else {
-            notifDropdown.style.display = 'block';
-            notifDropdown.classList.add('show');
-            loadNotifications();
-        }
+        const isVisible = notifDropdown.style.display === 'block';
+        notifDropdown.style.display = isVisible ? 'none' : 'block';
+        if (!isVisible) loadNotifications();
     };
 }
 
@@ -1275,43 +1264,3 @@ init = async function() {
 }
 
 init();
-
-// ── UTILITIES ──
-function formatLumo(lumet) {
-    return (lumet / 100).toFixed(0) + ' LUMO';
-}
-
-window.toggleFavorite = function(e, id) {
-    if (e) e.stopPropagation();
-    const btn = e.currentTarget;
-    const isFav = btn.classList.toggle('active');
-    btn.style.color = isFav ? 'var(--accent-red)' : 'white';
-};
-
-// Start Chat helper for Marketplace
-window.startChat = async function(listingId, sellerId) {
-    if (sellerId === currentUser.id) return;
-    try {
-        const { data: chat } = await supabase
-            .from('chats')
-            .select('id')
-            .eq('listing_id', listingId)
-            .eq('buyer_id', currentUser.id)
-            .maybeSingle();
-
-        let id = chat?.id;
-        if (!id) {
-            const { data: newChat } = await supabase
-                .from('chats')
-                .insert({ listing_id: listingId, buyer_id: currentUser.id, seller_id: sellerId })
-                .select()
-                .single();
-            id = newChat.id;
-        }
-        loadSection('messages');
-        setTimeout(() => {
-            const item = document.querySelector(`.chat-item[data-id="${id}"]`);
-            if (item) item.click();
-        }, 500);
-    } catch (e) { console.error(e); }
-};

@@ -216,93 +216,62 @@
 
                 <!-- ═══ MARKETPLACE ═══ -->
                 <section class="content-section" id="section-marketplace">
-                    <div class="marketplace-layout-advanced">
-                        <!-- Left Sidebar: Advanced Filters -->
-                        <aside class="marketplace-filters-sidebar">
-                            <div class="filter-sidebar-header">
-                                <h3>Filters</h3>
-                                <button class="clear-filters-btn" id="clearAllFilters" onclick="clearAllFilters()">Clear All</button>
-                            </div>
+                    <!-- Ad Slot: Google AdMob / Unity (Top Banner) -->
+                    <div class="ad-slot top-banner">
+                        <div class="ad-placeholder">
+                            <span>Sponsor Message — Powered by Unity Ads</span>
+                        </div>
+                    </div>
 
-                            <div class="filter-group-advanced">
-                                <label>Search keyword</label>
-                                <div class="sidebar-search-box">
-                                    <input type="text" id="marketplaceSearch" placeholder="Search items..." />
-                                </div>
-                            </div>
+                    <div class="marketplace-controls">
+                        <div class="search-bar-advanced">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <input type="text" id="marketplaceSearch" class="search-input-alt" placeholder="Find cars, electronics, services..." />
+                        </div>
+                        
+                        <div class="filter-row">
+                            <select id="marketplaceCategory" class="filter-select-alt">
+                                <option value="">All Categories</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="clothing">Clothing</option>
+                                <option value="furniture">Furniture</option>
+                                <option value="home_garden">Home & Garden</option>
+                                <option value="sports">Sports</option>
+                                <option value="vehicles">Vehicles</option>
+                                <option value="baby_kids">Baby & Kids</option>
+                                <option value="beauty">Beauty</option>
+                                <option value="books">Books</option>
+                                <option value="property">Property</option>
+                                <option value="toys">Toys</option>
+                                <option value="services">Services</option>
+                                <option value="other">Other</option>
+                            </select>
+                            
+                            <select id="marketplaceSubCategory" class="filter-select-alt" style="display:none;">
+                                <option value="">Subcategory</option>
+                            </select>
 
-                            <div class="filter-group-advanced">
-                                <label>Category</label>
-                                <select id="marketplaceCategory" class="sidebar-select">
-                                    <option value="">All Categories</option>
-                                    <option value="electronics">Electronics</option>
-                                    <option value="clothing">Clothing</option>
-                                    <option value="furniture">Furniture</option>
-                                    <option value="home_garden">Home & Garden</option>
-                                    <option value="sports">Sports</option>
-                                    <option value="vehicles">Vehicles</option>
-                                    <option value="baby_kids">Baby & Kids</option>
-                                    <option value="beauty">Beauty</option>
-                                    <option value="books">Books</option>
-                                    <option value="property">Property</option>
-                                    <option value="toys">Toys</option>
-                                    <option value="services">Services</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
+                            <select id="marketplaceSort" class="filter-select-alt">
+                                <option value="newest">Newest First</option>
+                                <option value="price_low">Price: Low to High</option>
+                                <option value="price_high">Price: High to Low</option>
+                                <option value="popular">Most Popular</option>
+                            </select>
+                        </div>
+                    </div>
 
-                            <div class="filter-group-advanced" id="subCategoryGroupSidebar" style="display:none;">
-                                <label>Subcategory</label>
-                                <select id="marketplaceSubCategory" class="sidebar-select">
-                                    <option value="">All Subcategories</option>
-                                </select>
-                            </div>
+                    <div class="listings-grid" id="marketplaceGrid">
+                        <div class="empty-state-dash">
+                            <div class="loading-spinner"></div>
+                        </div>
+                    </div>
 
-                            <div class="filter-group-advanced">
-                                <label>Sort By</label>
-                                <select id="marketplaceSort" class="sidebar-select">
-                                    <option value="newest">Newest First</option>
-                                    <option value="price_low">Price: Low to High</option>
-                                    <option value="price_high">Price: High to Low</option>
-                                    <option value="popular">Most Popular</option>
-                                </select>
-                            </div>
-
-                            <div class="filter-group-advanced">
-                                <label>Distance</label>
-                                <select id="marketplaceDistance" class="sidebar-select">
-                                    <option value="10">Within 10 km</option>
-                                    <option value="50">Within 50 km</option>
-                                    <option value="100">Within 100 km</option>
-                                    <option value="all" selected>Anywhere</option>
-                                </select>
-                            </div>
-
-                            <!-- Ad Slot Sidebar -->
-                            <div class="ad-sidebar-box">
-                                <div class="ad-label">ADVERTISING</div>
-                                <div class="ad-content-mini">Unity Video Rewards</div>
-                            </div>
-                        </aside>
-
-                        <!-- Main Content Area -->
-                        <div class="marketplace-main-view">
-                            <div class="active-filter-bar" id="activeFilters">
-                                <!-- Tags dynamically added here -->
-                            </div>
-
-                            <!-- Ad Slot: Top Banner -->
-                            <div class="ad-slot top-banner-advanced">
-                                <div class="ad-placeholder-advanced">
-                                    <span>Premium Sponsored — AdMob</span>
-                                </div>
-                            </div>
-
-                            <div class="listings-grid" id="marketplaceGrid">
-                                <div class="empty-state-dash">
-                                    <div class="loading-spinner"></div>
-                                </div>
-                            </div>
+                    <!-- Sidebar Ad Slot: Google AdMob -->
+                    <div class="ad-sidebar-fixed">
+                        <div class="ad-placeholder-vertical">
+                            <span>Google AdMob Banner</span>
                         </div>
                     </div>
                 </section>
@@ -380,25 +349,19 @@
 
                 <!-- ═══ MESSAGES ═══ -->
                 <section class="content-section" id="section-messages">
-                    <div class="messages-layout-advanced">
-                        <div class="conversation-pane">
-                            <div class="pane-header">
-                                <h3>Messages</h3>
-                                <div class="pane-search">
-                                    <input type="text" placeholder="Search chats..." id="chatSearch">
-                                </div>
+                    <div class="chat-container">
+                        <div class="chat-sidebar">
+                            <div class="chat-search">
+                                <input type="text" placeholder="Search chats..." id="chatSearch">
                             </div>
-                            <div class="chat-list-advanced" id="chatList">
-                                <!-- JS Injected -->
+                            <div class="chat-list" id="chatList">
                                 <div class="loading-spinner"></div>
                             </div>
                         </div>
-
-                        <div class="chat-main-pane" id="chatWindow">
-                            <div class="chat-placeholder-view">
-                                <div class="placeholder-icon">💬</div>
-                                <h2>Your Conversations</h2>
-                                <p>Select a chat from the sidebar to start trading.</p>
+                        <div class="chat-window" id="chatWindow">
+                            <div class="chat-empty-state">
+                                <h3>Select a conversation</h3>
+                                <p>Choose a chat from the left to start messaging.</p>
                             </div>
                         </div>
                     </div>
@@ -517,51 +480,38 @@
 
     <!-- Listing Detail Modal -->
     <div class="popup-overlay" id="listingDetailModal" style="display:none;">
-        <div class="popup-card-advanced">
-            <div class="popup-close-advanced" onclick="closeListingDetail()">✕</div>
+        <div class="popup-card listing-detail-card">
+            <div class="popup-close" onclick="closeListingDetail()">✕</div>
 
-            <div class="detail-container-premium">
-                <div class="detail-gallery-side">
-                    <img id="detailImage" src="/images/app-icon.png" alt="Listing" class="premium-detail-img" />
-                    <div class="gallery-nav-placeholder">
-                        <div class="gallery-dot active"></div>
-                        <div class="gallery-dot"></div>
-                        <div class="gallery-dot"></div>
-                    </div>
+            <div class="detail-layout">
+                <div class="detail-image-section">
+                    <img id="detailImage" src="/images/app-icon.png" alt="Listing" class="detail-main-img" />
                 </div>
 
-                <div class="detail-content-side">
-                    <div class="detail-top-info">
-                        <div class="category-pill-mini" id="detailCategory">ELECTRONICS</div>
-                        <h2 id="detailTitle">Title</h2>
-                        <div class="premium-price-tag" id="detailPrice">0 LUMO</div>
+                <div class="detail-info-section">
+                    <div class="detail-header">
+                        <h2 id="detailTitle" class="detail-title">Loading...</h2>
+                        <div class="detail-price-badge" id="detailPrice">0 L</div>
                     </div>
 
-                    <div class="detail-location-row">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
+                    <div class="detail-meta-row">
                         <span id="detailLocation">Location</span>
-                        <span class="dot-separator">•</span>
-                        <span id="detailDate">Today</span>
+                        <span id="detailCategory">Category</span>
+                        <span id="detailDate">Date</span>
                     </div>
 
-                    <div class="detail-description-box">
-                        <p id="detailDescription">Description goes here...</p>
-                    </div>
+                    <p id="detailDescription" class="detail-desc">...</p>
 
-                    <div class="seller-profile-small">
-                        <img id="detailSellerAvatar" src="/images/app-icon.png" />
-                        <div class="seller-details">
-                            <span class="seller-name-label" id="detailSellerName">Username</span>
-                            <span class="seller-rating-label">★★★★★ (4.8)</span>
+                    <div class="detail-seller-card">
+                        <img id="detailSellerAvatar" src="/images/app-icon.png" class="seller-avatar" />
+                        <div class="seller-text">
+                            <span id="detailSellerName" class="seller-name">User</span>
+                            <span class="seller-label">Verified User</span>
                         </div>
-                        <button class="verify-badge">VERIFIED</button>
                     </div>
 
-                    <div class="premium-action-bar" id="detailActions">
-                        <!-- JS Buttons -->
+                    <div class="detail-actions" id="detailActions">
+                        <!-- Dynamic buttons injected via JS -->
                     </div>
                 </div>
             </div>
@@ -600,78 +550,78 @@
 
     <!-- Create Listing Modal -->
     <div class="popup-overlay" id="createListingModal" style="display:none;">
-        <div class="popup-card-advanced create-listing-wizard">
-            <div class="popup-close-advanced" onclick="closeCreateListing()">✕</div>
-            
-            <div class="wizard-header">
-                <h2>List an Item</h2>
-                <div class="wizard-steps">
-                    <div class="step active">1. Details</div>
-                    <div class="step">2. Media</div>
-                    <div class="step">3. Review</div>
-                </div>
-            </div>
+        <div class="popup-card listing-detail-card" style="max-width:600px;">
+            <div class="popup-close" onclick="closeCreateListing()">✕</div>
+            <div style="padding:32px;">
+                <h2 style="margin-bottom:24px;">Create New Listing</h2>
 
-            <div class="wizard-content">
-                <div class="wizard-form-grid">
-                    <div class="form-item">
-                        <label>Title</label>
-                        <input type="text" id="newListingTitle" placeholder="What are you selling?" maxlength="80">
-                    </div>
-
-                    <div class="form-item">
-                        <label>Price (LUMO)</label>
-                        <input type="number" id="newListingPrice" placeholder="0" min="1">
-                    </div>
-
-                    <div class="form-item full-width">
-                        <label>Description</label>
-                        <textarea id="newListingDesc" rows="4" placeholder="Tell buyers more about it..."></textarea>
-                    </div>
-
-                    <div class="form-item">
-                        <label>Category</label>
-                        <select id="newListingCategory">
-                            <option value="electronics">Electronics</option>
-                            <option value="clothing">Clothing</option>
-                            <option value="furniture">Furniture</option>
-                            <option value="vehicles">Vehicles</option>
-                            <option value="other" selected>Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-item" id="subCategoryGroup" style="display:none;">
-                        <label>Subcategory</label>
-                        <select id="newListingSubCategory">
-                            <option value="">Select subcategory</option>
-                        </select>
-                    </div>
-
-                    <div class="form-item">
-                        <label>Condition</label>
-                        <select id="newListingCondition">
-                            <option value="new">New</option>
-                            <option value="like_new">Like New</option>
-                            <option value="good" selected>Good</option>
-                            <option value="fair">Fair</option>
-                        </select>
-                    </div>
-
-                    <div class="form-item full-width">
-                        <label>Upload Image</label>
-                        <div class="premium-upload-zone" onclick="document.getElementById('newListingImage').click()">
-                            <div class="upload-icon">📸</div>
-                            <div class="upload-text">Drag & drop or click to upload</div>
-                            <input type="file" id="newListingImage" accept="image/*" style="display:none;" onchange="handleNewListingImage(this)">
-                        </div>
-                        <div id="newListingPreview" class="upload-preview-list"></div>
-                    </div>
+                <div class="form-group">
+                    <label>Title *</label>
+                    <input type="text" id="newListingTitle" class="popup-input" placeholder="What are you listing?"
+                        maxlength="80">
                 </div>
 
-                <div class="wizard-footer">
-                    <button class="secondary-btn" onclick="closeCreateListing()">Cancel</button>
-                    <button class="premium-publish-btn" onclick="submitNewListing()">Publish Now</button>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="newListingDesc" class="popup-input" rows="3"
+                        placeholder="Describe your item..."></textarea>
                 </div>
+
+                <div class="form-group">
+                    <label>Price (Lumo) *</label>
+                    <input type="number" id="newListingPrice" class="popup-input" placeholder="e.g. 50" min="1"
+                        step="1">
+                </div>
+
+                <div class="form-group">
+                    <label>Category *</label>
+                    <select id="newListingCategory" class="popup-input">
+                        <option value="electronics">Electronics</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="furniture">Furniture</option>
+                        <option value="home_garden">Home & Garden</option>
+                        <option value="sports">Sports</option>
+                        <option value="vehicles">Vehicles</option>
+                        <option value="baby_kids">Baby & Kids</option>
+                        <option value="beauty">Beauty</option>
+                        <option value="books">Books</option>
+                        <option value="property">Property</option>
+                        <option value="toys">Toys</option>
+                        <option value="services">Services</option>
+                        <option value="other" selected>Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="subCategoryGroup" style="display:none;">
+                    <label>Subcategory *</label>
+                    <select id="newListingSubCategory" class="popup-input">
+                        <option value="">Select Subcategory</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Condition</label>
+                    <select id="newListingCondition" class="popup-input">
+                        <option value="new">New</option>
+                        <option value="like_new">Like New</option>
+                        <option value="good" selected>Good</option>
+                        <option value="fair">Fair</option>
+                        <option value="poor">Poor</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" id="newListingLocation" class="popup-input" placeholder="City, Country">
+                </div>
+
+                <div class="form-group">
+                    <label>Image</label>
+                    <input type="file" id="newListingImage" accept="image/*" class="popup-input" style="padding:8px;">
+                </div>
+
+                <button class="popup-btn" onclick="submitNewListing()" style="width:100%;margin-top:8px;">Publish
+                    Listing</button>
             </div>
         </div>
     </div>
